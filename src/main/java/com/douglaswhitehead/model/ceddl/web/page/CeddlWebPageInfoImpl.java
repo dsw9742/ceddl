@@ -1,6 +1,6 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
-import org.joda.time.Instant;
+import java.util.Date;
 
 /**
  * Describes details about the page.
@@ -16,9 +16,9 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 	private final String version;
 	private final String[] breadcrumbs;
 	private final String author;
-	private final Instant issueDate;
-	private final Instant effectiveDate;
-	private final Instant expiryDate;
+	private final Date issueDate;
+	private final Date effectiveDate;
+	private final Date expiryDate;
 	private final String language;
 	private final String geoRegion;
 	private final String industryCodes;
@@ -36,9 +36,9 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 		final String newVersion,
 		final String[] newBreadcrumbs,
 		final String newAuthor,
-		final Instant newIssueDate,
-		final Instant newEffectiveDate,
-		final Instant newExpiryDate,
+		final Date newIssueDate,
+		final Date newEffectiveDate,
+		final Date newExpiryDate,
 		final String newLanguage,
 		final String newGeoRegion,
 		final String newIndustryCodes,
@@ -102,15 +102,15 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 		return this.author;
 	}
 	
-	public Instant getIssueDate() {
+	public Date getIssueDate() {
 		return this.issueDate;
 	}
 	
-	public Instant getEffectiveDate() {
+	public Date getEffectiveDate() {
 		return this.effectiveDate;
 	}
 	
-	public Instant getExpiryDate() {
+	public Date getExpiryDate() {
 		return this.expiryDate;
 	}
 	
@@ -148,9 +148,9 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 		private String nestedVersion;
 		private String[] nestedBreadcrumbs;
 		private String nestedAuthor;
-		private Instant nestedIssueDate;
-		private Instant nestedEffectiveDate;
-		private Instant nestedExpiryDate;
+		private Date nestedIssueDate;
+		private Date nestedEffectiveDate;
+		private Date nestedExpiryDate;
 		private String nestedLanguage;
 		private String nestedGeoRegion;
 		private String nestedIndustryCodes;
@@ -203,17 +203,17 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 			return this;
 		}
 		
-		public Builder issueDate(final Instant newIssueDate) {
+		public Builder issueDate(final Date newIssueDate) {
 			this.nestedIssueDate = newIssueDate;
 			return this;
 		}
 		
-		public Builder effectiveDate(final Instant newEffectiveDate) {
+		public Builder effectiveDate(final Date newEffectiveDate) {
 			this.nestedEffectiveDate = newEffectiveDate;
 			return this;
 		}
 		
-		public Builder expiryDate(final Instant newExpiryDate) {
+		public Builder expiryDate(final Date newExpiryDate) {
 			this.nestedExpiryDate = newExpiryDate;
 			return this;
 		}

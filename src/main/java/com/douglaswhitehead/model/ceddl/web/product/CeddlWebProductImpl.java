@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.product;
+package com.douglaswhitehead.model.ceddl.web.product;
 
 /**
  * 6.4 Product Object

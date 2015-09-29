@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
 /**
  * 6.6 Transaction Object

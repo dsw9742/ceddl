@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.user;
+package com.douglaswhitehead.model.ceddl.web.user;
 
 /**
  * This object provides population segmentation information for the user, such as premium versus

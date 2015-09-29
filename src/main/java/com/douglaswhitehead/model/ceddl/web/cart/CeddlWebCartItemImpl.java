@@ -1,8 +1,8 @@
-package com.contentualize.model.ceddl.web.cart;
+package com.douglaswhitehead.model.ceddl.web.cart;
 
-import com.contentualize.model.ceddl.web.product.CeddlWebProduct;
-import com.contentualize.model.ceddl.web.product.CeddlWebProductCategory;
-import com.contentualize.model.ceddl.web.product.CeddlWebProductInfo;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProduct;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProductCategory;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProductInfo;
 
 /**
  * List of items in the cart.

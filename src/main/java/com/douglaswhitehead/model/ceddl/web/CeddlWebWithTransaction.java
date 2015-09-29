@@ -1,7 +1,7 @@
-package com.contentualize.model.ceddl.web;
+package com.douglaswhitehead.model.ceddl.web;
 
-import com.contentualize.model.ceddl.Ceddl;
-import com.contentualize.model.ceddl.web.transaction.CeddlWebTransaction;
+import com.douglaswhitehead.model.ceddl.Ceddl;
+import com.douglaswhitehead.model.ceddl.web.transaction.CeddlWebTransaction;
 
 public interface CeddlWebWithTransaction extends Ceddl {
 

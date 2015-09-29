@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web;
+package com.douglaswhitehead.model.ceddl.web;
 
 /**
  * An extensible object for providing address information for the user.

@@ -1,8 +1,8 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
-import com.contentualize.model.ceddl.web.product.CeddlWebProduct;
-import com.contentualize.model.ceddl.web.product.CeddlWebProductCategory;
-import com.contentualize.model.ceddl.web.product.CeddlWebProductInfo;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProduct;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProductCategory;
+import com.douglaswhitehead.model.ceddl.web.product.CeddlWebProductInfo;
 
 public interface CeddlWebTransactionItem {
 

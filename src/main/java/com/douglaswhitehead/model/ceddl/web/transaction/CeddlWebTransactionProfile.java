@@ -1,6 +1,6 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
-import com.contentualize.model.ceddl.web.CeddlWebProfileAddress;
+import com.douglaswhitehead.model.ceddl.web.CeddlWebProfileAddress;
 
 public interface CeddlWebTransactionProfile {
 	

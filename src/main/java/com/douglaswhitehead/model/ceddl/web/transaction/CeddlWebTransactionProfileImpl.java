@@ -1,6 +1,6 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
-import com.contentualize.model.ceddl.web.CeddlWebProfileAddress;
+import com.douglaswhitehead.model.ceddl.web.CeddlWebProfileAddress;
 
 /**
  * A profile for information about the purchaser, typically associated with a registered user.

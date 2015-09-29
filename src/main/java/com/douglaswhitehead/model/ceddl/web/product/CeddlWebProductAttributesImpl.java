@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.product;
+package com.douglaswhitehead.model.ceddl.web.product;
 
 /**
  * This object provides extensibility to the Product object. Any additional dimensions related to the 

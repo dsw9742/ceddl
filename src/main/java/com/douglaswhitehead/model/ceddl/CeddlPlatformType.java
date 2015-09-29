@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl;
+package com.douglaswhitehead.model.ceddl;
 
 public enum CeddlPlatformType {
 	WEB,

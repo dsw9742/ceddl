@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
 public interface CeddlWebPage {
 	

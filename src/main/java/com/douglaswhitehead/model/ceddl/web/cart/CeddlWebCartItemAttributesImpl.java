@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.cart;
+package com.douglaswhitehead.model.ceddl.web.cart;
 
 /**
  * This object provides extensibility to each item within the cart. Any additional dimensions related

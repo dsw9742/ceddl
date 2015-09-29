@@ -1,6 +1,6 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
-import org.joda.time.Instant;
+import java.util.Date;
 
 public interface CeddlWebPageInfo {
 
@@ -13,9 +13,9 @@ public interface CeddlWebPageInfo {
 	public String getVersion();
 	public String[] getBreadcrumbs();
 	public String getAuthor();
-	public Instant getIssueDate();
-	public Instant getEffectiveDate();
-	public Instant getExpiryDate();
+	public Date getIssueDate();
+	public Date getEffectiveDate();
+	public Date getExpiryDate();
 	public String getLanguage();
 	public String getGeoRegion();
 	public String getIndustryCodes();

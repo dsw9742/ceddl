@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
 /**
  * This object provides extensibility to the Page object. All names are optional and should fit the 

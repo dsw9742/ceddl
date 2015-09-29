@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
 /**
  * A profile for information about the purchaser, typically associated with a registered user.

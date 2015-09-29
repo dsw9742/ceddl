@@ -1,6 +1,6 @@
-package com.contentualize.model.ceddl.web.user;
+package com.douglaswhitehead.model.ceddl.web.user;
 
-import com.contentualize.model.ceddl.web.CeddlWebProfileAddress;
+import com.douglaswhitehead.model.ceddl.web.CeddlWebProfileAddress;
 
 /**
  * A profile for information about the user, typically associated with a registered user.

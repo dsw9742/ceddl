@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.cart;
+package com.douglaswhitehead.model.ceddl.web.cart;
 
 /**
  * 6.5 Cart Object

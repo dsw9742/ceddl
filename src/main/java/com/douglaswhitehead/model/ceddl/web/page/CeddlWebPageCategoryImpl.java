@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
 /**
  * Because of the wide range of methods for categorization, an object literal is provided for page

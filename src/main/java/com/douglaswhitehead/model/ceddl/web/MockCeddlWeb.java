@@ -1,10 +1,10 @@
-package com.contentualize.model.ceddl.web;
+package com.douglaswhitehead.model.ceddl.web;
 
-import com.contentualize.model.ceddl.web.cart.CeddlWebCart;
-import com.contentualize.model.ceddl.web.cart.CeddlWebCartImpl;
-import com.contentualize.model.ceddl.web.page.CeddlWebPageImpl;
-import com.contentualize.model.ceddl.web.user.CeddlWebUser;
-import com.contentualize.model.ceddl.web.user.CeddlWebUserImpl;
+import com.douglaswhitehead.model.ceddl.web.cart.CeddlWebCart;
+import com.douglaswhitehead.model.ceddl.web.cart.CeddlWebCartImpl;
+import com.douglaswhitehead.model.ceddl.web.page.CeddlWebPageImpl;
+import com.douglaswhitehead.model.ceddl.web.user.CeddlWebUser;
+import com.douglaswhitehead.model.ceddl.web.user.CeddlWebUserImpl;
 
 public class MockCeddlWeb implements CeddlWeb {
 

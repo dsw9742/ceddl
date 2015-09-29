@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.transaction;
+package com.douglaswhitehead.model.ceddl.web.transaction;
 
 /**
  * This object provides extensibility to each item within the transaction. Any additional dimensions

@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.page;
+package com.douglaswhitehead.model.ceddl.web.page;
 
 /**
  * 6.3 Page Object 

@@ -1,4 +1,4 @@
-package com.contentualize.model.ceddl.web.user;
+package com.douglaswhitehead.model.ceddl.web.user;
 
 /**
  * 6.9 User Object
