@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata;
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.product.Product;
-import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
+import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
 
 public interface DigitalData {
@@ -16,7 +16,7 @@ public interface DigitalData {
 	
 	public Cart getCart();
 	
-	public CeddlWebTransaction getTransaction();
+	public Transaction getTransaction();
 	
 	public User[] getUser();
 	

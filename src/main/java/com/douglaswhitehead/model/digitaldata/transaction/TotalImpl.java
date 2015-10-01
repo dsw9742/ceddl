@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * The transactionTotal SHOULD be the total price inclusive of all discounts, charges, and
  * tax.
  */
-public class CeddlWebTransactionTotalImpl implements CeddlWebTransactionTotal {
+public class TotalImpl implements Total {
 
 	private final BigDecimal basePrice;
 	private final String voucherCode;
@@ -20,7 +20,7 @@ public class CeddlWebTransactionTotalImpl implements CeddlWebTransactionTotal {
 	private final BigDecimal priceWithTax;
 	private final BigDecimal transactionTotal;
 	
-	private CeddlWebTransactionTotalImpl(
+	private TotalImpl(
 		final BigDecimal newBasePrice,
 		final String newVoucherCode,
 		final BigDecimal newVoucherDiscount,
@@ -134,8 +134,8 @@ public class CeddlWebTransactionTotalImpl implements CeddlWebTransactionTotal {
 			return this;
 		}
 		
-		public CeddlWebTransactionTotalImpl build() {
-			return new CeddlWebTransactionTotalImpl(
+		public TotalImpl build() {
+			return new TotalImpl(
 				nestedBasePrice,
 				nestedVoucherCode,
 				nestedVoucherDiscount,

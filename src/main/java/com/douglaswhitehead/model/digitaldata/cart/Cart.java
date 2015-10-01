@@ -1,6 +1,7 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
+import com.douglaswhitehead.model.digitaldata.common.Item;
 
 public interface Cart {
 

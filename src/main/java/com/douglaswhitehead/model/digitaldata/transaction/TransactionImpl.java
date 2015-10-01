@@ -1,5 +1,9 @@
 package com.douglaswhitehead.model.digitaldata.transaction;
 
+import com.douglaswhitehead.model.digitaldata.common.Attributes;
+import com.douglaswhitehead.model.digitaldata.common.Item;
+import com.douglaswhitehead.model.digitaldata.user.Profile;
+
 /**
  * 6.6 Transaction Object
  * 
@@ -7,20 +11,20 @@ package com.douglaswhitehead.model.digitaldata.transaction;
  * Transaction object contains analogous sub-objects to the Cart object as well as additional subobjects
  * specific to completed orders.
  */
-public class CeddlWebTransactionImpl implements CeddlWebTransaction {
+public class TransactionImpl implements Transaction {
 
 	private final String transactionID;
-	private final CeddlWebTransactionProfile profile;
-	private final CeddlWebTransactionTotal total;
-	private final CeddlWebTransactionAttributes attributes;
-	private final CeddlWebTransactionItem[] item;
+	private final Profile profile;
+	private final Total total;
+	private final Attributes attributes;
+	private final Item[] item;
 	
-	private CeddlWebTransactionImpl(
+	private TransactionImpl(
 		final String newTransactionID,
-		final CeddlWebTransactionProfile newProfile,
-		final CeddlWebTransactionTotal newTotal,
-		final CeddlWebTransactionAttributes newAttributes,
-		final CeddlWebTransactionItem[] newItem
+		final Profile newProfile,
+		final Total newTotal,
+		final Attributes newAttributes,
+		final Item[] newItem
 	) {
 		this.transactionID = newTransactionID;
 		this.profile = newProfile;
@@ -33,56 +37,56 @@ public class CeddlWebTransactionImpl implements CeddlWebTransaction {
 		return transactionID;
 	}
 	
-	public CeddlWebTransactionProfile getProfile() {
+	public Profile getProfile() {
 		return profile;
 	}
 	
-	public CeddlWebTransactionTotal getTotal() {
+	public Total getTotal() {
 		return total;
 	}
 	
-	public CeddlWebTransactionAttributes getAttributes() {
+	public Attributes getAttributes() {
 		return attributes;
 	}
 	
-	public CeddlWebTransactionItem[] getItem() {
+	public Item[] getItem() {
 		return item;
 	}
 	
 	public static class Builder {
 		private String nestedTransactionID;
-		private CeddlWebTransactionProfile nestedProfile;
-		private CeddlWebTransactionTotal nestedTotal;
-		private CeddlWebTransactionAttributes nestedAttributes;
-		private CeddlWebTransactionItem[] nestedItem;
+		private Profile nestedProfile;
+		private Total nestedTotal;
+		private Attributes nestedAttributes;
+		private Item[] nestedItem;
 		
 		public Builder transactionID(final String newTransactionID) {
 			this.nestedTransactionID = newTransactionID;
 			return this;
 		}
 		
-		public Builder profile(final CeddlWebTransactionProfile newProfile) {
+		public Builder profile(final Profile newProfile) {
 			this.nestedProfile = newProfile;
 			return this;
 		}
 		
-		public Builder total(final CeddlWebTransactionTotal newTotal) {
+		public Builder total(final Total newTotal) {
 			this.nestedTotal = newTotal;
 			return this;
 		}
 		
-		public Builder attributes(final CeddlWebTransactionAttributes newAttributes) {
+		public Builder attributes(final Attributes newAttributes) {
 			this.nestedAttributes = newAttributes;
 			return this;
 		}
 		
-		public Builder item(final CeddlWebTransactionItem[] newItem) {
+		public Builder item(final Item[] newItem) {
 			this.nestedItem = newItem;
 			return this;
 		}
 		
-		public CeddlWebTransactionImpl build() {
-			return new CeddlWebTransactionImpl(
+		public TransactionImpl build() {
+			return new TransactionImpl(
 				nestedTransactionID,
 				nestedProfile,
 				nestedTotal,

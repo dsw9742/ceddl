@@ -6,8 +6,8 @@ import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.page.PageImpl;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.product.ProductImpl;
-import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
-import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransactionImpl;
+import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
+import com.douglaswhitehead.model.digitaldata.transaction.TransactionImpl;
 import com.douglaswhitehead.model.digitaldata.user.User;
 import com.douglaswhitehead.model.digitaldata.user.UserImpl;
 
@@ -36,8 +36,8 @@ public class MockDigitalDataImpl implements DigitalData {
 	}
 	
 	@Override
-	public CeddlWebTransaction getTransaction() {
-		return new CeddlWebTransactionImpl.Builder().build();
+	public Transaction getTransaction() {
+		return new TransactionImpl.Builder().build();
 	}
 
 	@Override

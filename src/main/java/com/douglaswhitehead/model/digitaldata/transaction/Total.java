@@ -2,7 +2,7 @@ package com.douglaswhitehead.model.digitaldata.transaction;
 
 import java.math.BigDecimal;
 
-public interface CeddlWebTransactionItemPrice {
+public interface Total {
 
 	public BigDecimal getBasePrice();
 	public String getVoucherCode();
@@ -12,6 +12,7 @@ public interface CeddlWebTransactionItemPrice {
 	public BigDecimal getShipping();
 	public String getShippingMethod();
 	public BigDecimal getPriceWithTax();
+	public BigDecimal getTransactionTotal();
 	
 	public static interface Builder {
 		
@@ -23,8 +24,9 @@ public interface CeddlWebTransactionItemPrice {
 		public Builder shipping();
 		public Builder shippingMethod();
 		public Builder priceWithTax();
+		public Builder transactionTotal();
 		
-		public CeddlWebTransactionItemPrice build();
+		public Total build();
 		
 	}
 }
