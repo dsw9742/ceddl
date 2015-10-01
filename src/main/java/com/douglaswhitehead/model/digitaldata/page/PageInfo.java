@@ -2,7 +2,7 @@ package com.douglaswhitehead.model.digitaldata.page;
 
 import java.util.Date;
 
-public interface CeddlWebPageInfo {
+public interface PageInfo {
 
 	public String getPageId();
 	public String getPageName();
@@ -44,7 +44,7 @@ public interface CeddlWebPageInfo {
 		public Builder onsiteSearchTerm();
 		public Builder onsiteSearchResults();
 		
-		public CeddlWebPageInfo build();
+		public PageInfo build();
 		
 	}
 	

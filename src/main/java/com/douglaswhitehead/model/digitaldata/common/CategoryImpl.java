@@ -1,17 +1,17 @@
-package com.douglaswhitehead.model.digitaldata.page;
+package com.douglaswhitehead.model.digitaldata.common;
 
 /**
- * Because of the wide range of methods for categorization, an object literal is provided for page
+ * Because of the wide range of methods for categorization, an object literal is provided for object
  * categories.
  *
  * The name primaryCategory is RECOMMENDED if you included only one set of categories
- * for pages, or for your primary set of categories. All other names are optional and should fit the
+ * for objects, or for your primary set of categories. All other names are optional and should fit the
  * individual implementation needs in both naming and values passed.
  */
-public class CeddlWebPageCategoryImpl implements CeddlWebPageCategory {
+public class CategoryImpl implements Category {
 	private final String primaryCategory;
 	
-	private CeddlWebPageCategoryImpl(
+	private CategoryImpl(
 		final String newPrimaryCategory
 		) {
 		this.primaryCategory = newPrimaryCategory;
@@ -29,8 +29,8 @@ public class CeddlWebPageCategoryImpl implements CeddlWebPageCategory {
 			return this;
 		}
 		
-		public CeddlWebPageCategoryImpl build() {
-			return new CeddlWebPageCategoryImpl(
+		public CategoryImpl build() {
+			return new CategoryImpl(
 				nestedPrimaryCategory
 			);
 		}

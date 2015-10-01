@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Describes details about the page.
  */
-public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
+public class PageInfoImpl implements PageInfo {
 	
 	private final String pageId;
 	private final String pageName;
@@ -26,7 +26,7 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 	private final String onsiteSearchTerm;
 	private final long onsiteSearchResults;
 	
-	private CeddlWebPageInfoImpl(
+	private PageInfoImpl(
 		final String newPageId,
 		final String newPageName,
 		final String newDestinationURL,
@@ -248,8 +248,8 @@ public class CeddlWebPageInfoImpl implements CeddlWebPageInfo {
 			return this;
 		}
 		
-		public CeddlWebPageInfoImpl build() {
-			return new CeddlWebPageInfoImpl(
+		public PageInfoImpl build() {
+			return new PageInfoImpl(
 				nestedPageId,
 				nestedPageName,
 				nestedDestinationURL,
