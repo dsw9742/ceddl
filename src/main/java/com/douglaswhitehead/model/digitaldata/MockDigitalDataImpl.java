@@ -11,7 +11,7 @@ import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransactionImp
 import com.douglaswhitehead.model.digitaldata.user.CeddlWebUser;
 import com.douglaswhitehead.model.digitaldata.user.CeddlWebUserImpl;
 
-public class MockCeddlWeb implements DigitalData {
+public class MockDigitalDataImpl implements DigitalData {
 
 	@Override
 	public String getPageInstanceId() {
