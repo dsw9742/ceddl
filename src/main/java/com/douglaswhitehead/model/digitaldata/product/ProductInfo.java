@@ -1,6 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.product;
 
-public interface CeddlWebProductInfo {
+public interface ProductInfo {
 	
 	public String getProductID();
 	public String getProductName();
@@ -26,7 +26,7 @@ public interface CeddlWebProductInfo {
 		public Builder color();
 		public Builder size();
 		
-		public CeddlWebProductInfo build();
+		public ProductInfo build();
 		
 	}
 

@@ -1,27 +1,27 @@
 package com.douglaswhitehead.model.digitaldata.transaction;
 
-import com.douglaswhitehead.model.digitaldata.product.CeddlWebProduct;
-import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductCategory;
-import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductInfo;
+import com.douglaswhitehead.model.digitaldata.common.Category;
+import com.douglaswhitehead.model.digitaldata.product.Product;
+import com.douglaswhitehead.model.digitaldata.product.ProductInfo;
 
 /**
  * List of items in the transaction.
  */
 public class CeddlWebTransactionItemImpl implements CeddlWebTransactionItem {
 
-	private final CeddlWebProductInfo productInfo;
-	private final CeddlWebProductCategory category;
+	private final ProductInfo productInfo;
+	private final Category category;
 	private final int quantity;
 	private final CeddlWebTransactionItemPrice price;
-	private final CeddlWebProduct[] linkedProduct;
+	private final Product[] linkedProduct;
 	private final CeddlWebTransactionItemAttributes attributes;
 	
 	private CeddlWebTransactionItemImpl(
-		final CeddlWebProductInfo newProductInfo,
-		final CeddlWebProductCategory newCategory,
+		final ProductInfo newProductInfo,
+		final Category newCategory,
 		final int newQuantity,
 		final CeddlWebTransactionItemPrice newPrice,
-		final CeddlWebProduct[] newLinkedProduct,
+		final Product[] newLinkedProduct,
 		final CeddlWebTransactionItemAttributes newAttributes
 	) {
 		this.productInfo = newProductInfo;
@@ -32,11 +32,11 @@ public class CeddlWebTransactionItemImpl implements CeddlWebTransactionItem {
 		this.attributes = newAttributes;
 	}
 	
-	public CeddlWebProductInfo getProductInfo() {
+	public ProductInfo getProductInfo() {
 		return productInfo;
 	}
 
-	public CeddlWebProductCategory getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
@@ -48,7 +48,7 @@ public class CeddlWebTransactionItemImpl implements CeddlWebTransactionItem {
 		return price;
 	}
 
-	public CeddlWebProduct[] getLinkedProduct() {
+	public Product[] getLinkedProduct() {
 		return linkedProduct;
 	}
 
@@ -57,19 +57,19 @@ public class CeddlWebTransactionItemImpl implements CeddlWebTransactionItem {
 	}
 
 	public static class Builder {
-		private CeddlWebProductInfo nestedProductInfo;
-		private CeddlWebProductCategory nestedCategory;
+		private ProductInfo nestedProductInfo;
+		private Category nestedCategory;
 		private int nestedQuantity;
 		private CeddlWebTransactionItemPrice nestedPrice;
-		private CeddlWebProduct[] nestedLinkedProduct;
+		private Product[] nestedLinkedProduct;
 		private CeddlWebTransactionItemAttributes nestedAttributes;
 		
-		public Builder productInfo(final CeddlWebProductInfo newProductInfo) {
+		public Builder productInfo(final ProductInfo newProductInfo) {
 			this.nestedProductInfo = newProductInfo;
 			return this;
 		}
 		
-		public Builder category(final CeddlWebProductCategory newCategory) {
+		public Builder category(final Category newCategory) {
 			this.nestedCategory = newCategory;
 			return this;
 		}
@@ -84,7 +84,7 @@ public class CeddlWebTransactionItemImpl implements CeddlWebTransactionItem {
 			return this;
 		}
 		
-		public Builder linkedProduct(final CeddlWebProduct[] newLinkedProduct) {
+		public Builder linkedProduct(final Product[] newLinkedProduct) {
 			this.nestedLinkedProduct = newLinkedProduct;
 			return this;
 		}

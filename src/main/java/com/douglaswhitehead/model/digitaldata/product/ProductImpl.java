@@ -1,67 +1,57 @@
-package com.douglaswhitehead.model.digitaldata.cart;
+package com.douglaswhitehead.model.digitaldata.product;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
 import com.douglaswhitehead.model.digitaldata.common.Category;
-import com.douglaswhitehead.model.digitaldata.product.Product;
-import com.douglaswhitehead.model.digitaldata.product.ProductInfo;
 
 /**
- * List of items in the cart.
+ * 6.4 Product Object
+ * 
+ * The Product object carries details about a particular product with frequently used properties
+ * listed below. This is intended for data about products displayed on pages or other content. For
+ * products added to a shopping cart or ordered in a transaction, see the Cart and Transaction
+ * objects below.
+ *
+ * The Product object and its children, where included, MUST have the following Object Names &
+ * Types.
  */
-public class ItemImpl implements Item {
+public class ProductImpl implements Product {
 
 	private final ProductInfo productInfo;
 	private final Category category;
-	private final int quantity;
-	private final Price price;
 	private final Product[] linkedProduct;
 	private final Attributes attributes;
 	
-	private ItemImpl(
+	private ProductImpl(
 		final ProductInfo newProductInfo,
 		final Category newCategory,
-		final int newQuantity,
-		final Price newPrice,
 		final Product[] newLinkedProduct,
 		final Attributes newAttributes
 	) {
 		this.productInfo = newProductInfo;
 		this.category = newCategory;
-		this.quantity = newQuantity;
-		this.price = newPrice;
 		this.linkedProduct = newLinkedProduct;
 		this.attributes = newAttributes;
 	}
 	
 	public ProductInfo getProductInfo() {
-		return productInfo;
+		return this.productInfo;
 	}
 	
 	public Category getCategory() {
-		return category;
-	}
-	
-	public int getQuantity() {
-		return quantity;
-	}
-	
-	public Price getPrice() {
-		return price;
+		return this.category;
 	}
 	
 	public Product[] getLinkedProduct() {
-		return linkedProduct;
+		return this.linkedProduct;
 	}
 	
 	public Attributes getAttributes() {
-		return attributes;
+		return this.attributes;
 	}
 	
 	public static class Builder {
 		private ProductInfo nestedProductInfo;
 		private Category nestedCategory;
-		private int nestedQuantity;
-		private Price nestedPrice;
 		private Product[] nestedLinkedProduct;
 		private Attributes nestedAttributes;
 		
@@ -75,18 +65,8 @@ public class ItemImpl implements Item {
 			return this;
 		}
 		
-		public Builder quantity(final int newQuantity) {
-			this.nestedQuantity = newQuantity;
-			return this;
-		}
-		
 		public Builder linkedProduct(final Product[] newLinkedProduct) {
 			this.nestedLinkedProduct = newLinkedProduct;
-			return this;
-		}
-		
-		public Builder price(final Price newPrice) {
-			this.nestedPrice = newPrice;
 			return this;
 		}
 		
@@ -95,16 +75,13 @@ public class ItemImpl implements Item {
 			return this;
 		}
 		
-		public ItemImpl build() {
-			return new ItemImpl(
+		public ProductImpl build() {
+			return new ProductImpl(
 				nestedProductInfo,
 				nestedCategory,
-				nestedQuantity,
-				nestedPrice,
 				nestedLinkedProduct,
 				nestedAttributes
 			);
 		}
 	}
-	
 }

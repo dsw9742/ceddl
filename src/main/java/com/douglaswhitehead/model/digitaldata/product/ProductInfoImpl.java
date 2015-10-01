@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.product;
 /**
  * This object describes the product.
  */
-public class CeddlWebProductInfoImpl implements CeddlWebProductInfo {
+public class ProductInfoImpl implements ProductInfo {
 
 	private final String productID;
 	private final String productName;
@@ -16,7 +16,7 @@ public class CeddlWebProductInfoImpl implements CeddlWebProductInfo {
 	private final String color;
 	private final String size;
 	
-	private CeddlWebProductInfoImpl(
+	private ProductInfoImpl(
 		final String newProductID,
 		final String newProductName,
 		final String newDescription,
@@ -142,8 +142,8 @@ public class CeddlWebProductInfoImpl implements CeddlWebProductInfo {
 			return this;
 		}
 		
-		public CeddlWebProductInfoImpl build() {
-			return new CeddlWebProductInfoImpl(
+		public ProductInfoImpl build() {
+			return new ProductInfoImpl(
 				nestedProductID,
 				nestedProductName,
 				nestedDescription,
