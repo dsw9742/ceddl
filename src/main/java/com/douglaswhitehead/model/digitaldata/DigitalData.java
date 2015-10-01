@@ -1,6 +1,6 @@
 package com.douglaswhitehead.model.digitaldata;
 
-import com.douglaswhitehead.model.digitaldata.cart.CeddlWebCart;
+import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.page.CeddlWebPage;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProduct;
 import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
@@ -14,7 +14,7 @@ public interface DigitalData {
 	
 	public CeddlWebProduct[] getProduct();
 	
-	public CeddlWebCart getCart();
+	public Cart getCart();
 	
 	public CeddlWebTransaction getTransaction();
 	

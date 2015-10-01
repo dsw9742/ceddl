@@ -2,7 +2,7 @@ package com.douglaswhitehead.model.digitaldata.cart;
 
 import java.math.BigDecimal;
 
-public interface CeddlWebCartPrice {
+public interface Price {
 	
 	public BigDecimal getBasePrice();
 	public String getVoucherCode();
@@ -26,7 +26,7 @@ public interface CeddlWebCartPrice {
 		public Builder priceWithTax();
 		public Builder cartTotal();
 		
-		public CeddlWebCartPrice build();
+		public Price build();
 		
 	}
 

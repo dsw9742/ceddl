@@ -1,5 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
+import com.douglaswhitehead.model.digitaldata.common.Attributes;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProduct;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductCategory;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductInfo;
@@ -7,22 +8,22 @@ import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductInfo;
 /**
  * List of items in the cart.
  */
-public class CeddlWebCartItemImpl implements CeddlWebCartItem {
+public class ItemImpl implements Item {
 
 	private final CeddlWebProductInfo productInfo;
 	private final CeddlWebProductCategory category;
 	private final int quantity;
-	private final CeddlWebCartPrice price;
+	private final Price price;
 	private final CeddlWebProduct[] linkedProduct;
-	private final CeddlWebCartItemAttributesImpl attributes;
+	private final Attributes attributes;
 	
-	private CeddlWebCartItemImpl(
+	private ItemImpl(
 		final CeddlWebProductInfo newProductInfo,
 		final CeddlWebProductCategory newCategory,
 		final int newQuantity,
-		final CeddlWebCartPrice newPrice,
+		final Price newPrice,
 		final CeddlWebProduct[] newLinkedProduct,
-		final CeddlWebCartItemAttributesImpl newAttributes
+		final Attributes newAttributes
 	) {
 		this.productInfo = newProductInfo;
 		this.category = newCategory;
@@ -44,7 +45,7 @@ public class CeddlWebCartItemImpl implements CeddlWebCartItem {
 		return quantity;
 	}
 	
-	public CeddlWebCartPrice getPrice() {
+	public Price getPrice() {
 		return price;
 	}
 	
@@ -52,7 +53,7 @@ public class CeddlWebCartItemImpl implements CeddlWebCartItem {
 		return linkedProduct;
 	}
 	
-	public CeddlWebCartItemAttributesImpl getAttributes() {
+	public Attributes getAttributes() {
 		return attributes;
 	}
 	
@@ -60,9 +61,9 @@ public class CeddlWebCartItemImpl implements CeddlWebCartItem {
 		private CeddlWebProductInfo nestedProductInfo;
 		private CeddlWebProductCategory nestedCategory;
 		private int nestedQuantity;
-		private CeddlWebCartPrice nestedPrice;
+		private Price nestedPrice;
 		private CeddlWebProduct[] nestedLinkedProduct;
-		private CeddlWebCartItemAttributesImpl nestedAttributes;
+		private Attributes nestedAttributes;
 		
 		public Builder productInfo(final CeddlWebProductInfo newProductInfo) {
 			this.nestedProductInfo = newProductInfo;
@@ -84,18 +85,18 @@ public class CeddlWebCartItemImpl implements CeddlWebCartItem {
 			return this;
 		}
 		
-		public Builder price(final CeddlWebCartPrice newPrice) {
+		public Builder price(final Price newPrice) {
 			this.nestedPrice = newPrice;
 			return this;
 		}
 		
-		public Builder attributes(final CeddlWebCartItemAttributesImpl newAttributes) {
+		public Builder attributes(final Attributes newAttributes) {
 			this.nestedAttributes = newAttributes;
 			return this;
 		}
 		
-		public CeddlWebCartItemImpl build() {
-			return new CeddlWebCartItemImpl(
+		public ItemImpl build() {
+			return new ItemImpl(
 				nestedProductInfo,
 				nestedCategory,
 				nestedQuantity,

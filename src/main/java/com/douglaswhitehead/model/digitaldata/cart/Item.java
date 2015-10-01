@@ -1,17 +1,18 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
+import com.douglaswhitehead.model.digitaldata.common.Attributes;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProduct;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductCategory;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProductInfo;
 
-public interface CeddlWebCartItem {
+public interface Item {
 
 	public CeddlWebProductInfo getProductInfo();
 	public CeddlWebProductCategory getCategory();
 	public int getQuantity();
-	public CeddlWebCartPrice getPrice();
+	public Price getPrice();
 	public CeddlWebProduct[] getLinkedProduct();
-	public CeddlWebCartItemAttributesImpl getAttributes();
+	public Attributes getAttributes();
 	
 	public static interface Builder {
 		
@@ -22,7 +23,7 @@ public interface CeddlWebCartItem {
 		public Builder linkedProduct();
 		public Builder attributes();
 		
-		public CeddlWebCartItem build();
+		public Item build();
 		
 	}
 	

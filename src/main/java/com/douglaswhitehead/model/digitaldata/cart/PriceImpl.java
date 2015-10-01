@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * items before applicable discounts, shipping charges, and tax. The cartTotal SHOULD be
  * the total price inclusive of all discounts, charges, and tax.
  */
-public class CeddlWebCartPriceImpl implements CeddlWebCartPrice {
+public class PriceImpl implements Price {
 
 	private final BigDecimal basePrice;
 	private final String voucherCode;
@@ -19,7 +19,7 @@ public class CeddlWebCartPriceImpl implements CeddlWebCartPrice {
 	private final BigDecimal priceWithTax;
 	private final BigDecimal cartTotal;
 	
-	private CeddlWebCartPriceImpl(
+	private PriceImpl(
 		final BigDecimal newBasePrice,
 		final String newVoucherCode,
 		final BigDecimal newVoucherDiscount,
@@ -133,8 +133,8 @@ public class CeddlWebCartPriceImpl implements CeddlWebCartPrice {
 			return this;
 		}
 		
-		public CeddlWebCartPriceImpl build() {
-			return new CeddlWebCartPriceImpl(
+		public PriceImpl build() {
+			return new PriceImpl(
 				nestedBasePrice,
 				nestedVoucherCode,
 				nestedVoucherDiscount,

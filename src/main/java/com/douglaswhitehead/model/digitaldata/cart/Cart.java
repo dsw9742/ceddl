@@ -1,11 +1,13 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
-public interface CeddlWebCart {
+import com.douglaswhitehead.model.digitaldata.common.Attributes;
+
+public interface Cart {
 
 	public String getCartID();
-	public CeddlWebCartPrice getPrice();
-	public CeddlWebCartAttributes getAttributes();
-	public CeddlWebCartItem[] getItem();
+	public Price getPrice();
+	public Attributes getAttributes();
+	public Item[] getItem();
 	
 	public static interface Builder {
 		
@@ -14,7 +16,7 @@ public interface CeddlWebCart {
 		public Builder attributes();
 		public Builder item();
 		
-		public CeddlWebCart build();
+		public Cart build();
 		
 	}
 }

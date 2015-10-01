@@ -1,5 +1,7 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
+import com.douglaswhitehead.model.digitaldata.common.Attributes;
+
 /**
  * 6.5 Cart Object
  * 
@@ -7,18 +9,18 @@ package com.douglaswhitehead.model.digitaldata.cart;
  * added to it. The Cart object is intended for a purchase that has not yet been completed. See the
  * Transaction object below for completed orders.
  */
-public class CeddlWebCartImpl implements CeddlWebCart {
+public class CartImpl implements Cart {
 
 	private final String cartID;
-	private final CeddlWebCartPrice price;
-	private final CeddlWebCartAttributes attributes;
-	private final CeddlWebCartItem[] item;
+	private final Price price;
+	private final Attributes attributes;
+	private final Item[] item;
 	
-	private CeddlWebCartImpl(
+	private CartImpl(
 		final String newCartID,
-		final CeddlWebCartPrice newPrice,
-		final CeddlWebCartAttributes newAttributes,
-		final CeddlWebCartItem[] newItem
+		final Price newPrice,
+		final Attributes newAttributes,
+		final Item[] newItem
 	) {
 		this.cartID = newCartID;
 		this.price = newPrice;
@@ -30,46 +32,46 @@ public class CeddlWebCartImpl implements CeddlWebCart {
 		return cartID;
 	}
 	
-	public CeddlWebCartPrice getPrice() {
+	public Price getPrice() {
 		return price;
 	}
 	
-	public CeddlWebCartAttributes getAttributes() {
+	public Attributes getAttributes() {
 		return attributes;
 	}
 	
-	public CeddlWebCartItem[] getItem() {
+	public Item[] getItem() {
 		return item;
 	}
 	
 	public static class Builder {
 		private String nestedCartID;
-		private CeddlWebCartPrice nestedPrice;
-		private CeddlWebCartAttributes nestedAttributes;
-		private CeddlWebCartItem[] nestedItem;
+		private Price nestedPrice;
+		private Attributes nestedAttributes;
+		private Item[] nestedItem;
 		
 		public Builder cartID(final String newCartID) {
 			this.nestedCartID = newCartID;
 			return this;
 		}
 		
-		public Builder price(final CeddlWebCartPrice newPrice) {
+		public Builder price(final Price newPrice) {
 			this.nestedPrice = newPrice;
 			return this;
 		}
 
-		public Builder attributes(final CeddlWebCartAttributes newAttributes) {
+		public Builder attributes(final Attributes newAttributes) {
 			this.nestedAttributes = newAttributes;
 			return this;
 		}
 		
-		public Builder item(final CeddlWebCartItem[] newItem) {
+		public Builder item(final Item[] newItem) {
 			this.nestedItem = newItem;
 			return this;
 		}
 		
-		public CeddlWebCartImpl build() {
-			return new CeddlWebCartImpl(
+		public CartImpl build() {
+			return new CartImpl(
 				nestedCartID,
 				nestedPrice,
 				nestedAttributes,

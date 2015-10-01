@@ -1,7 +1,7 @@
 package com.douglaswhitehead.model.digitaldata;
 
-import com.douglaswhitehead.model.digitaldata.cart.CeddlWebCart;
-import com.douglaswhitehead.model.digitaldata.cart.CeddlWebCartImpl;
+import com.douglaswhitehead.model.digitaldata.cart.Cart;
+import com.douglaswhitehead.model.digitaldata.cart.CartImpl;
 import com.douglaswhitehead.model.digitaldata.page.CeddlWebPage;
 import com.douglaswhitehead.model.digitaldata.page.CeddlWebPageImpl;
 import com.douglaswhitehead.model.digitaldata.product.CeddlWebProduct;
@@ -31,8 +31,8 @@ public class MockDigitalDataImpl implements DigitalData {
 	}
 	
 	@Override
-	public CeddlWebCart getCart() {
-		return new CeddlWebCartImpl.Builder().build();
+	public Cart getCart() {
+		return new CartImpl.Builder().build();
 	}
 	
 	@Override
