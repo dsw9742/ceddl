@@ -1,6 +1,6 @@
-package com.douglaswhitehead.model.digitaldata.user;
+package com.douglaswhitehead.model.digitaldata.common;
 
-public interface CeddlWebProfileAddress {
+public interface Address {
 	
 	public String getLine1();
 	public String getLine2();
@@ -18,7 +18,7 @@ public interface CeddlWebProfileAddress {
 		public Builder postalCode();
 		public Builder country();
 		
-		public CeddlWebProfileAddress build();
+		public Address build();
 		
 	}
 }

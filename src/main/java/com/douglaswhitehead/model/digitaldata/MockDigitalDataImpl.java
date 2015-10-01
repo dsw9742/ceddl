@@ -8,8 +8,8 @@ import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.product.ProductImpl;
 import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
 import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransactionImpl;
-import com.douglaswhitehead.model.digitaldata.user.CeddlWebUser;
-import com.douglaswhitehead.model.digitaldata.user.CeddlWebUserImpl;
+import com.douglaswhitehead.model.digitaldata.user.User;
+import com.douglaswhitehead.model.digitaldata.user.UserImpl;
 
 public class MockDigitalDataImpl implements DigitalData {
 
@@ -41,9 +41,9 @@ public class MockDigitalDataImpl implements DigitalData {
 	}
 
 	@Override
-	public CeddlWebUser[] getUser() {
-		CeddlWebUser[] users = new CeddlWebUser[1];
-		users[0] = new CeddlWebUserImpl.Builder().build();
+	public User[] getUser() {
+		User[] users = new User[1];
+		users[0] = new UserImpl.Builder().build();
 		return users;
 	}
 

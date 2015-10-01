@@ -1,6 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-public interface CeddlWebUserProfileInfo {
+public interface ProfileInfo {
 
 	public String getProfileID();
 	public String getUserName();
@@ -18,7 +18,7 @@ public interface CeddlWebUserProfileInfo {
 		public Builder returningStatus();
 		public Builder type();
 		
-		public CeddlWebUserProfileInfo build();
+		public ProfileInfo build();
 		
 	}
 }

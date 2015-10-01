@@ -3,13 +3,13 @@ package com.douglaswhitehead.model.digitaldata.user;
 /**
  * An extensible object for providing social information for the user profile.
  */
-public class CeddlWebUserProfileSocialImpl implements CeddlWebUserProfileSocial {
+public class SocialImpl implements Social {
 	private final String twitter;
 	private final Object twitterInfo;
 	private final String facebook;
 	private final Object facebookInfo;
 	
-	private CeddlWebUserProfileSocialImpl(
+	private SocialImpl(
 		final String newTwitter,
 		final Object newTwitterInfo,
 		final String newFacebook,
@@ -63,8 +63,8 @@ public class CeddlWebUserProfileSocialImpl implements CeddlWebUserProfileSocial 
 			return this;
 		}
 		
-		public CeddlWebUserProfileSocialImpl build() {
-			return new CeddlWebUserProfileSocialImpl(
+		public SocialImpl build() {
+			return new SocialImpl(
 				nestedTwitter,
 				nestedTwitterInfo,
 				nestedFacebook,

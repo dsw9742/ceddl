@@ -1,9 +1,9 @@
-package com.douglaswhitehead.model.digitaldata.user;
+package com.douglaswhitehead.model.digitaldata.common;
 
 /**
  * An extensible object for providing address information for the user.
  */
-public class CeddlWebProfileAddressImpl implements CeddlWebProfileAddress {
+public class AddressImpl implements Address {
 
 	private final String line1;
 	private final String line2;
@@ -12,7 +12,7 @@ public class CeddlWebProfileAddressImpl implements CeddlWebProfileAddress {
 	private final String postalCode;
 	private final String country;
 	
-	private CeddlWebProfileAddressImpl(
+	private AddressImpl(
 		final String newLine1,
 		final String newLine2,
 		final String newCity,
@@ -90,8 +90,8 @@ public class CeddlWebProfileAddressImpl implements CeddlWebProfileAddress {
 			return this;
 		}
 		
-		public CeddlWebProfileAddressImpl build() {
-			return new CeddlWebProfileAddressImpl(
+		public AddressImpl build() {
+			return new AddressImpl(
 				nestedLine1,
 				nestedLine2,
 				nestedCity,

@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.user;
 /**
  * An extensible object for providing information about the user.
  */
-public class CeddlWebUserProfileInfoImpl implements CeddlWebUserProfileInfo {
+public class ProfileInfoImpl implements ProfileInfo {
 
 	private final String profileID;
 	private final String userName;
@@ -12,7 +12,7 @@ public class CeddlWebUserProfileInfoImpl implements CeddlWebUserProfileInfo {
 	private final String returningStatus;
 	private final String type;
 	
-	private CeddlWebUserProfileInfoImpl(
+	private ProfileInfoImpl(
 		final String newProfileID,
 		final String newUserName,
 		final String newEmail,
@@ -90,8 +90,8 @@ public class CeddlWebUserProfileInfoImpl implements CeddlWebUserProfileInfo {
 			return this;
 		}
 		
-		public CeddlWebUserProfileInfoImpl build() {
-			return new CeddlWebUserProfileInfoImpl(
+		public ProfileInfoImpl build() {
+			return new ProfileInfoImpl(
 				nestedProfileID,
 				nestedUserName,
 				nestedEmail,

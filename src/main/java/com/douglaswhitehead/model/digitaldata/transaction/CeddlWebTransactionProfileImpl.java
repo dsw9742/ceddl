@@ -1,6 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.transaction;
 
-import com.douglaswhitehead.model.digitaldata.user.CeddlWebProfileAddress;
+import com.douglaswhitehead.model.digitaldata.common.Address;
 
 /**
  * A profile for information about the purchaser, typically associated with a registered user.
@@ -8,13 +8,13 @@ import com.douglaswhitehead.model.digitaldata.user.CeddlWebProfileAddress;
 public class CeddlWebTransactionProfileImpl implements CeddlWebTransactionProfile {
 
 	private final CeddlWebTransactionProfileInfo profileInfo;
-	private final CeddlWebProfileAddress address;
-	private final CeddlWebProfileAddress shippingAddress;
+	private final Address address;
+	private final Address shippingAddress;
 	
 	private CeddlWebTransactionProfileImpl(
 		final CeddlWebTransactionProfileInfo newProfileInfo,
-		final CeddlWebProfileAddress newAddress,
-		final CeddlWebProfileAddress newShippingAddress
+		final Address newAddress,
+		final Address newShippingAddress
 	) {
 		this.profileInfo = newProfileInfo;
 		this.address = newAddress;
@@ -25,30 +25,30 @@ public class CeddlWebTransactionProfileImpl implements CeddlWebTransactionProfil
 		return profileInfo;
 	}
 	
-	public CeddlWebProfileAddress getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 	
-	public CeddlWebProfileAddress getShippingAddress() {
+	public Address getShippingAddress() {
 		return shippingAddress;
 	}
 	
 	public static class Builder {
 		private CeddlWebTransactionProfileInfo nestedProfileInfo;
-		private CeddlWebProfileAddress nestedAddress;
-		private CeddlWebProfileAddress nestedShippingAddress;
+		private Address nestedAddress;
+		private Address nestedShippingAddress;
 		
 		public Builder profileInfo(final CeddlWebTransactionProfileInfo newProfileInfo) {
 			this.nestedProfileInfo = newProfileInfo;
 			return this;
 		}
 		
-		public Builder address(final CeddlWebProfileAddress newAddress) {
+		public Builder address(final Address newAddress) {
 			this.nestedAddress = newAddress;
 			return this;
 		}
 		
-		public Builder shippingAddress(final CeddlWebProfileAddress newShippingAddress) {
+		public Builder shippingAddress(final Address newShippingAddress) {
 			this.nestedShippingAddress = newShippingAddress;
 			return this;
 		}

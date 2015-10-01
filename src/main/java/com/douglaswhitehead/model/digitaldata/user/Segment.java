@@ -1,10 +1,10 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-public interface CeddlWebUserSegment {
+public interface Segment {
 
 	public static interface Builder {
 		
-		public CeddlWebUserSegment build();
+		public Segment build();
 		
 	}
 	

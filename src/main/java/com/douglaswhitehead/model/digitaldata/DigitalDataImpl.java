@@ -4,7 +4,7 @@ import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
-import com.douglaswhitehead.model.digitaldata.user.CeddlWebUser;
+import com.douglaswhitehead.model.digitaldata.user.User;
 
 public class DigitalDataImpl implements DigitalData {
 
@@ -39,7 +39,7 @@ public class DigitalDataImpl implements DigitalData {
 	}
 	
 	@Override
-	public CeddlWebUser[] getUser() {
+	public User[] getUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}

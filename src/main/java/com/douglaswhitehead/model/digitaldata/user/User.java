@@ -1,16 +1,16 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-public interface CeddlWebUser {
+public interface User {
 
-	public CeddlWebUserSegment getSegment();	
-	public CeddlWebUserProfile[] getProfile();
+	public Segment getSegment();	
+	public Profile[] getProfile();
 	
 	public static interface Builder {
 
 		public Builder segment();
 		public Builder profile();
 		
-		public CeddlWebUserImpl build();
+		public UserImpl build();
 		
 	}
 }

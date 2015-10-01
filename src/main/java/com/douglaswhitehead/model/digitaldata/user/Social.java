@@ -1,6 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-public interface CeddlWebUserProfileSocial {
+public interface Social {
 
 	public String getTwitter();
 	public Object getTwitterInfo();
@@ -14,7 +14,7 @@ public interface CeddlWebUserProfileSocial {
 		public Builder facebook();
 		public Builder facebookInfo();
 		
-		public CeddlWebUserProfileSocial build();
+		public Social build();
 		
 	}
 }

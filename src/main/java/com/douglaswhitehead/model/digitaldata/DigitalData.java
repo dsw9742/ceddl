@@ -4,7 +4,7 @@ import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.CeddlWebTransaction;
-import com.douglaswhitehead.model.digitaldata.user.CeddlWebUser;
+import com.douglaswhitehead.model.digitaldata.user.User;
 
 public interface DigitalData {
 	
@@ -18,7 +18,7 @@ public interface DigitalData {
 	
 	public CeddlWebTransaction getTransaction();
 	
-	public CeddlWebUser[] getUser();
+	public User[] getUser();
 	
 	public String getVersion();
 	

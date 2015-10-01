@@ -6,9 +6,9 @@ package com.douglaswhitehead.model.digitaldata.user;
  * dimensions related to the user can be provided. All names are optional and should fit the
  * individual implementation needs in both naming and values passed.
  */
-public class CeddlWebUserSegmentImpl implements CeddlWebUserSegment {
+public class SegmentImpl implements Segment {
 
-	private CeddlWebUserSegmentImpl(
+	private SegmentImpl(
 		
 	) {
 		
@@ -16,8 +16,8 @@ public class CeddlWebUserSegmentImpl implements CeddlWebUserSegment {
 	
 	public static class Builder {
 		
-		public CeddlWebUserSegmentImpl build() {
-			return new CeddlWebUserSegmentImpl(
+		public SegmentImpl build() {
+			return new SegmentImpl(
 				
 			);
 		}
