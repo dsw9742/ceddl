@@ -6,48 +6,121 @@ import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
 
+/**
+ * The root JavaScript Object (JSO) MUST be digitalData, and all data properties within this
+ * specification MUST fall within the hierarchy of the digitalData object.
+ */
 public class DigitalDataImpl implements DigitalData {
 
-	@Override
-	public String getPageInstanceId() {
-		// TODO Auto-generated method stub
-		return null;
+	private final String pageInstanceID;
+	private final Page page;
+	private final Product[] product;
+	private final Cart cart;
+	private final Transaction transaction;
+	private final User[] user;
+	private final String version;
+	
+	public DigitalDataImpl(
+		final String newPageInstanceID,
+		final Page newPage,
+		final Product[] newProduct,
+		final Cart newCart,
+		final Transaction newTransaction,
+		final User[] newUser,
+		final String newVersion
+	) {
+		this.pageInstanceID = newPageInstanceID;
+		this.page = newPage;
+		this.product = newProduct;
+		this.cart = newCart;
+		this.transaction = newTransaction;
+		this.user = newUser;
+		this.version = newVersion;
+	}
+	
+	public String getPageInstanceID() {
+		return pageInstanceID;
 	}
 
-	@Override
 	public Page getPage() {
-		// TODO Auto-generated method stub
-		return null;
+		return page;
 	}
-	
-	@Override
+
 	public Product[] getProduct() {
-		// TODO Auto-generated method stub
-		return null;
+		return product;
 	}
 
-	@Override
 	public Cart getCart() {
-		// TODO Auto-generated method stub
-		return null;
+		return cart;
 	}
 
-	@Override
 	public Transaction getTransaction() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public User[] getUser() {
-		// TODO Auto-generated method stub
-		return null;
+		return transaction;
 	}
 
-	@Override
+	public User[] getUser() {
+		return user;
+	}
+
 	public String getVersion() {
-		// TODO Auto-generated method stub
-		return null;
+		return version;
+	}
+
+	public static class Builder {
+		private String nestedPageInstanceID;
+		private Page nestedPage;
+		private Product[] nestedProduct;
+		private Cart nestedCart;
+		private Transaction nestedTransaction;
+		private User[] nestedUser;
+		private String nestedVersion;
+		
+		public Builder pageInstanceID(final String newPageInstanceID) {
+			this.nestedPageInstanceID = newPageInstanceID;
+			return this;
+		}
+		
+		public Builder page(final Page newPage) {
+			this.nestedPage = newPage;
+			return this;
+		}
+		
+		public Builder product(final Product[] newProduct) {
+			this.nestedProduct = newProduct;
+			return this;
+		}
+		
+		public Builder cart(final Cart newCart) {
+			this.nestedCart = newCart;
+			return this;
+		}
+		
+		public Builder transaction(final Transaction newTransaction) {
+			this.nestedTransaction = newTransaction;
+			return this;
+		}
+		
+		public Builder user(final User[] newUser) {
+			this.nestedUser = newUser;
+			return this;
+		}
+		
+		public Builder version(final String newVersion) {
+			this.nestedVersion = newVersion;
+			return this;
+		}
+		
+		public DigitalDataImpl build() {
+			return new DigitalDataImpl(
+				nestedPageInstanceID,
+				nestedPage,
+				nestedProduct,
+				nestedCart,
+				nestedTransaction,
+				nestedUser,
+				nestedVersion
+			);
+		}
 	}
 
 }

@@ -1,5 +1,6 @@
-package com.douglaswhitehead.model.digitaldata;
+package com.douglaswhitehead.model.digitaldata.utility;
 
+import com.douglaswhitehead.model.digitaldata.DigitalData;
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.cart.CartImpl;
 import com.douglaswhitehead.model.digitaldata.page.Page;
@@ -11,10 +12,13 @@ import com.douglaswhitehead.model.digitaldata.transaction.TransactionImpl;
 import com.douglaswhitehead.model.digitaldata.user.User;
 import com.douglaswhitehead.model.digitaldata.user.UserImpl;
 
+/**
+ * Mock implementation of DigitalData interface for testing purposes.
+ */
 public class MockDigitalDataImpl implements DigitalData {
 
 	@Override
-	public String getPageInstanceId() {
+	public String getPageInstanceID() {
 		return "mock-ceddl";
 	}
 

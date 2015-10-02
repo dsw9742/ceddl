@@ -8,18 +8,26 @@ import com.douglaswhitehead.model.digitaldata.user.User;
 
 public interface DigitalData {
 	
-	public String getPageInstanceId();
-	
+	public String getPageInstanceID();
 	public Page getPage();
-	
 	public Product[] getProduct();
-	
 	public Cart getCart();
-	
 	public Transaction getTransaction();
-	
 	public User[] getUser();
-	
 	public String getVersion();
+	
+	public static interface Builder {
+		
+		public Builder pageInstanceID();
+		public Builder page();
+		public Builder product();
+		public Builder cart();
+		public Builder transaction();
+		public Builder user();
+		public Builder version();
+		
+		public DigitalData build();
+		
+	}
 	
 }
