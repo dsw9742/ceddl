@@ -2,6 +2,9 @@ package com.douglaswhitehead.model.digitaldata.event;
 
 import java.util.Date;
 
+/**
+ * This object describes the event.
+ */
 public class EventInfoImpl implements EventInfo {
 	
 	private final String eventName;
@@ -12,7 +15,7 @@ public class EventInfoImpl implements EventInfo {
 	private final String cause;
 	private final String effect;
 	
-	public EventInfoImpl(
+	private EventInfoImpl(
 		final String newEventName,
 		final String newEventAction,
 		final int newEventPoints,

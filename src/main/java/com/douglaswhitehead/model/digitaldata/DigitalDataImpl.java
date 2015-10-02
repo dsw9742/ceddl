@@ -1,6 +1,7 @@
 package com.douglaswhitehead.model.digitaldata;
 
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
+import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.product.Product;
@@ -19,16 +20,18 @@ public class DigitalDataImpl implements DigitalData {
 	private final Cart cart;
 	private final Transaction transaction;
 	private final Event[] event;
+	private final Component[] component;
 	private final User[] user;
 	private final String version;
 	
-	public DigitalDataImpl(
+	private DigitalDataImpl(
 		final String newPageInstanceID,
 		final Page newPage,
 		final Product[] newProduct,
 		final Cart newCart,
 		final Transaction newTransaction,
 		final Event[] newEvent,
+		final Component[] newComponent,
 		final User[] newUser,
 		final String newVersion
 	) {
@@ -38,6 +41,7 @@ public class DigitalDataImpl implements DigitalData {
 		this.cart = newCart;
 		this.transaction = newTransaction;
 		this.event = newEvent;
+		this.component = newComponent;
 		this.user = newUser;
 		this.version = newVersion;
 	}
@@ -65,6 +69,10 @@ public class DigitalDataImpl implements DigitalData {
 	public Event[] getEvent() {
 		return event;
 	}
+	
+	public Component[] getComponent() {
+		return component;
+	}
 
 	public User[] getUser() {
 		return user;
@@ -81,6 +89,7 @@ public class DigitalDataImpl implements DigitalData {
 		private Cart nestedCart;
 		private Transaction nestedTransaction;
 		private Event[] nestedEvent;
+		private Component[] nestedComponent;
 		private User[] nestedUser;
 		private String nestedVersion;
 		
@@ -114,6 +123,11 @@ public class DigitalDataImpl implements DigitalData {
 			return this;
 		}
 		
+		public Builder component(final Component[] newComponent) {
+			this.nestedComponent = newComponent;
+			return this;
+		}
+		
 		public Builder user(final User[] newUser) {
 			this.nestedUser = newUser;
 			return this;
@@ -132,6 +146,7 @@ public class DigitalDataImpl implements DigitalData {
 				nestedCart,
 				nestedTransaction,
 				nestedEvent,
+				nestedComponent,
 				nestedUser,
 				nestedVersion
 			);

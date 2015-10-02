@@ -11,12 +11,11 @@ import com.douglaswhitehead.model.digitaldata.common.Category;
  * cart, etc. Any action on the page could be captured by an Event object.
  */
 public class EventImpl implements Event {
-
 	private final EventInfo eventInfo;
 	private final Category category;
 	private final Attributes attributes;
 	
-	public EventImpl(
+	private EventImpl(
 		final EventInfo newEventInfo,
 		final Category newCategory,
 		final Attributes newAttributes

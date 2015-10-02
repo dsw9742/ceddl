@@ -1,6 +1,7 @@
 package com.douglaswhitehead.model.digitaldata;
 
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
+import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.product.Product;
@@ -15,6 +16,7 @@ public interface DigitalData {
 	public Cart getCart();
 	public Transaction getTransaction();
 	public Event[] getEvent();
+	public Component[] getComponent();
 	public User[] getUser();
 	public String getVersion();
 	
@@ -26,6 +28,7 @@ public interface DigitalData {
 		public Builder cart();
 		public Builder transaction();
 		public Builder event();
+		public Builder component();
 		public Builder user();
 		public Builder version();
 		
