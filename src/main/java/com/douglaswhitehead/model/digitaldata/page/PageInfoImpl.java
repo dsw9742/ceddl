@@ -2,11 +2,14 @@ package com.douglaswhitehead.model.digitaldata.page;
 
 import java.util.Date;
 
+import com.douglaswhitehead.model.digitaldata.BaseObjectImpl;
+
 /**
  * Describes details about the page.
  */
 public class PageInfoImpl implements PageInfo {
 	
+	private final BaseObjectImpl pageId2;
 	private final String pageId;
 	private final String pageName;
 	private final String destinationURL;
@@ -27,6 +30,7 @@ public class PageInfoImpl implements PageInfo {
 	private final long onsiteSearchResults;
 	
 	private PageInfoImpl(
+		final BaseObjectImpl newPageId2,
 		final String newPageId,
 		final String newPageName,
 		final String newDestinationURL,
@@ -46,6 +50,7 @@ public class PageInfoImpl implements PageInfo {
 		final String newOnsiteSearchTerm,
 		final long newOnsiteSearchResults
 		) {
+		this.pageId2 = newPageId2;
 		this.pageId = newPageId;
 		this.pageName = newPageName;
 		this.destinationURL = newDestinationURL;
@@ -64,6 +69,10 @@ public class PageInfoImpl implements PageInfo {
 		this.publisher = newPublisher;
 		this.onsiteSearchTerm = newOnsiteSearchTerm;
 		this.onsiteSearchResults = newOnsiteSearchResults;
+	}
+	
+	public BaseObjectImpl getPageId2() {
+		return pageId2;
 	}
 	
 	public String getPageId() {
@@ -139,6 +148,7 @@ public class PageInfoImpl implements PageInfo {
 	}
 	
 	public static class Builder {
+		private BaseObjectImpl nestedPageId2;
 		private String nestedPageId;
 		private String nestedPageName;
 		private String nestedDestinationURL;
@@ -157,6 +167,11 @@ public class PageInfoImpl implements PageInfo {
 		private String nestedPublisher;
 		private String nestedOnsiteSearchTerm;
 		private long nestedOnsiteSearchResults;
+		
+		public Builder pageId2(final BaseObjectImpl newPageId2) {
+			this.nestedPageId2 = newPageId2;
+			return this;
+		}
 		
 		public Builder pageId(final String newPageId) {
 			this.nestedPageId = newPageId;
@@ -250,6 +265,7 @@ public class PageInfoImpl implements PageInfo {
 		
 		public PageInfoImpl build() {
 			return new PageInfoImpl(
+				nestedPageId2,
 				nestedPageId,
 				nestedPageName,
 				nestedDestinationURL,

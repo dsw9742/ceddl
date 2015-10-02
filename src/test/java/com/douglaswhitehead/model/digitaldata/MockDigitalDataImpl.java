@@ -1,4 +1,4 @@
-package com.douglaswhitehead.model.digitaldata.utility;
+package com.douglaswhitehead.model.digitaldata;
 
 import com.douglaswhitehead.model.digitaldata.DigitalData;
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
