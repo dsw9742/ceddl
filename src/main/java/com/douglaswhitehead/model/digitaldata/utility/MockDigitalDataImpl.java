@@ -3,6 +3,8 @@ package com.douglaswhitehead.model.digitaldata.utility;
 import com.douglaswhitehead.model.digitaldata.DigitalData;
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.cart.CartImpl;
+import com.douglaswhitehead.model.digitaldata.event.Event;
+import com.douglaswhitehead.model.digitaldata.event.EventImpl;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.page.PageImpl;
 import com.douglaswhitehead.model.digitaldata.product.Product;
@@ -42,6 +44,13 @@ public class MockDigitalDataImpl implements DigitalData {
 	@Override
 	public Transaction getTransaction() {
 		return new TransactionImpl.Builder().build();
+	}
+	
+	@Override
+	public Event[] getEvent() {
+		Event[] events = new Event[1];
+		events[0] = new EventImpl.Builder().build();
+		return events;
 	}
 
 	@Override
