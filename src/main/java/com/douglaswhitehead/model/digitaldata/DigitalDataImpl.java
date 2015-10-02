@@ -4,6 +4,7 @@ import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
+import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
@@ -22,6 +23,7 @@ public class DigitalDataImpl implements DigitalData {
 	private final Event[] event;
 	private final Component[] component;
 	private final User[] user;
+	private final Privacy privacy;
 	private final String version;
 	
 	private DigitalDataImpl(
@@ -33,6 +35,7 @@ public class DigitalDataImpl implements DigitalData {
 		final Event[] newEvent,
 		final Component[] newComponent,
 		final User[] newUser,
+		final Privacy newPrivacy,
 		final String newVersion
 	) {
 		this.pageInstanceID = newPageInstanceID;
@@ -43,6 +46,7 @@ public class DigitalDataImpl implements DigitalData {
 		this.event = newEvent;
 		this.component = newComponent;
 		this.user = newUser;
+		this.privacy = newPrivacy;
 		this.version = newVersion;
 	}
 	
@@ -77,6 +81,10 @@ public class DigitalDataImpl implements DigitalData {
 	public User[] getUser() {
 		return user;
 	}
+	
+	public Privacy getPrivacy() {
+		return privacy;
+	}
 
 	public String getVersion() {
 		return version;
@@ -91,6 +99,7 @@ public class DigitalDataImpl implements DigitalData {
 		private Event[] nestedEvent;
 		private Component[] nestedComponent;
 		private User[] nestedUser;
+		private Privacy nestedPrivacy;
 		private String nestedVersion;
 		
 		public Builder pageInstanceID(final String newPageInstanceID) {
@@ -133,6 +142,11 @@ public class DigitalDataImpl implements DigitalData {
 			return this;
 		}
 		
+		public Builder privacy(final Privacy newPrivacy) {
+			this.nestedPrivacy = newPrivacy;
+			return this;
+		}
+		
 		public Builder version(final String newVersion) {
 			this.nestedVersion = newVersion;
 			return this;
@@ -148,6 +162,7 @@ public class DigitalDataImpl implements DigitalData {
 				nestedEvent,
 				nestedComponent,
 				nestedUser,
+				nestedPrivacy,
 				nestedVersion
 			);
 		}

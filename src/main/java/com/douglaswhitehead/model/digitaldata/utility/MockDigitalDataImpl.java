@@ -9,6 +9,8 @@ import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.event.EventImpl;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.page.PageImpl;
+import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
+import com.douglaswhitehead.model.digitaldata.privacy.PrivacyImpl;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.product.ProductImpl;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
@@ -61,6 +63,10 @@ public class MockDigitalDataImpl implements DigitalData {
 		User[] users = new User[1];
 		users[0] = new UserImpl.Builder().build();
 		return users;
+	}
+	
+	public Privacy getPrivacy() {
+		return new PrivacyImpl.Builder().build();
 	}
 
 	public String getVersion() {

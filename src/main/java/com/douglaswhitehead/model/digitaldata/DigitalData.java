@@ -4,6 +4,7 @@ import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
+import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
@@ -18,6 +19,7 @@ public interface DigitalData {
 	public Event[] getEvent();
 	public Component[] getComponent();
 	public User[] getUser();
+	public Privacy getPrivacy();
 	public String getVersion();
 	
 	public static interface Builder {
@@ -30,6 +32,7 @@ public interface DigitalData {
 		public Builder event();
 		public Builder component();
 		public Builder user();
+		public Builder privacy();
 		public Builder version();
 		
 		public DigitalData build();
