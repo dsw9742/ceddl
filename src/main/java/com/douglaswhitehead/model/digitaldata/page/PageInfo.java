@@ -2,11 +2,7 @@ package com.douglaswhitehead.model.digitaldata.page;
 
 import java.util.Date;
 
-import com.douglaswhitehead.model.digitaldata.BaseObjectImpl;
-
 public interface PageInfo {
-
-	public BaseObjectImpl getPageId2();
 	public String getPageId();
 	public String getPageName();
 	public String getDestinationURL();
@@ -27,8 +23,6 @@ public interface PageInfo {
 	public long getOnsiteSearchResults();
 	
 	public static interface Builder {
-		
-		public Builder pageId2();
 		public Builder pageId();
 		public Builder pageName();
 		public Builder destinationURL();

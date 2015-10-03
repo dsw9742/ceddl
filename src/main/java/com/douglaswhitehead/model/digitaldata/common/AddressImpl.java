@@ -3,101 +3,105 @@ package com.douglaswhitehead.model.digitaldata.common;
 /**
  * An extensible object for providing address information for the user.
  */
-public class AddressImpl implements Address {
+public class AddressImpl extends Base implements Address {
 
-	private final String line1;
-	private final String line2;
-	private final String city;
-	private final String stateProvince;
-	private final String postalCode;
-	private final String country;
+	private static final String LINE_1 = "line1";
+	private static final String LINE_2 = "line2";
+	private static final String CITY = "city";
+	private static final String STATE_PROVINCE = "stateProvince";
+	private static final String POSTAL_CODE = "postalCode";
+	private static final String COUNTRY = "country";
 	
 	private AddressImpl(
-		final String newLine1,
-		final String newLine2,
-		final String newCity,
-		final String newStateProvince,
-		final String newPostalCode,
-		final String newCountry
+		final Object line1,
+		final Object line2,
+		final Object city,
+		final Object stateProvince,
+		final Object postalCode,
+		final Object country
 	) {
-		this.line1 = newLine1;
-		this.line2 = newLine2;
-		this.city = newCity;
-		this.stateProvince = newStateProvince;
-		this.postalCode = newPostalCode;
-		this.country = newCountry;
+		this.map.put(LINE_1, line1);
+		this.map.put(LINE_2, line2);
+		this.map.put(CITY, city);
+		this.map.put(STATE_PROVINCE, stateProvince);
+		this.map.put(POSTAL_CODE, postalCode);
+		this.map.put(COUNTRY, country);
 	}
 	
-	public String getLine1() {
-		return this.line1;
+	public Object getLine1() {
+		return map.get(LINE_1);
 	}
 	
-	public String getLine2() {
-		return this.line2;
+	public Object getLine2() {
+		return map.get(LINE_2);
 	}
 	
-	public String getCity() {
-		return this.city;
+	public Object getCity() {
+		return map.get(CITY);
 	}
 	
-	public String getStateProvince() {
-		return this.stateProvince;
+	public Object getStateProvince() {
+		return map.get(STATE_PROVINCE);
 	}
 	
-	public String getPostalCode() {
-		return this.postalCode;
+	public Object getPostalCode() {
+		return map.get(POSTAL_CODE);
 	}
 	
-	public String getCountry() {
-		return this.country;
+	public Object getCountry() {
+		return map.get(COUNTRY);
 	}
 	
-	public static class Builder {
-		private String nestedLine1;
-		private String nestedLine2;
-		private String nestedCity;
-		private String nestedStateProvince;
-		private String nestedPostalCode;
-		private String nestedCountry;
-		
-		public Builder line1(final String newLine1) {
-			this.nestedLine1 = newLine1;
+	public static class Builder extends Base.Builder {
+		public Builder security(String[] categories) {
+			addSecurity(categories);
 			return this;
 		}
 		
-		public Builder line2(final String newLine2) {
-			this.nestedLine2 = newLine2;
+		public Builder line1(final String line1) {
+			this.map.put(LINE_1, line1);
+			this.previous = LINE_1;
 			return this;
 		}
 		
-		public Builder city(final String newCity) {
-			this.nestedCity = newCity;
+		public Builder line2(final String line2) {
+			this.map.put(LINE_2, line2);
+			this.previous = LINE_2;
 			return this;
 		}
 		
-		public Builder stateProvince(final String newStateProvince) {
-			this.nestedStateProvince = newStateProvince;
+		public Builder city(final String city) {
+			this.map.put(CITY, city);
+			this.previous = CITY;
 			return this;
 		}
 		
-		public Builder postalCode(final String newPostalCode) {
-			this.nestedPostalCode = newPostalCode;
+		public Builder stateProvince(final String stateProvince) {
+			this.map.put(STATE_PROVINCE, stateProvince);
+			this.previous = STATE_PROVINCE;
 			return this;
 		}
 		
-		public Builder country(final String newCountry) {
-			this.nestedCountry = newCountry;
+		public Builder postalCode(final String postalCode) {
+			this.map.put(POSTAL_CODE, postalCode);
+			this.previous = POSTAL_CODE;
+			return this;
+		}
+		
+		public Builder country(final String country) {
+			this.map.put(COUNTRY, country);
+			this.previous = COUNTRY;
 			return this;
 		}
 		
 		public AddressImpl build() {
 			return new AddressImpl(
-				nestedLine1,
-				nestedLine2,
-				nestedCity,
-				nestedStateProvince,
-				nestedPostalCode,
-				nestedCountry
+				map.get(LINE_1),
+				map.get(LINE_2),
+				map.get(CITY),
+				map.get(STATE_PROVINCE),
+				map.get(POSTAL_CODE),
+				map.get(COUNTRY)
 			);
 		}
 	}

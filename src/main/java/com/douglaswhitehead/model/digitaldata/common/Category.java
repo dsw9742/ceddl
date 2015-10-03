@@ -2,7 +2,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 
 public interface Category {
 	
-	public String getPrimaryCategory();
+	public Object getPrimaryCategory();
 	
 	public static interface Builder {
 		

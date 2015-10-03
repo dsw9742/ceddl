@@ -2,12 +2,12 @@ package com.douglaswhitehead.model.digitaldata.common;
 
 public interface Address {
 	
-	public String getLine1();
-	public String getLine2();
-	public String getCity();
-	public String getStateProvince();
-	public String getPostalCode();
-	public String getCountry();
+	public Object getLine1();
+	public Object getLine2();
+	public Object getCity();
+	public Object getStateProvince();
+	public Object getPostalCode();
+	public Object getCountry();
 	
 	public static interface Builder {
 		
