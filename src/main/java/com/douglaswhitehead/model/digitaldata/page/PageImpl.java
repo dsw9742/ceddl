@@ -1,6 +1,7 @@
 package com.douglaswhitehead.model.digitaldata.page;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
+import com.douglaswhitehead.model.digitaldata.common.Base;
 import com.douglaswhitehead.model.digitaldata.common.Category;
 
 /**
@@ -10,59 +11,59 @@ import com.douglaswhitehead.model.digitaldata.common.Category;
  * elements are captured by the specification below. The Page object and its children, where 
  * included, MUST have the following Object Names & Types.
  */
-public class PageImpl implements Page {
+public class PageImpl extends Base implements Page {
 	
-	private final PageInfo pageInfo;
-	private final Category category;
-	private final Attributes attributes;
+	private static final String PAGE_INFO = "pageInfo";
+	private static final String CATEGORY = "category";
+	private static final String ATTRIBUTES = "attributes";
 	
 	private PageImpl(
-		final PageInfo newPageInfo,
-		final Category newCategory,
-		final Attributes newAttributes
+		final Object pageInfo,
+		final Object category,
+		final Object attributes
 		) {
-		this.pageInfo = newPageInfo;
-		this.category = newCategory;
-		this.attributes = newAttributes;
+		this.map.put(PAGE_INFO, pageInfo);
+		this.map.put(CATEGORY, category);
+		this.map.put(ATTRIBUTES, attributes);
 	};
 	
-	public PageInfo getPageInfo() {
-		return this.pageInfo;
+	public Object getPageInfo() {
+		return map.get(PAGE_INFO);
 	}
 	
-	public Category getCategory() {
-		return this.category;
+	public Object getCategory() {
+		return map.get(CATEGORY);
 	}
 	
-	public Attributes getAttributes() {
-		return this.attributes;
+	public Object getAttributes() {
+		return map.get(ATTRIBUTES);
 	}
 
-	public static class Builder {
-		private PageInfo nestedPageInfo;
-		private Category nestedCategory;
-		private Attributes nestedAttributes;
+	public static class Builder extends Base.Builder {
 		
-		public Builder pageInfo(final PageInfo newPageInfo) {
-			this.nestedPageInfo = newPageInfo;
+		public Builder pageInfo(final PageInfo pageInfo) {
+			this.map.put(PAGE_INFO, pageInfo);
+			this.previous = PAGE_INFO;
 			return this;
 		}
 		
-		public Builder category(final Category newCategory) {
-			this.nestedCategory = newCategory;
+		public Builder category(final Category category) {
+			this.map.put(CATEGORY, category);
+			this.previous = CATEGORY;
 			return this;
 		}
 		
-		public Builder attributes(final Attributes newAttributes) {
-			this.nestedAttributes = newAttributes;
+		public Builder attributes(final Attributes attributes) {
+			this.map.put(ATTRIBUTES, attributes);
+			this.previous = ATTRIBUTES;
 			return this;
 		}
 		
 		public PageImpl build() {
 			return new PageImpl(
-				nestedPageInfo,
-				nestedCategory,
-				nestedAttributes
+				map.get(PAGE_INFO),
+				map.get(CATEGORY),
+				map.get(ATTRIBUTES)
 			);
 		}
 	}

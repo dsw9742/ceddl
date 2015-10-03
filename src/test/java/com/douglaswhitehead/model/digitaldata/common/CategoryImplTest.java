@@ -8,14 +8,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class CategoryImplTest {
 
-	private static final String VALID = "{\"primaryCategory\":{\"testCat\":{\"security\":[\"Analytics\"]}}}";
+	private static final String VALID = "{\"primaryCategory\":\"testCat\"}";
 	
 	@Test
 	public void test() throws Exception {
 		
-		String[] categories = new String[]{"Analytics"};
-		
-		Category object = new CategoryImpl.Builder().primaryCategory("testCat").security(categories).build();
+		Category object = new CategoryImpl.Builder()
+									.primaryCategory("testCat")
+								.build();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);

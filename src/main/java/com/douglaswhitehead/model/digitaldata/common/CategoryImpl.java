@@ -23,11 +23,6 @@ public class CategoryImpl extends Base implements Category {
 	
 	public static class Builder extends Base.Builder {
 		
-		public Builder security(String[] categories) {
-			addSecurity(categories);
-			return this;
-		}
-		
 		public Builder primaryCategory(final String primaryCategory) {
 			this.map.put(PRIMARY_CATEGORY, primaryCategory);
 			this.previous = PRIMARY_CATEGORY;

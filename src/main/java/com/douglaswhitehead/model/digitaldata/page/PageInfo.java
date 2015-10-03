@@ -1,26 +1,24 @@
 package com.douglaswhitehead.model.digitaldata.page;
 
-import java.util.Date;
-
 public interface PageInfo {
-	public String getPageId();
-	public String getPageName();
-	public String getDestinationURL();
-	public String getReferringURL();
-	public String getSysEnv();
-	public String getVariant();
-	public String getVersion();
-	public String[] getBreadcrumbs();
-	public String getAuthor();
-	public Date getIssueDate();
-	public Date getEffectiveDate();
-	public Date getExpiryDate();
-	public String getLanguage();
-	public String getGeoRegion();
-	public String getIndustryCodes();
-	public String getPublisher();
-	public String getOnsiteSearchTerm();
-	public long getOnsiteSearchResults();
+	public Object getPageId();
+	public Object getPageName();
+	public Object getDestinationURL();
+	public Object getReferringURL();
+	public Object getSysEnv();
+	public Object getVariant();
+	public Object getVersion();
+	public Object getBreadcrumbs();
+	public Object getAuthor();
+	public Object getIssueDate();
+	public Object getEffectiveDate();
+	public Object getExpiryDate();
+	public Object getLanguage();
+	public Object getGeoRegion();
+	public Object getIndustryCodes();
+	public Object getPublisher();
+	public Object getOnsiteSearchTerm();
+	public Object getOnsiteSearchResults();
 	
 	public static interface Builder {
 		public Builder pageId();

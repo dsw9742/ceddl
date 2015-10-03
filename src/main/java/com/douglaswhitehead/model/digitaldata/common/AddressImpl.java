@@ -53,10 +53,6 @@ public class AddressImpl extends Base implements Address {
 	}
 	
 	public static class Builder extends Base.Builder {
-		public Builder security(String[] categories) {
-			addSecurity(categories);
-			return this;
-		}
 		
 		public Builder line1(final String line1) {
 			this.map.put(LINE_1, line1);
