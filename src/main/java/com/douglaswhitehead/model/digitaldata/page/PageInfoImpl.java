@@ -1,13 +1,15 @@
 package com.douglaswhitehead.model.digitaldata.page;
 
 import java.util.Date;
+import java.util.Map;
 
-import com.douglaswhitehead.model.digitaldata.common.Base;
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
  * Describes details about the page.
  */
-public class PageInfoImpl extends Base implements PageInfo {
+public class PageInfoImpl extends BaseImpl implements PageInfo {
 	private static final String PAGE_ID = "pageId";
 	private static final String PAGE_NAME = "pageName";
 	private static final String DESTINATION_URL = "destinationURL";
@@ -28,6 +30,8 @@ public class PageInfoImpl extends Base implements PageInfo {
 	private static final String ONSITE_SEARCH_RESULTS = "onsiteSearchResults";
 	
 	private PageInfoImpl(
+		//final Map<String, Object> security,
+		final Security security,
 		final Object pageId,
 		final Object pageName,
 		final Object destinationURL,
@@ -47,6 +51,7 @@ public class PageInfoImpl extends Base implements PageInfo {
 		final Object onsiteSearchTerm,
 		final Object onsiteSearchResults
 		) {
+		this.security = security;
 		this.map.put(PAGE_ID, pageId);
 		this.map.put(PAGE_NAME, pageName);
 		this.map.put(DESTINATION_URL, destinationURL);
@@ -139,7 +144,13 @@ public class PageInfoImpl extends Base implements PageInfo {
 		return map.get(ONSITE_SEARCH_RESULTS);
 	}
 	
-	public static class Builder extends Base.Builder {
+	public static class Builder extends BaseImpl.Builder {
+		
+		public Builder security(final String[] accessCategories) {
+			validateSecurity();
+			this.security.secure(previous, accessCategories);
+			return this;
+		}
 		
 		public Builder pageId(final String pageId) {
 			this.map.put(PAGE_ID, pageId);
@@ -251,6 +262,7 @@ public class PageInfoImpl extends Base implements PageInfo {
 		
 		public PageInfoImpl build() {
 			return new PageInfoImpl(
+				security,
 				map.get(PAGE_ID),
 				map.get(PAGE_NAME),
 				map.get(DESTINATION_URL),

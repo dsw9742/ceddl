@@ -5,7 +5,7 @@ package com.douglaswhitehead.model.digitaldata.common;
  * the object. All names are optional and should fit the individual implementation needs in both naming 
  * and values passed.
  */
-public class AttributesImpl extends Base implements Attributes {
+public class AttributesImpl extends BaseImpl implements Attributes {
 
 	private AttributesImpl(
 		
@@ -13,7 +13,7 @@ public class AttributesImpl extends Base implements Attributes {
 		
 	}
 	
-	public static class Builder extends Base.Builder {
+	public static class Builder extends BaseImpl.Builder {
 		
 		public AttributesImpl build() {
 			return new AttributesImpl(

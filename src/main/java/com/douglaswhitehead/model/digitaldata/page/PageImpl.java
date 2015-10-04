@@ -1,7 +1,7 @@
 package com.douglaswhitehead.model.digitaldata.page;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
-import com.douglaswhitehead.model.digitaldata.common.Base;
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
 import com.douglaswhitehead.model.digitaldata.common.Category;
 
 /**
@@ -11,7 +11,7 @@ import com.douglaswhitehead.model.digitaldata.common.Category;
  * elements are captured by the specification below. The Page object and its children, where 
  * included, MUST have the following Object Names & Types.
  */
-public class PageImpl extends Base implements Page {
+public class PageImpl extends BaseImpl implements Page {
 	
 	private static final String PAGE_INFO = "pageInfo";
 	private static final String CATEGORY = "category";
@@ -39,7 +39,7 @@ public class PageImpl extends Base implements Page {
 		return map.get(ATTRIBUTES);
 	}
 
-	public static class Builder extends Base.Builder {
+	public static class Builder extends BaseImpl.Builder {
 		
 		public Builder pageInfo(final PageInfo pageInfo) {
 			this.map.put(PAGE_INFO, pageInfo);

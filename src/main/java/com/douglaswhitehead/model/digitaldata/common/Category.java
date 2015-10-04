@@ -6,6 +6,8 @@ public interface Category {
 	
 	public static interface Builder {
 		
+		public Builder security();
+		
 		public Builder primaryCategory();
 		
 		public Category build();

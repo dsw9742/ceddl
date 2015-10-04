@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 /**
  * An extensible object for providing address information for the user.
  */
-public class AddressImpl extends Base implements Address {
+public class AddressImpl extends BaseImpl implements Address {
 
 	private static final String LINE_1 = "line1";
 	private static final String LINE_2 = "line2";
@@ -52,7 +52,7 @@ public class AddressImpl extends Base implements Address {
 		return map.get(COUNTRY);
 	}
 	
-	public static class Builder extends Base.Builder {
+	public static class Builder extends BaseImpl.Builder {
 		
 		public Builder line1(final String line1) {
 			this.map.put(LINE_1, line1);

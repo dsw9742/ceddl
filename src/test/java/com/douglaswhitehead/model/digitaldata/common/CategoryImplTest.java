@@ -5,6 +5,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class CategoryImplTest {
 
@@ -14,11 +15,12 @@ public class CategoryImplTest {
 	public void test() throws Exception {
 		
 		Category object = new CategoryImpl.Builder()
-									.primaryCategory("testCat")
+									.primaryCategory("testCat").security(new String[]{"Analytics"})
 								.build();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		String output = mapper.writeValueAsString(object);
 		
 		System.out.println(VALID);

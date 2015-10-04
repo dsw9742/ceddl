@@ -21,6 +21,7 @@ public interface PageInfo {
 	public Object getOnsiteSearchResults();
 	
 	public static interface Builder {
+		public Builder security();
 		public Builder pageId();
 		public Builder pageName();
 		public Builder destinationURL();
