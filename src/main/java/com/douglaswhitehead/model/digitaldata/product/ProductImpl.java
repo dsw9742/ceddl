@@ -13,11 +13,35 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
  */
 public class ProductImpl extends BaseImpl implements Product {
 
+	/**
+	 * String constant for <tt>productInfo</tt>
+	 */
 	private final static String PRODUCT_INFO = "productInfo";
+	
+	/**
+	 * String constant for <tt>category</tt>
+	 */
 	private final static String CATEGORY = "category";
+	
+	/**
+	 * String constant for <tt>linkedProduct</tt>
+	 */
 	private final static String LINKED_PRODUCT = "linkedProduct";
+	
+	/**
+	 * String constant for <tt>attributes</tt>
+	 */
 	private final static String ATTRIBUTES = "attributes";
 	
+	/**
+	 * ProductImpl constructor.
+	 * 
+	 * @param Security security
+	 * @param ProductInfo productInfo
+	 * @param Category category
+	 * @param Product[] linkedProduct
+	 * @param Attributes attributes
+	 */
 	private ProductImpl(
 		final Security security,
 		final ProductInfo productInfo,
@@ -32,28 +56,60 @@ public class ProductImpl extends BaseImpl implements Product {
 		this.map.put(ATTRIBUTES, attributes);
 	}
 	
+	/**
+	 * Returns the ProductInfo object.
+	 * 
+	 * @return ProductInfo
+	 */
 	@Override
 	public ProductInfo getProductInfo() {
 		return (ProductInfo)map.get(PRODUCT_INFO);
 	}
 	
+	/**
+	 * Returns the Category object.
+	 * 
+	 * @return Category
+	 */
 	@Override
 	public Category getCategory() {
 		return (Category)map.get(CATEGORY);
 	}
 	
+	/**
+	 * Returns the LinkedProduct array.
+	 * 
+	 * @return Product[]
+	 */
 	@Override
 	public Product[] getLinkedProduct() {
 		return (Product[])map.get(LINKED_PRODUCT);
 	}
 	
+	/**
+	 * Returns the Attributes object.
+	 * 
+	 * @return Attributes
+	 */
 	@Override
 	public Attributes getAttributes() {
 		return (Attributes)map.get(ATTRIBUTES);
 	}
 	
+	/**
+	 * Implementation of the Product.Builder interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
 	public static class Builder extends BaseImpl.Builder<Builder> implements Product.Builder {
 		
+		/**
+		 * Builds the ProductInfo object.
+		 * 
+		 * @param ProductInfo productInfo
+		 * @return Builder
+		 */
 		@Override
 		public Builder productInfo(final ProductInfo productInfo) {
 			this.map.put(PRODUCT_INFO, productInfo);
@@ -61,6 +117,12 @@ public class ProductImpl extends BaseImpl implements Product {
 			return this;
 		}
 		
+		/**
+		 * Builds the Category object.
+		 * 
+		 * @param Category category
+		 * @return Builder
+		 */
 		@Override
 		public Builder category(final Category category) {
 			this.map.put(CATEGORY, category);
@@ -68,6 +130,12 @@ public class ProductImpl extends BaseImpl implements Product {
 			return this;
 		}
 		
+		/**
+		 * Builds the LinkedProduct array.
+		 * 
+		 * @param Product[] linkedProduct
+		 * @return Builder
+		 */
 		@Override
 		public Builder linkedProduct(final Product[] linkedProduct) {
 			this.map.put(LINKED_PRODUCT, linkedProduct);
@@ -75,6 +143,12 @@ public class ProductImpl extends BaseImpl implements Product {
 			return this;
 		}
 		
+		/**
+		 * Builds the Attributes object.
+		 * 
+		 * @param Attributes attributes
+		 * @return Builder
+		 */
 		@Override
 		public Builder attributes(final Attributes attributes) {
 			this.map.put(ATTRIBUTES, attributes);
@@ -82,6 +156,11 @@ public class ProductImpl extends BaseImpl implements Product {
 			return this;
 		}
 		
+		/**
+		 * Builds and returns the ProductImpl object.
+		 * 
+		 * @return ProductImpl
+		 */
 		@Override
 		public ProductImpl build() {
 			return new ProductImpl(
@@ -93,6 +172,11 @@ public class ProductImpl extends BaseImpl implements Product {
 			);
 		}
 		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
 		@Override
 		protected Builder builder() {
 			return this;
