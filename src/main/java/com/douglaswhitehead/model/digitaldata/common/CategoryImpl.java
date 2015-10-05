@@ -11,7 +11,7 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class CategoryImpl extends BaseImpl implements Category {
 	
 	/**
-	 * String constant for {@code primaryCategory }
+	 * String constant for <tt>primaryCategory</tt>
 	 */
 	private static final String PRIMARY_CATEGORY = "primaryCategory";
 	
@@ -69,7 +69,7 @@ public class CategoryImpl extends BaseImpl implements Category {
 		}
 		
 		/**
-		 * Builds the CategoryImpl object.
+		 * Builds and returns the CategoryImpl object.
 		 * 
 		 * @return CategoryImpl
 		 */

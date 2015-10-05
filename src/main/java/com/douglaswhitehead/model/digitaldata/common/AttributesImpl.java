@@ -40,7 +40,7 @@ public class AttributesImpl extends BaseImpl implements Attributes {
 		}
 		
 		/**
-		 * Builds the AttributesImpl object.
+		 * Builds and returns the AttributesImpl object.
 		 * 
 		 * @return AttributesImpl
 		 */

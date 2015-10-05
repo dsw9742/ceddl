@@ -21,7 +21,7 @@ public class PageInfoImplTest {
 		Date expiryDate = simpleDateFormat.parse("12/30/2001");
 		
 		PageInfo object = new PageInfoImpl.Builder()
-								.pageId("testPageId-prod")
+								.pageID("testPageId-prod")
 								.pageName("testPageName")
 								.destinationURL("http://www.test.com/search/results")
 								.referringURL("http://www.test.com/")
@@ -38,7 +38,7 @@ public class PageInfoImplTest {
 								.industryCodes("5140, 5141")
 								.publisher("Shirley J Tester").security(new String[]{"Analytics"})
 								.onsiteSearchTerm("testing 123")
-								.onsiteSearchResults(5432)
+								.onsiteSearchResults(Long.valueOf(5432))
 							.build();
 		
 		ObjectMapper mapper = new ObjectMapper();

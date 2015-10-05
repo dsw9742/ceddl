@@ -1,58 +1,154 @@
 package com.douglaswhitehead.model.digitaldata.page;
 
 import java.util.Date;
-import java.util.Map;
 
 import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
 import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * Describes details about the page.
+ * Implementation of the PageInfo interface.
+ * 
+ * @author douglas.whitehead
+ *
  */
 public class PageInfoImpl extends BaseImpl implements PageInfo {
+	
+	/**
+	 * String constant for <tt>pageID</tt>
+	 */
 	private static final String PAGE_ID = "pageId";
+	
+	/**
+	 * String constant for <tt>pageName</tt>
+	 */
 	private static final String PAGE_NAME = "pageName";
+	
+	/**
+	 * String constant for <tt>destinationURL</tt>
+	 */
 	private static final String DESTINATION_URL = "destinationURL";
+	
+	/**
+	 * String constant for <tt>referringURL</tt>
+	 */
 	private static final String REFERRING_URL = "referringURL";
+	
+	/**
+	 * String constant for <tt>sysEnv</tt>
+	 */
 	private static final String SYS_ENV = "sysEnv";
+	
+	/**
+	 * String constant for <tt>variant</tt>
+	 */
 	private static final String VARIANT = "variant";
+	
+	/**
+	 * String constant for <tt>version</tt>
+	 */
 	private static final String VERSION = "version";
+	
+	/**
+	 * String constant for <tt>breadcrumbs</tt>
+	 */
 	private static final String BREADCRUMBS = "breadcrumbs";
+	
+	/**
+	 * String constant for <tt>author</tt>
+	 */
 	private static final String AUTHOR = "author";
+	
+	/**
+	 * String constant for <tt>issueDate</tt>
+	 */
 	private static final String ISSUE_DATE = "issueDate";
+	
+	/**
+	 * String constant for <tt>effectiveDate</tt>
+	 */
 	private static final String EFFECTIVE_DATE = "effectiveDate";
+	
+	/**
+	 * String constant for <tt>expiryDate</tt>
+	 */
 	private static final String EXPIRY_DATE = "expiryDate";
+	
+	/**
+	 * String constant for <tt>language</tt>
+	 */
 	private static final String LANGUAGE = "language";
+	
+	/**
+	 * String constant for <tt>geoRegion</tt>
+	 */
 	private static final String GEO_REGION = "geoRegion";
+	
+	/**
+	 * String constant for <tt>industryCodes</tt>
+	 */
 	private static final String INDUSTRY_CODES = "industryCodes";
+	
+	/**
+	 * String constant for <tt>publisher</tt>
+	 */
 	private static final String PUBLISHER = "publisher";
+	
+	/**
+	 * String constant for <tt>onsiteSearchTerm</tt>
+	 */
 	private static final String ONSITE_SEARCH_TERM = "onsiteSearchTerm";
+	
+	/**
+	 * String constant for <tt>onsiteSearchResults</tt>
+	 */
 	private static final String ONSITE_SEARCH_RESULTS = "onsiteSearchResults";
 	
+	/**
+	 * PageInfoImpl constructor.
+	 * 
+	 * @param Security security
+	 * @param String pageID
+	 * @param String pageName
+	 * @param String destinationURL
+	 * @param String referringURL
+	 * @param String sysEnv
+	 * @param String variant
+	 * @param String version
+	 * @param String[] breadcrumbs
+	 * @param String author
+	 * @param Date issueDate
+	 * @param Date effectiveDate
+	 * @param Date expiryDate
+	 * @param String language
+	 * @param String geoRegion
+	 * @param String industryCodes
+	 * @param String publisher
+	 * @param String onsiteSearchTerm
+	 * @param Long onsiteSearchResults
+	 */
 	private PageInfoImpl(
-		//final Map<String, Object> security,
 		final Security security,
-		final Object pageId,
-		final Object pageName,
-		final Object destinationURL,
-		final Object referringURL,
-		final Object sysEnv,
-		final Object variant,
-		final Object version,
-		final Object breadcrumbs,
-		final Object author,
-		final Object issueDate,
-		final Object effectiveDate,
-		final Object expiryDate,
-		final Object language,
-		final Object geoRegion,
-		final Object industryCodes,
-		final Object publisher,
-		final Object onsiteSearchTerm,
-		final Object onsiteSearchResults
+		final String pageID,
+		final String pageName,
+		final String destinationURL,
+		final String referringURL,
+		final String sysEnv,
+		final String variant,
+		final String version,
+		final String[] breadcrumbs,
+		final String author,
+		final Date issueDate,
+		final Date effectiveDate,
+		final Date expiryDate,
+		final String language,
+		final String geoRegion,
+		final String industryCodes,
+		final String publisher,
+		final String onsiteSearchTerm,
+		final Long onsiteSearchResults
 		) {
 		this.security = security;
-		this.map.put(PAGE_ID, pageId);
+		this.map.put(PAGE_ID, pageID);
 		this.map.put(PAGE_NAME, pageName);
 		this.map.put(DESTINATION_URL, destinationURL);
 		this.map.put(REFERRING_URL, referringURL);
@@ -72,216 +168,447 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		this.map.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
 	}
 	
-	public Object getPageId() {
-		return map.get(PAGE_ID);
+	/**
+	 * Returns the PageID object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getPageID() {
+		return (String)map.get(PAGE_ID);
 	}
 	
-	public Object getPageName() {
-		return map.get(PAGE_NAME);
+	/**
+	 * Returns the PageName object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getPageName() {
+		return (String)map.get(PAGE_NAME);
 	}
 	
-	public Object getDestinationURL() {
-		return map.get(DESTINATION_URL);
+	/**
+	 * Returns the DestinationURL object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getDestinationURL() {
+		return (String)map.get(DESTINATION_URL);
 	}
 	
-	public Object getReferringURL() {
-		return map.get(REFERRING_URL);
+	/**
+	 * Returns the ReferringURL object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getReferringURL() {
+		return (String)map.get(REFERRING_URL);
 	}
 	
-	public Object getSysEnv() {
-		return map.get(SYS_ENV);
+	/**
+	 * Returns the SysEnv object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getSysEnv() {
+		return (String)map.get(SYS_ENV);
 	}
 	
-	public Object getVariant() {
-		return map.get(VARIANT);
+	/**
+	 * Returns the Variant object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getVariant() {
+		return (String)map.get(VARIANT);
 	}
 	
-	public Object getVersion() {
-		return map.get(VERSION);
+	/**
+	 * Returns the Version object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getVersion() {
+		return (String)map.get(VERSION);
 	}
 	
-	public Object getBreadcrumbs() {
-		return map.get(BREADCRUMBS);
+	/**
+	 * Returns the Breadcrumbs object.
+	 * 
+	 * @return String[]
+	 */
+	@Override
+	public String[] getBreadcrumbs() {
+		return (String[])map.get(BREADCRUMBS);
 	}
 	
-	public Object getAuthor() {
-		return map.get(AUTHOR);
+	/**
+	 * Returns the Author object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getAuthor() {
+		return (String)map.get(AUTHOR);
 	}
 	
-	public Object getIssueDate() {
-		return map.get(ISSUE_DATE);
+	/**
+	 * Returns the IssueDate object.
+	 * 
+	 * @return Date
+	 */
+	@Override
+	public Date getIssueDate() {
+		return (Date)map.get(ISSUE_DATE);
 	}
 	
-	public Object getEffectiveDate() {
-		return map.get(EFFECTIVE_DATE);
+	/**
+	 * Returns the EffectiveDate object.
+	 * 
+	 * @return Date
+	 */
+	@Override
+	public Date getEffectiveDate() {
+		return (Date)map.get(EFFECTIVE_DATE);
 	}
 	
-	public Object getExpiryDate() {
-		return map.get(EXPIRY_DATE);
+	/**
+	 * Returns the ExpiryDate object.
+	 * 
+	 * @return Date
+	 */
+	@Override
+	public Date getExpiryDate() {
+		return (Date)map.get(EXPIRY_DATE);
 	}
 	
-	public Object getLanguage() {
-		return map.get(LANGUAGE);
+	/**
+	 * Returns the Language object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getLanguage() {
+		return (String)map.get(LANGUAGE);
 	}
 	
-	public Object getGeoRegion() {
-		return map.get(GEO_REGION);
+	/**
+	 * Returns the GeoRegion object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getGeoRegion() {
+		return (String)map.get(GEO_REGION);
 	}
 	
-	public Object getIndustryCodes() {
-		return map.get(INDUSTRY_CODES);
+	/**
+	 * Returns the IndustryCodes object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getIndustryCodes() {
+		return (String)map.get(INDUSTRY_CODES);
 	}
 	
-	public Object getPublisher() {
-		return map.get(PUBLISHER);
+	/**
+	 * Returns the Publisher object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getPublisher() {
+		return (String)map.get(PUBLISHER);
 	}
 	
-	public Object getOnsiteSearchTerm() {
-		return map.get(ONSITE_SEARCH_TERM);
+	/**
+	 * Returns the OnsiteSearchTerm object.
+	 * 
+	 * @return String
+	 */
+	@Override
+	public String getOnsiteSearchTerm() {
+		return (String)map.get(ONSITE_SEARCH_TERM);
 	}
 	
-	public Object getOnsiteSearchResults() {
-		return map.get(ONSITE_SEARCH_RESULTS);
+	/**
+	 * Returns the OnsiteSearchResults object.
+	 * 
+	 * @return Long
+	 */
+	@Override
+	public Long getOnsiteSearchResults() {
+		return (Long)map.get(ONSITE_SEARCH_RESULTS);
 	}
 	
-	public static class Builder extends BaseImpl.Builder {
+	/**
+	 * Implementation of the PageInfo.Builder interface.
+	 * 
+	 * @author douglas.whitehead
+	 *
+	 */
+	public static class Builder extends BaseImpl.Builder<Builder> implements PageInfo.Builder {
 		
-		public Builder security(final String[] accessCategories) {
-			validateSecurity();
-			this.security.secure(previous, accessCategories);
-			return this;
-		}
-		
-		public Builder pageId(final String pageId) {
+		/**
+		 * Builds the PageID object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder pageID(final String pageId) {
 			this.map.put(PAGE_ID, pageId);
 			this.previous = PAGE_ID;
 			return this;
 		}
 		
+		/**
+		 * Builds the PageName object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder pageName(final String pageName) {
 			this.map.put(PAGE_NAME, pageName);
 			this.previous = PAGE_NAME;
 			return this;
 		}
 		
+		/**
+		 * Builds the DestinationURL object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder destinationURL(final String destinationURL) {
 			this.map.put(DESTINATION_URL, destinationURL);
 			this.previous = DESTINATION_URL;
 			return this;
 		}
 		
+		/**
+		 * Builds the ReferringURL object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder referringURL(final String referringURL) {
 			this.map.put(REFERRING_URL, referringURL);
 			this.previous = REFERRING_URL;
 			return this;
 		}
 		
+		/**
+		 * Builds the SysEnv object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder sysEnv(final String sysEnv) {
 			this.map.put(SYS_ENV, sysEnv);
 			this.previous = SYS_ENV;
 			return this;
 		}
 		
+		/**
+		 * Builds the Variant object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder variant(final String variant) {
 			this.map.put(VARIANT, variant);
 			this.previous = VARIANT;
 			return this;
 		}
 		
+		/**
+		 * Builds the Version object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder version(final String version) {
 			this.map.put(VERSION, version);
 			this.previous = VERSION;
 			return this;
 		}
 		
+		/**
+		 * Builds the Breadcrumbs object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder breadcrumbs(final String[] breadcrumbs) {
 			this.map.put(BREADCRUMBS, breadcrumbs);
 			this.previous = BREADCRUMBS;
 			return this;
 		}
 		
+		/**
+		 * Builds the Author object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder author(final String author) {
 			this.map.put(AUTHOR, author);
 			this.previous = AUTHOR;
 			return this;
 		}
 		
+		/**
+		 * Builds the IssueDate object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder issueDate(final Date issueDate) {
 			this.map.put(ISSUE_DATE, issueDate);
 			this.previous = ISSUE_DATE;
 			return this;
 		}
 		
+		/**
+		 * Builds the EffectiveDate object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder effectiveDate(final Date effectiveDate) {
 			this.map.put(EFFECTIVE_DATE, effectiveDate);
 			this.previous = EFFECTIVE_DATE;
 			return this;
 		}
 		
+		/**
+		 * Builds the ExpiryDate object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder expiryDate(final Date expiryDate) {
 			this.map.put(EXPIRY_DATE, expiryDate);
 			this.previous = EXPIRY_DATE;
 			return this;
 		}
 		
+		/**
+		 * Builds the Language object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder language(final String language) {
 			this.map.put(LANGUAGE, language);
 			this.previous = LANGUAGE;
 			return this;
 		}
 		
+		/**
+		 * Builds the GeoRegion object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder geoRegion(final String geoRegion) {
 			this.map.put(GEO_REGION, geoRegion);
 			this.previous = GEO_REGION;
 			return this;
 		}
 		
+		/**
+		 * Builds the IndustryCodes object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder industryCodes(final String industryCodes) {
 			this.map.put(INDUSTRY_CODES, industryCodes);
 			this.previous = INDUSTRY_CODES;
 			return this;
 		}
 		
+		/**
+		 * Builds the Publisher object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder publisher(final String publisher) {
 			this.map.put(PUBLISHER, publisher);
 			this.previous = PUBLISHER;
 			return this;
 		}
 		
+		/**
+		 * Builds the OnsiteSearchTerm object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
 		public Builder onsiteSearchTerm(final String onsiteSearchTerm) {
 			this.map.put(ONSITE_SEARCH_TERM, onsiteSearchTerm);
 			this.previous = ONSITE_SEARCH_TERM;
 			return this;
 		}
 		
-		public Builder onsiteSearchResults(final Integer onsiteSearchResults) {
+		/**
+		 * Builds the OnsiteSearchResults object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder onsiteSearchResults(final Long onsiteSearchResults) {
 			this.map.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
 			this.previous = ONSITE_SEARCH_RESULTS; 
 			return this;
 		}
 		
+		/**
+		 * Builds and returns the PageInfoImpl object.
+		 * 
+		 * @return PageInfoImpl
+		 */
 		public PageInfoImpl build() {
 			return new PageInfoImpl(
 				security,
-				map.get(PAGE_ID),
-				map.get(PAGE_NAME),
-				map.get(DESTINATION_URL),
-				map.get(REFERRING_URL),
-				map.get(SYS_ENV),
-				map.get(VARIANT),
-				map.get(VERSION),
-				map.get(BREADCRUMBS),
-				map.get(AUTHOR),
-				map.get(ISSUE_DATE),
-				map.get(EFFECTIVE_DATE),
-				map.get(EXPIRY_DATE),
-				map.get(LANGUAGE),
-				map.get(GEO_REGION),
-				map.get(INDUSTRY_CODES),
-				map.get(PUBLISHER),
-				map.get(ONSITE_SEARCH_TERM),
-				map.get(ONSITE_SEARCH_RESULTS)
+				(String)map.get(PAGE_ID),
+				(String)map.get(PAGE_NAME),
+				(String)map.get(DESTINATION_URL),
+				(String)map.get(REFERRING_URL),
+				(String)map.get(SYS_ENV),
+				(String)map.get(VARIANT),
+				(String)map.get(VERSION),
+				(String[])map.get(BREADCRUMBS),
+				(String)map.get(AUTHOR),
+				(Date)map.get(ISSUE_DATE),
+				(Date)map.get(EFFECTIVE_DATE),
+				(Date)map.get(EXPIRY_DATE),
+				(String)map.get(LANGUAGE),
+				(String)map.get(GEO_REGION),
+				(String)map.get(INDUSTRY_CODES),
+				(String)map.get(PUBLISHER),
+				(String)map.get(ONSITE_SEARCH_TERM),
+				(Long)map.get(ONSITE_SEARCH_RESULTS)
 			);
+		}
+
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder self() {
+			return this;
 		}
 	}
 

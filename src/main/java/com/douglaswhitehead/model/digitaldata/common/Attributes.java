@@ -10,6 +10,9 @@ package com.douglaswhitehead.model.digitaldata.common;
  * the object. All names are optional and should fit the individual implementation needs in both naming 
  * and values passed.
  * </p>
+ * 
+ * @author douglas.whitehead
+ * 
  */
 public interface Attributes {
 
@@ -22,7 +25,7 @@ public interface Attributes {
 	public static interface Builder {
 		
 		/**
-		 * Builds the Attributes object.
+		 * Builds and returns the Attributes object.
 		 * 
 		 * @return Attributes
 		 */

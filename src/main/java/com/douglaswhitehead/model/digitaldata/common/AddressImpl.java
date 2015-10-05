@@ -8,32 +8,32 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class AddressImpl extends BaseImpl implements Address {
 
 	/**
-	 * String constant for {@code line1 }
+	 * String constant for <tt>line1</tt>
 	 */
 	private static final String LINE_1 = "line1";
 	
 	/**
-	 * String constant for {@code line2 }
+	 * String constant for <tt>line2</tt>
 	 */
 	private static final String LINE_2 = "line2";
 	
 	/**
-	 * String constant for {@code city }
+	 * String constant for <tt>city</tt>
 	 */
 	private static final String CITY = "city";
 	
 	/**
-	 * String constant for {@code stateProvince }
+	 * String constant for <tt>stateProvince</tt>
 	 */
 	private static final String STATE_PROVINCE = "stateProvince";
 	
 	/**
-	 * String constant for {@code postalCode }
+	 * String constant for <tt>postalCode</tt>
 	 */
 	private static final String POSTAL_CODE = "postalCode";
 	
 	/**
-	 * String constant for {@code country }
+	 * String constant for <tt>country</tt>
 	 */
 	private static final String COUNTRY = "country";
 	
@@ -153,7 +153,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder line1(final String line1) {
 			this.map.put(LINE_1, line1);
 			this.previous = LINE_1;
-			return this;
+			return self();
 		}
 		
 		/**
@@ -165,7 +165,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder line2(final String line2) {
 			this.map.put(LINE_2, line2);
 			this.previous = LINE_2;
-			return this;
+			return self();
 		}
 		
 		/**
@@ -177,7 +177,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder city(final String city) {
 			this.map.put(CITY, city);
 			this.previous = CITY;
-			return this;
+			return self();
 		}
 		
 		/**
@@ -189,7 +189,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder stateProvince(final String stateProvince) {
 			this.map.put(STATE_PROVINCE, stateProvince);
 			this.previous = STATE_PROVINCE;
-			return this;
+			return self();
 		}
 		
 		/**
@@ -201,7 +201,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder postalCode(final String postalCode) {
 			this.map.put(POSTAL_CODE, postalCode);
 			this.previous = POSTAL_CODE;
-			return this;
+			return self();
 		}
 		
 		/**
@@ -213,7 +213,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder country(final String country) {
 			this.map.put(COUNTRY, country);
 			this.previous = COUNTRY;
-			return this;
+			return self();
 		}
 		
 		/**

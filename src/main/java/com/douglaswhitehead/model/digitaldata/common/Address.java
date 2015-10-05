@@ -105,7 +105,7 @@ public interface Address {
 		public Builder country(String country);
 		
 		/**
-		 * Builds the Address object.
+		 * Builds and returns the Address object.
 		 * 
 		 * @return Address
 		 */

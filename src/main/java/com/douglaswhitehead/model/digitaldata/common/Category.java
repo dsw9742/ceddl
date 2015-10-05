@@ -15,6 +15,9 @@ package com.douglaswhitehead.model.digitaldata.common;
  * for objects, or for your primary set of categories. All other names are optional and should fit the
  * individual implementation needs in both naming and values passed.
  * </p>
+ * 
+ * @author douglas.whitehead
+ * 
  */
 public interface Category {
 	
