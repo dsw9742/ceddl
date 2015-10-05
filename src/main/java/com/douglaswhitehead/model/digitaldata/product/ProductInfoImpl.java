@@ -1,160 +1,355 @@
 package com.douglaswhitehead.model.digitaldata.product;
 
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
+
 /**
- * This object describes the product.
+ * Implementation of ProductInfo interface.
+ * 
+ * @author douglas.whitehead
+ * 
  */
-public class ProductInfoImpl implements ProductInfo {
+public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 
-	private final String productID;
-	private final String productName;
-	private final String description;
-	private final String productURL;
-	private final String productImage;
-	private final String productThumbnail;
-	private final String manufacturer;
-	private final String sku;
-	private final String color;
-	private final String size;
+	/**
+	 * String constant for <tt>productID</tt>
+	 */
+	private static final String PRODUCT_ID = "productID";
 	
+	/**
+	 * String constant for <tt>productName</tt>
+	 */
+	private static final String PRODUCT_NAME = "productName";
+	
+	/**
+	 * String constant for <tt>description</tt>
+	 */
+	private static final String DESCRIPTION = "description";
+	
+	/**
+	 * String constant for <tt>productURL</tt>
+	 */
+	private static final String PRODUCT_URL = "productURL";
+	
+	/**
+	 * String constant for <tt>productImage</tt>
+	 */
+	private static final String PRODUCT_IMAGE = "productImage";
+	
+	/**
+	 * String constant for <tt>productThumbnail</tt>
+	 */
+	private static final String PRODUCT_THUMBNAIL = "productThumbnail";
+	
+	/**
+	 * String constant for <tt>manufacturer</tt>
+	 */
+	private static final String MANUFACTURER = "manufacturer";
+	
+	/**
+	 * String constant for <tt>sku</tt>
+	 */
+	private static final String SKU = "sku";
+	
+	/**
+	 * String constant for <tt>color</tt>
+	 */
+	private static final String COLOR = "color";
+	
+	/**
+	 * String constant for <tt>size</tt>
+	 */
+	private static final String SIZE = "size";
+	
+	/**
+	 * ProductInfoImpl constructor.
+	 * 
+	 * @param Security security
+	 * @param String productID
+	 * @param String productName
+	 * @param String description
+	 * @param String productURL
+	 * @param String productImage
+	 * @param String productThumbnail
+	 * @param String manufacturer
+	 * @param String sku
+	 * @param String color
+	 * @param String size
+	 */
 	private ProductInfoImpl(
-		final String newProductID,
-		final String newProductName,
-		final String newDescription,
-		final String newProductURL,
-		final String newProductImage,
-		final String newProductThumbnail,
-		final String newManufacturer,
-		final String newSku,
-		final String newColor,
-		final String newSize
+		final Security security,
+		final String productID,
+		final String productName,
+		final String description,
+		final String productURL,
+		final String productImage,
+		final String productThumbnail,
+		final String manufacturer,
+		final String sku,
+		final String color,
+		final String size
 	) {
-		this.productID = newProductID;
-		this.productName = newProductName;
-		this.description = newDescription;
-		this.productURL = newProductURL;
-		this.productImage = newProductImage;
-		this.productThumbnail = newProductThumbnail;
-		this.manufacturer = newManufacturer;
-		this.sku = newSku;
-		this.color = newColor;
-		this.size = newSize;
+		this.security = security;
+		this.map.put(PRODUCT_ID, productID);
+		this.map.put(PRODUCT_NAME, productName);
+		this.map.put(DESCRIPTION, description);
+		this.map.put(PRODUCT_URL, productURL);
+		this.map.put(PRODUCT_IMAGE, productImage);
+		this.map.put(PRODUCT_THUMBNAIL, productThumbnail);
+		this.map.put(MANUFACTURER, manufacturer);
+		this.map.put(SKU, sku);
+		this.map.put(COLOR, color);
+		this.map.put(SIZE, size);
 	}
 	
+	/**
+	 * Returns the ProductID object.
+	 * 
+	 * @return String
+	 */
 	public String getProductID() {
-		return this.productID;
+		return (String)map.get(PRODUCT_ID);
 	}
 
+	/**
+	 * Returns the ProductName object.
+	 * 
+	 * @return String
+	 */
 	public String getProductName() {
-		return this.productName;
+		return (String)map.get(PRODUCT_NAME);
 	}
 
+	/**
+	 * Returns the Description object.
+	 * 
+	 * @return String
+	 */
 	public String getDescription() {
-		return this.description;
+		return (String)map.get(DESCRIPTION);
 	}
 
+	/**
+	 * Returns the ProductURL object.
+	 * 
+	 * @return String
+	 */
 	public String getProductURL() {
-		return this.productURL;
+		return (String)map.get(PRODUCT_URL);
 	}
 
+	/**
+	 * Returns the ProductImage object.
+	 * 
+	 * @return String
+	 */
 	public String getProductImage() {
-		return this.productImage;
+		return (String)map.get(PRODUCT_IMAGE);
 	}
 
+	/**
+	 * Returns the ProductThumbnail object.
+	 * 
+	 * @return String
+	 */
 	public String getProductThumbnail() {
-		return this.productThumbnail;
+		return (String)map.get(PRODUCT_THUMBNAIL);
 	}
 
+	/**
+	 * Returns the Manufacturer object.
+	 * 
+	 * @return String
+	 */
 	public String getManufacturer() {
-		return this.manufacturer;
+		return (String)map.get(MANUFACTURER);
 	}
 
+	/**
+	 * Returns the Sku object.
+	 * 
+	 * @return String
+	 */
 	public String getSku() {
-		return this.sku;
+		return (String)map.get(SKU);
 	}
 
+	/**
+	 * Returns the Color object.
+	 * 
+	 * @return String
+	 */
 	public String getColor() {
-		return this.color;
+		return (String)map.get(COLOR);
 	}
 
+	/**
+	 * Returns the Size object.
+	 * 
+	 * @return String
+	 */
 	public String getSize() {
-		return this.size;
+		return (String)map.get(SIZE);
 	}
 
-	public static class Builder {
-		private String nestedProductID;
-		private String nestedProductName;
-		private String nestedDescription;
-		private String nestedProductURL;
-		private String nestedProductImage;
-		private String nestedProductThumbnail;
-		private String nestedManufacturer;
-		private String nestedSku;
-		private String nestedColor;
-		private String nestedSize;
-		
-		public Builder productID(final String newProductID) {
-			this.nestedProductID = newProductID;
-			return this;
+	/**
+	 * Implementation of the ProductInfo.Builder interface.
+	 * 
+	 * @author douglas.whitehead
+	 *
+	 */
+	public static class Builder extends BaseImpl.Builder<Builder> implements ProductInfo.Builder {
+
+		/**
+		 * Builds the ProductID object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder productID(final String productID) {
+			this.map.put(PRODUCT_ID, productID);
+			this.previous = PRODUCT_ID;
+			return builder();
 		}
 		
-		public Builder productName(final String newProductName) {
-			this.nestedProductName = newProductName;
-			return this;
+		/**
+		 * Builds the ProductName object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder productName(final String productName) {
+			this.map.put(PRODUCT_NAME, productName);
+			this.previous = PRODUCT_NAME;
+			return builder();
 		}
 		
-		public Builder description(final String newDescription) {
-			this.nestedDescription = newDescription;
-			return this;
+		/**
+		 * Builds the Description object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder description(final String description) {
+			this.map.put(DESCRIPTION, description);
+			this.previous = DESCRIPTION;
+			return builder();
 		}
 		
-		public Builder productURL(final String newProductURL) {
-			this.nestedProductURL = newProductURL;
-			return this;
+		/**
+		 * Builds the ProductURL object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder productURL(final String productURL) {
+			this.map.put(PRODUCT_URL, productURL);
+			this.previous = PRODUCT_URL;
+			return builder();
 		}
 		
-		public Builder productImage(final String newProductImage) {
-			this.nestedProductImage = newProductImage;
-			return this;
+		/**
+		 * Builds the ProductImage object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder productImage(final String productImage) {
+			this.map.put(PRODUCT_IMAGE, productImage);
+			this.previous = PRODUCT_IMAGE;
+			return builder();
 		}
 		
-		public Builder productThumbnail(final String newProductThumbnail) {
-			this.nestedProductThumbnail = newProductThumbnail;
-			return this;
+		/**
+		 * Builds the ProductThumbnail object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder productThumbnail(final String productThumbnail) {
+			this.map.put(PRODUCT_THUMBNAIL, productThumbnail);
+			this.previous = PRODUCT_THUMBNAIL;
+			return builder();
 		}
 		
-		public Builder manufacturer(final String newManufacturer) {
-			this.nestedManufacturer = newManufacturer;
-			return this;
+		/**
+		 * Builds the Manufacturer object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder manufacturer(final String manufacturer) {
+			this.map.put(MANUFACTURER, manufacturer);
+			this.previous = MANUFACTURER;
+			return builder();
 		}
 		
-		public Builder sku(final String newSku) {
-			this.nestedSku = newSku;
-			return this;
+		/**
+		 * Builds the Sku object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder sku(final String sku) {
+			this.map.put(SKU, sku);
+			this.previous = SKU;
+			return builder();
+		}
+
+		/**
+		 * Builds the Color object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder color(final String color) {
+			this.map.put(COLOR, color);
+			this.previous = COLOR;
+			return builder();
 		}
 		
-		public Builder color(final String newColor) {
-			this.nestedColor = newColor;
-			return this;
+		/**
+		 * Builds the Size object.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		public Builder size(final String size) {
+			this.map.put(SIZE, size);
+			this.previous = SIZE;
+			return builder();
 		}
 		
-		public Builder size(final String newSize) {
-			this.nestedSize = newSize;
-			return this;
-		}
-		
+		/**
+		 * Builds and returns the ProductInfoImpl object.
+		 * 
+		 * @return ProductInfoImpl
+		 */
+		@Override
 		public ProductInfoImpl build() {
 			return new ProductInfoImpl(
-				nestedProductID,
-				nestedProductName,
-				nestedDescription,
-				nestedProductURL,
-				nestedProductImage,
-				nestedProductThumbnail,
-				nestedManufacturer,
-				nestedSku,
-				nestedColor,
-				nestedSize
+				security,
+				(String)map.get(PRODUCT_ID),
+				(String)map.get(PRODUCT_NAME),
+				(String)map.get(DESCRIPTION),
+				(String)map.get(PRODUCT_URL),
+				(String)map.get(PRODUCT_IMAGE),
+				(String)map.get(PRODUCT_THUMBNAIL),
+				(String)map.get(MANUFACTURER),
+				(String)map.get(SKU),
+				(String)map.get(COLOR),
+				(String)map.get(SIZE)
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 	}
 }
