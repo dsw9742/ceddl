@@ -112,7 +112,7 @@ public interface PageInfo {
 	public String getVersion();
 	
 	/**
-	 * Returns the Breadcrumbs object.
+	 * Returns the Breadcrumbs array.
 	 * 
 	 * @return String[]
 	 */
@@ -246,7 +246,7 @@ public interface PageInfo {
 		public Builder version(String version);
 		
 		/**
-		 * Builds the Breadcrumbs object.
+		 * Builds the Breadcrumbs array.
 		 * 
 		 * @return Builder
 		 */

@@ -1,87 +1,101 @@
 package com.douglaswhitehead.model.digitaldata.product;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
 import com.douglaswhitehead.model.digitaldata.common.Category;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * 6.4 Product Object
+ * Implementation of the Product interface.
  * 
- * The Product object carries details about a particular product with frequently used properties
- * listed below. This is intended for data about products displayed on pages or other content. For
- * products added to a shopping cart or ordered in a transaction, see the Cart and Transaction
- * objects below.
- *
- * The Product object and its children, where included, MUST have the following Object Names &
- * Types.
+ * @author douglas.whitehead
+ * 
  */
-public class ProductImpl implements Product {
+public class ProductImpl extends BaseImpl implements Product {
 
-	private final ProductInfo productInfo;
-	private final Category category;
-	private final Product[] linkedProduct;
-	private final Attributes attributes;
+	private final static String PRODUCT_INFO = "productInfo";
+	private final static String CATEGORY = "category";
+	private final static String LINKED_PRODUCT = "linkedProduct";
+	private final static String ATTRIBUTES = "attributes";
 	
 	private ProductImpl(
-		final ProductInfo newProductInfo,
-		final Category newCategory,
-		final Product[] newLinkedProduct,
-		final Attributes newAttributes
+		final Security security,
+		final ProductInfo productInfo,
+		final Category category,
+		final Product[] linkedProduct,
+		final Attributes attributes
 	) {
-		this.productInfo = newProductInfo;
-		this.category = newCategory;
-		this.linkedProduct = newLinkedProduct;
-		this.attributes = newAttributes;
+		this.security = security;
+		this.map.put(PRODUCT_INFO, productInfo);
+		this.map.put(CATEGORY, category);
+		this.map.put(LINKED_PRODUCT, linkedProduct);
+		this.map.put(ATTRIBUTES, attributes);
 	}
 	
+	@Override
 	public ProductInfo getProductInfo() {
-		return this.productInfo;
+		return (ProductInfo)map.get(PRODUCT_INFO);
 	}
 	
+	@Override
 	public Category getCategory() {
-		return this.category;
+		return (Category)map.get(CATEGORY);
 	}
 	
+	@Override
 	public Product[] getLinkedProduct() {
-		return this.linkedProduct;
+		return (Product[])map.get(LINKED_PRODUCT);
 	}
 	
+	@Override
 	public Attributes getAttributes() {
-		return this.attributes;
+		return (Attributes)map.get(ATTRIBUTES);
 	}
 	
-	public static class Builder {
-		private ProductInfo nestedProductInfo;
-		private Category nestedCategory;
-		private Product[] nestedLinkedProduct;
-		private Attributes nestedAttributes;
+	public static class Builder extends BaseImpl.Builder<Builder> implements Product.Builder {
 		
-		public Builder productInfo(final ProductInfo newProductInfo) {
-			this.nestedProductInfo = newProductInfo;
+		@Override
+		public Builder productInfo(final ProductInfo productInfo) {
+			this.map.put(PRODUCT_INFO, productInfo);
+			this.previous = PRODUCT_INFO;
 			return this;
 		}
 		
-		public Builder category(final Category newCategory) {
-			this.nestedCategory = newCategory;
+		@Override
+		public Builder category(final Category category) {
+			this.map.put(CATEGORY, category);
+			this.previous = CATEGORY;
 			return this;
 		}
 		
-		public Builder linkedProduct(final Product[] newLinkedProduct) {
-			this.nestedLinkedProduct = newLinkedProduct;
+		@Override
+		public Builder linkedProduct(final Product[] linkedProduct) {
+			this.map.put(LINKED_PRODUCT, linkedProduct);
+			this.previous = LINKED_PRODUCT;
 			return this;
 		}
 		
-		public Builder attributes(final Attributes newAttributes) {
-			this.nestedAttributes = newAttributes;
+		@Override
+		public Builder attributes(final Attributes attributes) {
+			this.map.put(ATTRIBUTES, attributes);
+			this.previous = ATTRIBUTES;
 			return this;
 		}
 		
+		@Override
 		public ProductImpl build() {
 			return new ProductImpl(
-				nestedProductInfo,
-				nestedCategory,
-				nestedLinkedProduct,
-				nestedAttributes
+				security,
+				(ProductInfo)map.get(PRODUCT_INFO),
+				(Category)map.get(CATEGORY),
+				(Product[])map.get(LINKED_PRODUCT),
+				(Attributes)map.get(ATTRIBUTES)
 			);
+		}
+		
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 	}
 }

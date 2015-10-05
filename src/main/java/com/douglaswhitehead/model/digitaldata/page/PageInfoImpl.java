@@ -239,7 +239,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 	}
 	
 	/**
-	 * Returns the Breadcrumbs object.
+	 * Returns the Breadcrumbs array.
 	 * 
 	 * @return String[]
 	 */
@@ -441,7 +441,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		}
 		
 		/**
-		 * Builds the Breadcrumbs object.
+		 * Builds the Breadcrumbs array.
 		 * 
 		 * @return Builder
 		 */
