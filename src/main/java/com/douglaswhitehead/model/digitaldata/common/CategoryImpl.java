@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * Implementation of the Category interface.
+ * Basic implementation of the Category interface.
  * 
  * @author douglas whitehead
  *
@@ -19,11 +19,11 @@ public class CategoryImpl extends BaseImpl implements Category {
 	 * CategoryImpl constructor.
 	 * 
 	 * @param Security security
-	 * @param Object primaryCategory
+	 * @param String primaryCategory
 	 */
 	private CategoryImpl(
 		final Security security,
-		final Object primaryCategory
+		final String primaryCategory
 		) {
 		this.security = security;
 		this.map.put(PRIMARY_CATEGORY, primaryCategory);
@@ -32,10 +32,11 @@ public class CategoryImpl extends BaseImpl implements Category {
 	/**
 	 * Returns the PrimaryCategory object.
 	 * 
-	 * @return Object
+	 * @return String
 	 */
-	public Object getPrimaryCategory() {
-		return map.get(PRIMARY_CATEGORY);
+	@Override
+	public String getPrimaryCategory() {
+		return (String)map.get(PRIMARY_CATEGORY);
 	}
 	
 	/**
@@ -44,16 +45,13 @@ public class CategoryImpl extends BaseImpl implements Category {
 	 * @author douglas whitehead
 	 *
 	 */
-	public static class Builder extends BaseImpl.Builder implements Category.Builder {
+	public static class Builder extends BaseImpl.Builder<Builder> implements Category.Builder {
 		
 		/**
-		 * Builds the Security object.
-		 * 
-		 * @param String[] accessCategories
-		 * @return Builder
+		 * Returns the Builder.
 		 */
-		public Builder security(final String[] accessCategories) {
-			this.security.secure(previous, accessCategories);
+		@Override
+		protected Builder self() {
 			return this;
 		}
 		
@@ -63,21 +61,23 @@ public class CategoryImpl extends BaseImpl implements Category {
 		 * @param String primaryCategory
 		 * @return Builder
 		 */
+		@Override
 		public Builder primaryCategory(final String primaryCategory) {
 			this.map.put(PRIMARY_CATEGORY, primaryCategory);
 			this.previous = PRIMARY_CATEGORY;
-			return this;
+			return self();
 		}
 		
 		/**
-		 * Builds the Category object.
+		 * Builds the CategoryImpl object.
 		 * 
-		 * @return Category
+		 * @return CategoryImpl
 		 */
+		@Override
 		public CategoryImpl build() {
 			return new CategoryImpl(
 				security,
-				map.get(PRIMARY_CATEGORY)
+				(String)map.get(PRIMARY_CATEGORY)
 			);
 		}
 		

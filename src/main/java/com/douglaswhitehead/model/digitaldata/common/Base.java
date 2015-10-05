@@ -11,7 +11,7 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public interface Base {
 	
 	/**
-	 * Return the Security object.
+	 * Returns the Security object.
 	 * 
 	 * @return the Security object.
 	 */
@@ -23,7 +23,15 @@ public interface Base {
 	 * @author douglas whitehead
 	 *
 	 */
-	public static interface Builder {
+	public static interface Builder<K> {
+		
+		/**
+		 * Builds the Security object.
+		 * 
+		 * @param accessCategories
+		 * @return K the Builder<K> generic
+		 */
+		public K security(String[] accessCategories);
 		
 	}
 

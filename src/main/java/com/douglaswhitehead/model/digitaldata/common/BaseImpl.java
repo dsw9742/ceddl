@@ -29,6 +29,7 @@ public abstract class BaseImpl implements Base {
 	 * 
 	 * @return Security object
 	 */
+	@Override
 	public Security getSecurity() {
 		return security;
 	}
@@ -39,7 +40,7 @@ public abstract class BaseImpl implements Base {
 	 * @author douglas whitehead
 	 *
 	 */
-	public abstract static class Builder implements Base.Builder {
+	public abstract static class Builder<K> implements Base.Builder<K> {
 		
 		/**
 		 * Builder internal LinkedHashMap to hold data layer information.
@@ -56,6 +57,25 @@ public abstract class BaseImpl implements Base {
 		 * used in the security() method of each BaseImpl.Builder extending class. 
 		 */
 		protected String previous;
+		
+		/**
+		 * Returns the Builder<K> object.
+		 * 
+		 * @return K the Builder generic
+		 */
+		protected abstract K self();
+		
+		/**
+		 * Builds the Security object. This method is only intended to be called by the BaseImpl.Builder class.
+		 * 
+		 * @param String[] accessCategories
+		 * @return K the Builder generic
+		 */
+		@Override
+		public K security(final String[] accessCategories) {
+			this.security.secure(previous, accessCategories);
+			return self();
+		}
 		
 		/**
 		 * Validates {@code previous } variable.

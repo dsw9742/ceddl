@@ -5,25 +5,21 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
-public class AddressImplTest {
+public class AttributesImplTest {
 
-	private static final String VALID = "{\"country\":\"test country\",\"stateProvince\":\"test state\",\"postalCode\":\"55555\",\"line1\":\"555 test street\",\"line2\":\"apt test\",\"city\":\"test town\"}";
+	private static final String VALID = "";
 	
 	@Test
 	public void test() throws Exception {
 		
-		Address object = new AddressImpl.Builder()
-							.line1("555 test street").security(new String[]{"Analytics"})
-							.line2("apt test").security(new String[]{"Analytics"})
-							.city("test town")
-							.stateProvince("test state")
-							.postalCode("55555")
-							.country("test country")
-						.build();
+		Attributes object = new AttributesImpl.Builder()
+								.build();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		String output = mapper.writeValueAsString(object);
 		
 		System.out.println(VALID);

@@ -21,9 +21,9 @@ public interface Category {
 	/**
 	 * Returns the PrimaryCategory object.
 	 * 
-	 * @return Object
+	 * @return String
 	 */
-	public Object getPrimaryCategory();
+	public String getPrimaryCategory();
 	
 	/**
 	 * Category.Builder inner interface.
@@ -32,13 +32,6 @@ public interface Category {
 	 *
 	 */
 	public static interface Builder {
-		
-		/**
-		 * Builds the Security object.
-		 * 
-		 * @return Builder
-		 */
-		public Builder security(String[] accessCategories);
 		
 		/**
 		 * Builds the PrimaryCategory object.

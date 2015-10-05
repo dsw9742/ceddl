@@ -16,10 +16,10 @@ public class SecurityImpl implements Security {
 	/**
 	 * Internal LinkedHashMap to hold data layer security-related information.
 	 */
-	private Map<String, Object> map = new LinkedHashMap<String, Object>();
+	protected Map<String, Object> map = new LinkedHashMap<String, Object>();
 	
 	/**
-	 * SecurityImpl constructor. This method is only intended to be called by the BaseImpl class.
+	 * SecurityImpl constructor. This method is only intended to be called by the BaseImpl.Builder class.
 	 */
 	public SecurityImpl() {
 		
@@ -36,7 +36,7 @@ public class SecurityImpl implements Security {
 	}
 
 	/**
-	 * Creates Security object for key. This method is only intended to be called by the BaseImpl class.
+	 * Creates Security object for key. This method is only intended to be called by the BaseImpl.Builder class.
 	 * 
 	 * @param String key The data layer key to which to attach the accessCategories
 	 * @param String[] accessCategories An array of accessCategories
