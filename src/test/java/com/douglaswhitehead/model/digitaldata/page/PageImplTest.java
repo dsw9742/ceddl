@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PageImplTest {
 	
-	private static final String VALID = "{\"category\":{\"primaryCategory\":\"testCat\"},\"pageInfo\":{\"language\":\"en-US\",\"variant\":\"2\",\"version\":\"1.01\",\"destinationURL\":\"http://www.test.com/search/results\",\"referringURL\":\"http://www.test.com/\",\"breadcrumbs\":[\"home\",\"search\",\"results\"],\"effectiveDate\":1052712000000,\"expiryDate\":1055390400000,\"industryCodes\":\"5140, 5141\",\"onsiteSearchTerm\":\"testing 123\",\"onsiteSearchResults\":5432,\"sysEnv\":\"desktop\",\"geoRegion\":\"US\",\"publisher\":\"Shirley J Tester\",\"issueDate\":1050120000000,\"pageId\":\"testPageId-prod\",\"pageName\":\"testPageName\",\"author\":\"Test McGee\"}}";
+	private static final String VALID = "{\"category\":{\"primaryCategory\":\"testCat\"},\"pageInfo\":{\"security\":{\"author\":[\"Analytics\"],\"publisher\":[\"Analytics\"]},\"language\":\"en-US\",\"variant\":\"2\",\"version\":\"1.01\",\"destinationURL\":\"http://www.test.com/search/results\",\"referringURL\":\"http://www.test.com/\",\"breadcrumbs\":[\"home\",\"search\",\"results\"],\"effectiveDate\":1052712000000,\"expiryDate\":1055390400000,\"industryCodes\":\"5140, 5141\",\"onsiteSearchTerm\":\"testing 123\",\"onsiteSearchResults\":5432,\"pageName\":\"testPageName\",\"geoRegion\":\"US\",\"publisher\":\"Shirley J Tester\",\"author\":\"Test McGee\",\"sysEnv\":\"desktop\",\"issueDate\":1050120000000,\"pageID\":\"testPageId-prod\"}}";
 	
 	@Test
 	public void test() throws Exception {
@@ -23,7 +23,7 @@ public class PageImplTest {
 		
 		Page object = new PageImpl.Builder()
 							.pageInfo(new PageInfoImpl.Builder()
-									.pageId("testPageId-prod")
+									.pageID("testPageId-prod")
 									.pageName("testPageName")
 									.destinationURL("http://www.test.com/search/results")
 									.referringURL("http://www.test.com/")
@@ -31,16 +31,16 @@ public class PageImplTest {
 									.variant("2")
 									.version("1.01")
 									.breadcrumbs(new String[]{"home", "search", "results"})
-									.author("Test McGee")
+									.author("Test McGee").security(new String[]{"Analytics"})
 									.issueDate(issueDate)
 									.effectiveDate(effectiveDate)
 									.expiryDate(expiryDate)
 									.language("en-US")
 									.geoRegion("US")
 									.industryCodes("5140, 5141")
-									.publisher("Shirley J Tester")
+									.publisher("Shirley J Tester").security(new String[]{"Analytics"})
 									.onsiteSearchTerm("testing 123")
-									.onsiteSearchResults(5432)
+									.onsiteSearchResults(Long.valueOf(5432))
 								.build())
 							.category(new CategoryImpl.Builder()
 												.primaryCategory("testCat")

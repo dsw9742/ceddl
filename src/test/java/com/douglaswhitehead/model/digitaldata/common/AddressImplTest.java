@@ -21,7 +21,7 @@ public class AddressImplTest {
 							.postalCode("55555")
 							.country("test country")
 						.build();
-		
+
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		String output = mapper.writeValueAsString(object);

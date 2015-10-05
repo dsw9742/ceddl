@@ -9,14 +9,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class AttributesImplTest {
 
-	private static final String VALID = "";
+	private static final String VALID = "{}";
 	
 	@Test
 	public void test() throws Exception {
 		
 		Attributes object = new AttributesImpl.Builder()
 								.build();
-		
+
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);

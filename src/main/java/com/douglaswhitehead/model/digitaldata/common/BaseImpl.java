@@ -22,7 +22,7 @@ public abstract class BaseImpl implements Base {
 	/**
 	 * Internal Security object to hold security-related information.
 	 */
-	protected Security security = new SecurityImpl();
+	protected Security security;
 	
 	/**
 	 * Returns the Security object.
@@ -50,7 +50,7 @@ public abstract class BaseImpl implements Base {
 		/**
 		 * Builder internal Security object to hold security-related information.
 		 */
-		protected Security security = new SecurityImpl();
+		protected Security security;
 		
 		/**
 		 * Builder previous variable to hold name of most recent object map key. This variable is intended to be 
@@ -73,6 +73,9 @@ public abstract class BaseImpl implements Base {
 		 */
 		@Override
 		public K security(final String[] accessCategories) {
+			if (security == null) {
+				security = new SecurityImpl();
+			}
 			this.security.secure(previous, accessCategories);
 			return self();
 		}

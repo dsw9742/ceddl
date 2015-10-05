@@ -49,6 +49,8 @@ public class CategoryImpl extends BaseImpl implements Category {
 		
 		/**
 		 * Returns the Builder.
+		 * 
+		 * @return Builder
 		 */
 		@Override
 		protected Builder self() {

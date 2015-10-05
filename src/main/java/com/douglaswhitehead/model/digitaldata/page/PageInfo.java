@@ -188,6 +188,12 @@ public interface PageInfo {
 	 */
 	public Long getOnsiteSearchResults();
 	
+	/**
+	 * PageInfo.Builder inner interface.
+	 * 
+	 * @author douglas.whitehead
+	 *
+	 */
 	public static interface Builder {
 		
 		/**
