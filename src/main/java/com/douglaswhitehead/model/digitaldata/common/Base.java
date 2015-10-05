@@ -13,12 +13,12 @@ public interface Base {
 	/**
 	 * Return the Security object.
 	 * 
-	 * @return Security object.
+	 * @return the Security object.
 	 */
 	public Security getSecurity();
 	
 	/**
-	 * Builder inner interface for Base interface.
+	 * Base.Builder inner interface.
 	 * 
 	 * @author douglas whitehead
 	 *

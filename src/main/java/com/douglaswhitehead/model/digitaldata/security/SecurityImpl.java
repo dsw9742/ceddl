@@ -14,10 +14,13 @@ import com.fasterxml.jackson.annotation.JsonAnyGetter;
 public class SecurityImpl implements Security {
 
 	/**
-	 * Internal LinkedHashMap to hold data layer Security-related information.
+	 * Internal LinkedHashMap to hold data layer security-related information.
 	 */
 	private Map<String, Object> map = new LinkedHashMap<String, Object>();
 	
+	/**
+	 * SecurityImpl constructor. This method is only intended to be called by the BaseImpl class.
+	 */
 	public SecurityImpl() {
 		
 	}
@@ -25,7 +28,7 @@ public class SecurityImpl implements Security {
 	/**
 	 * Returns SecurityImpl as contents of map.
 	 * 
-	 * @return Map<String, Object>
+	 * @return Map<String, Object> the Map of security-related information
 	 */
 	@JsonAnyGetter
 	public Map<String, Object> getMap() {
@@ -33,13 +36,13 @@ public class SecurityImpl implements Security {
 	}
 
 	/**
-	 * Creates Security object for key.
+	 * Creates Security object for key. This method is only intended to be called by the BaseImpl class.
 	 * 
-	 * @param String key
-	 * @param Object value
+	 * @param String key The data layer key to which to attach the accessCategories
+	 * @param String[] accessCategories An array of accessCategories
 	 */
 	@Override
-	public void secure(final String key, final Object value) {
+	public void secure(final String key, final String[] value) {
 		this.map.put(key, value);
 	}
 

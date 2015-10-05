@@ -39,7 +39,7 @@ public abstract class BaseImpl implements Base {
 	 * @author douglas whitehead
 	 *
 	 */
-	public abstract static class Builder {
+	public abstract static class Builder implements Base.Builder {
 		
 		/**
 		 * Builder internal LinkedHashMap to hold data layer information.

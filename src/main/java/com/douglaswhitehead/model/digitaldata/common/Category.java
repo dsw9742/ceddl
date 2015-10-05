@@ -1,15 +1,57 @@
 package com.douglaswhitehead.model.digitaldata.common;
 
+/**
+ * <p>Category interface.</p>
+ * 
+ * <p>From the W3C CEDDL specification:</p>
+ * 
+ * <p>
+ * Because of the wide range of methods for categorization, an object literal is provided for object
+ * categories.
+ * </p>
+ *
+ * <p>
+ * The name primaryCategory is RECOMMENDED if you included only one set of categories
+ * for objects, or for your primary set of categories. All other names are optional and should fit the
+ * individual implementation needs in both naming and values passed.
+ * </p>
+ */
 public interface Category {
 	
+	/**
+	 * Returns the PrimaryCategory object.
+	 * 
+	 * @return Object
+	 */
 	public Object getPrimaryCategory();
 	
+	/**
+	 * Category.Builder inner interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
 	public static interface Builder {
 		
-		public Builder security();
+		/**
+		 * Builds the Security object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder security(String[] accessCategories);
 		
-		public Builder primaryCategory();
+		/**
+		 * Builds the PrimaryCategory object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder primaryCategory(String primaryCategory);
 		
+		/**
+		 * Builds the Category object.
+		 * 
+		 * @return Category
+		 */
 		public Category build();
 		
 	}
