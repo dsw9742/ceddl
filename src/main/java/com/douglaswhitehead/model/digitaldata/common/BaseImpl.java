@@ -63,7 +63,7 @@ public abstract class BaseImpl implements Base {
 		 * 
 		 * @return K the Builder generic
 		 */
-		protected abstract K self();
+		protected abstract K builder();
 		
 		/**
 		 * Builds the Security object. This method is only intended to be called by the BaseImpl.Builder class.
@@ -77,7 +77,7 @@ public abstract class BaseImpl implements Base {
 				security = new SecurityImpl();
 			}
 			this.security.secure(previous, accessCategories);
-			return self();
+			return builder();
 		}
 		
 		/**

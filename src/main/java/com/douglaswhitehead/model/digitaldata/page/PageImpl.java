@@ -91,7 +91,7 @@ public class PageImpl extends BaseImpl implements Page {
 		public Builder pageInfo(final PageInfo pageInfo) {
 			this.map.put(PAGE_INFO, pageInfo);
 			this.previous = PAGE_INFO;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -102,7 +102,7 @@ public class PageImpl extends BaseImpl implements Page {
 		public Builder category(final Category category) {
 			this.map.put(CATEGORY, category);
 			this.previous = CATEGORY;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -113,7 +113,7 @@ public class PageImpl extends BaseImpl implements Page {
 		public Builder attributes(final Attributes attributes) {
 			this.map.put(ATTRIBUTES, attributes);
 			this.previous = ATTRIBUTES;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -136,7 +136,7 @@ public class PageImpl extends BaseImpl implements Page {
 		 * @return Builder
 		 */
 		@Override
-		protected Builder self() {
+		protected Builder builder() {
 			return this;
 		}
 	}

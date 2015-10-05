@@ -140,7 +140,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		 * @return Builder
 		 */
 		@Override
-		protected Builder self() {
+		protected Builder builder() {
 			return this;
 		}
 		
@@ -153,7 +153,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder line1(final String line1) {
 			this.map.put(LINE_1, line1);
 			this.previous = LINE_1;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -165,7 +165,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder line2(final String line2) {
 			this.map.put(LINE_2, line2);
 			this.previous = LINE_2;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -177,7 +177,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder city(final String city) {
 			this.map.put(CITY, city);
 			this.previous = CITY;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -189,7 +189,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder stateProvince(final String stateProvince) {
 			this.map.put(STATE_PROVINCE, stateProvince);
 			this.previous = STATE_PROVINCE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -201,7 +201,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder postalCode(final String postalCode) {
 			this.map.put(POSTAL_CODE, postalCode);
 			this.previous = POSTAL_CODE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -213,7 +213,7 @@ public class AddressImpl extends BaseImpl implements Address {
 		public Builder country(final String country) {
 			this.map.put(COUNTRY, country);
 			this.previous = COUNTRY;
-			return self();
+			return builder();
 		}
 		
 		/**

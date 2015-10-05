@@ -365,7 +365,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder pageID(final String pageId) {
 			this.map.put(PAGE_ID, pageId);
 			this.previous = PAGE_ID;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -377,7 +377,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder pageName(final String pageName) {
 			this.map.put(PAGE_NAME, pageName);
 			this.previous = PAGE_NAME;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -389,7 +389,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder destinationURL(final String destinationURL) {
 			this.map.put(DESTINATION_URL, destinationURL);
 			this.previous = DESTINATION_URL;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -401,7 +401,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder referringURL(final String referringURL) {
 			this.map.put(REFERRING_URL, referringURL);
 			this.previous = REFERRING_URL;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -413,7 +413,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder sysEnv(final String sysEnv) {
 			this.map.put(SYS_ENV, sysEnv);
 			this.previous = SYS_ENV;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -425,7 +425,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder variant(final String variant) {
 			this.map.put(VARIANT, variant);
 			this.previous = VARIANT;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -437,7 +437,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder version(final String version) {
 			this.map.put(VERSION, version);
 			this.previous = VERSION;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -449,7 +449,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder breadcrumbs(final String[] breadcrumbs) {
 			this.map.put(BREADCRUMBS, breadcrumbs);
 			this.previous = BREADCRUMBS;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -461,7 +461,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder author(final String author) {
 			this.map.put(AUTHOR, author);
 			this.previous = AUTHOR;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -473,7 +473,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder issueDate(final Date issueDate) {
 			this.map.put(ISSUE_DATE, issueDate);
 			this.previous = ISSUE_DATE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -485,7 +485,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder effectiveDate(final Date effectiveDate) {
 			this.map.put(EFFECTIVE_DATE, effectiveDate);
 			this.previous = EFFECTIVE_DATE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -497,7 +497,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder expiryDate(final Date expiryDate) {
 			this.map.put(EXPIRY_DATE, expiryDate);
 			this.previous = EXPIRY_DATE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -509,7 +509,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder language(final String language) {
 			this.map.put(LANGUAGE, language);
 			this.previous = LANGUAGE;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -521,7 +521,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder geoRegion(final String geoRegion) {
 			this.map.put(GEO_REGION, geoRegion);
 			this.previous = GEO_REGION;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -533,7 +533,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder industryCodes(final String industryCodes) {
 			this.map.put(INDUSTRY_CODES, industryCodes);
 			this.previous = INDUSTRY_CODES;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -545,7 +545,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder publisher(final String publisher) {
 			this.map.put(PUBLISHER, publisher);
 			this.previous = PUBLISHER;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -557,7 +557,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder onsiteSearchTerm(final String onsiteSearchTerm) {
 			this.map.put(ONSITE_SEARCH_TERM, onsiteSearchTerm);
 			this.previous = ONSITE_SEARCH_TERM;
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -569,7 +569,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		public Builder onsiteSearchResults(final Long onsiteSearchResults) {
 			this.map.put(ONSITE_SEARCH_RESULTS, onsiteSearchResults);
 			this.previous = ONSITE_SEARCH_RESULTS; 
-			return self();
+			return builder();
 		}
 		
 		/**
@@ -607,7 +607,7 @@ public class PageInfoImpl extends BaseImpl implements PageInfo {
 		 * @return Builder
 		 */
 		@Override
-		protected Builder self() {
+		protected Builder builder() {
 			return this;
 		}
 	}

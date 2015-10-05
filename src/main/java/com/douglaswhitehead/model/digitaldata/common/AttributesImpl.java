@@ -35,7 +35,7 @@ public class AttributesImpl extends BaseImpl implements Attributes {
 		 * @return Builder
 		 */
 		@Override
-		protected Builder self() {
+		protected Builder builder() {
 			return this;
 		}
 		

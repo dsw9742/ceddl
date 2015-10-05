@@ -53,7 +53,7 @@ public class CategoryImpl extends BaseImpl implements Category {
 		 * @return Builder
 		 */
 		@Override
-		protected Builder self() {
+		protected Builder builder() {
 			return this;
 		}
 		
@@ -67,7 +67,7 @@ public class CategoryImpl extends BaseImpl implements Category {
 		public Builder primaryCategory(final String primaryCategory) {
 			this.map.put(PRIMARY_CATEGORY, primaryCategory);
 			this.previous = PRIMARY_CATEGORY;
-			return self();
+			return builder();
 		}
 		
 		/**
