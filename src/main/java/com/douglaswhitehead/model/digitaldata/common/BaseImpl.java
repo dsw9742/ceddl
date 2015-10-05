@@ -7,7 +7,7 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 import com.douglaswhitehead.model.digitaldata.security.SecurityImpl;
 
 /**
- * Base class implementation. Provides base internal objects as well as base security functionality.
+ * Implementation of Base interface. Provides base internal objects as well as base security functionality.
  * 
  * @author douglas whitehead
  *
@@ -20,12 +20,12 @@ public abstract class BaseImpl implements Base {
 	protected Map<String, Object> map = new LinkedHashMap<String, Object>();
 	
 	/**
-	 * Internal Security object to hold security information.
+	 * Internal Security object to hold security-related information.
 	 */
 	protected Security security = new SecurityImpl();
 	
 	/**
-	 * Return the Security object.
+	 * Returns the Security object.
 	 * 
 	 * @return Security object
 	 */
@@ -34,7 +34,7 @@ public abstract class BaseImpl implements Base {
 	}
 	
 	/**
-	 * Builder inner class for Base implementation.
+	 * Implementation of Base.Builder interface.
 	 * 
 	 * @author douglas whitehead
 	 *
@@ -47,7 +47,7 @@ public abstract class BaseImpl implements Base {
 		protected Map<String, Object> map = new LinkedHashMap<String, Object>();
 		
 		/**
-		 * Builder internal Security object to hold security information.
+		 * Builder internal Security object to hold security-related information.
 		 */
 		protected Security security = new SecurityImpl();
 		
@@ -58,7 +58,7 @@ public abstract class BaseImpl implements Base {
 		protected String previous;
 		
 		/**
-		 * Validates previous variable.
+		 * Validates {@code previous } variable.
 		 * 
 		 * @throws IllegalStateException if no valid data layer field precedes the call to BaseImpl.Builder 
 		 * extending class security() method. 

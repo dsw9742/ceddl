@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * Base class interface. Provides base security functionality.
+ * Base interface. Provides base security functionality.
  * 
  * @author douglas whitehead
  *
