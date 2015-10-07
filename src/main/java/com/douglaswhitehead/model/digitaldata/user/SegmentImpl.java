@@ -1,25 +1,54 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-/**
- * This object provides population segmentation information for the user, such as premium versus
- * basic membership, or any other forms of segmentation that are desirable. Any additional
- * dimensions related to the user can be provided. All names are optional and should fit the
- * individual implementation needs in both naming and values passed.
- */
-public class SegmentImpl implements Segment {
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
+/**
+ * Minimal implementation of the Segment interface.
+ * 
+ * @author douglas whitehead
+ * 
+ */
+public class SegmentImpl extends BaseImpl implements Segment {
+
+	/**
+	 * PriceImpl constructor.
+	 * 
+	 * @param Security security
+	 */
 	private SegmentImpl(
-		
+		final Security security
 	) {
-		
+		this.security = security;
 	}
 	
-	public static class Builder {
+	/**
+	 * Implementation of the Segment.Builder interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
+	public static class Builder extends BaseImpl.Builder<Builder> implements Segment.Builder {
 		
+		/**
+		 * Builds and returns the SegmentImpl object.
+		 * 
+		 * @return SegmentImpl
+		 */
 		public SegmentImpl build() {
 			return new SegmentImpl(
-				
+				security
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 		
 	}

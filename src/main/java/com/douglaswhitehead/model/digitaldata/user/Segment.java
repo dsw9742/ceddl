@@ -17,8 +17,19 @@ package com.douglaswhitehead.model.digitaldata.user;
  */
 public interface Segment {
 
+	/**
+	 * Segment.Builder inner interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
 	public static interface Builder {
 		
+		/**
+		 * Builds and returns the Segment object.
+		 * 
+		 * @return Segment
+		 */
 		public Segment build();
 		
 	}
