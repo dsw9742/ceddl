@@ -11,7 +11,7 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class CategoryImpl extends BaseImpl implements Category {
 	
 	/**
-	 * String constant for <tt>primaryCategory</tt>
+	 * String constant for <tt>primaryCategory</tt>.
 	 */
 	private static final String PRIMARY_CATEGORY = "primaryCategory";
 	

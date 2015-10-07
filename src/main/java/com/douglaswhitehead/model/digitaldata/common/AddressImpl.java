@@ -8,32 +8,32 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class AddressImpl extends BaseImpl implements Address {
 
 	/**
-	 * String constant for <tt>line1</tt>
+	 * String constant for <tt>line1</tt>.
 	 */
 	private static final String LINE_1 = "line1";
 	
 	/**
-	 * String constant for <tt>line2</tt>
+	 * String constant for <tt>line2</tt>.
 	 */
 	private static final String LINE_2 = "line2";
 	
 	/**
-	 * String constant for <tt>city</tt>
+	 * String constant for <tt>city</tt>.
 	 */
 	private static final String CITY = "city";
 	
 	/**
-	 * String constant for <tt>stateProvince</tt>
+	 * String constant for <tt>stateProvince</tt>.
 	 */
 	private static final String STATE_PROVINCE = "stateProvince";
 	
 	/**
-	 * String constant for <tt>postalCode</tt>
+	 * String constant for <tt>postalCode</tt>.
 	 */
 	private static final String POSTAL_CODE = "postalCode";
 	
 	/**
-	 * String constant for <tt>country</tt>
+	 * String constant for <tt>country</tt>.
 	 */
 	private static final String COUNTRY = "country";
 	

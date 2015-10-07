@@ -14,17 +14,17 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class PageImpl extends BaseImpl implements Page {
 	
 	/**
-	 * String constant for <tt>pageInfo</tt>
+	 * String constant for <tt>pageInfo</tt>.
 	 */
 	private static final String PAGE_INFO = "pageInfo";
 	
 	/**
-	 * String constant for <tt>category</tt>
+	 * String constant for <tt>category</tt>.
 	 */
 	private static final String CATEGORY = "category";
 	
 	/**
-	 * String constant for <tt>attributes</tt>
+	 * String constant for <tt>attributes</tt>.
 	 */
 	private static final String ATTRIBUTES = "attributes";
 	

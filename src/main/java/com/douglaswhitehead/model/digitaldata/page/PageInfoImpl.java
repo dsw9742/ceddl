@@ -14,92 +14,92 @@ import com.douglaswhitehead.model.digitaldata.security.Security;
 public class PageInfoImpl extends BaseImpl implements PageInfo {
 	
 	/**
-	 * String constant for <tt>pageID</tt>
+	 * String constant for <tt>pageID</tt>.
 	 */
 	private static final String PAGE_ID = "pageId";
 	
 	/**
-	 * String constant for <tt>pageName</tt>
+	 * String constant for <tt>pageName</tt>.
 	 */
 	private static final String PAGE_NAME = "pageName";
 	
 	/**
-	 * String constant for <tt>destinationURL</tt>
+	 * String constant for <tt>destinationURL</tt>.
 	 */
 	private static final String DESTINATION_URL = "destinationURL";
 	
 	/**
-	 * String constant for <tt>referringURL</tt>
+	 * String constant for <tt>referringURL</tt>.
 	 */
 	private static final String REFERRING_URL = "referringURL";
 	
 	/**
-	 * String constant for <tt>sysEnv</tt>
+	 * String constant for <tt>sysEnv</tt>.
 	 */
 	private static final String SYS_ENV = "sysEnv";
 	
 	/**
-	 * String constant for <tt>variant</tt>
+	 * String constant for <tt>variant</tt>.
 	 */
 	private static final String VARIANT = "variant";
 	
 	/**
-	 * String constant for <tt>version</tt>
+	 * String constant for <tt>version</tt>.
 	 */
 	private static final String VERSION = "version";
 	
 	/**
-	 * String constant for <tt>breadcrumbs</tt>
+	 * String constant for <tt>breadcrumbs</tt>.
 	 */
 	private static final String BREADCRUMBS = "breadcrumbs";
 	
 	/**
-	 * String constant for <tt>author</tt>
+	 * String constant for <tt>author</tt>.
 	 */
 	private static final String AUTHOR = "author";
 	
 	/**
-	 * String constant for <tt>issueDate</tt>
+	 * String constant for <tt>issueDate</tt>.
 	 */
 	private static final String ISSUE_DATE = "issueDate";
 	
 	/**
-	 * String constant for <tt>effectiveDate</tt>
+	 * String constant for <tt>effectiveDate</tt>.
 	 */
 	private static final String EFFECTIVE_DATE = "effectiveDate";
 	
 	/**
-	 * String constant for <tt>expiryDate</tt>
+	 * String constant for <tt>expiryDate</tt>.
 	 */
 	private static final String EXPIRY_DATE = "expiryDate";
 	
 	/**
-	 * String constant for <tt>language</tt>
+	 * String constant for <tt>language</tt>.
 	 */
 	private static final String LANGUAGE = "language";
 	
 	/**
-	 * String constant for <tt>geoRegion</tt>
+	 * String constant for <tt>geoRegion</tt>.
 	 */
 	private static final String GEO_REGION = "geoRegion";
 	
 	/**
-	 * String constant for <tt>industryCodes</tt>
+	 * String constant for <tt>industryCodes</tt>.
 	 */
 	private static final String INDUSTRY_CODES = "industryCodes";
 	
 	/**
-	 * String constant for <tt>publisher</tt>
+	 * String constant for <tt>publisher</tt>.
 	 */
 	private static final String PUBLISHER = "publisher";
 	
 	/**
-	 * String constant for <tt>onsiteSearchTerm</tt>
+	 * String constant for <tt>onsiteSearchTerm</tt>.
 	 */
 	private static final String ONSITE_SEARCH_TERM = "onsiteSearchTerm";
 	
 	/**
-	 * String constant for <tt>onsiteSearchResults</tt>
+	 * String constant for <tt>onsiteSearchResults</tt>.
 	 */
 	private static final String ONSITE_SEARCH_RESULTS = "onsiteSearchResults";
 	
