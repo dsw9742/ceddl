@@ -1,83 +1,96 @@
 package com.douglaswhitehead.model.digitaldata.cart;
 
 import com.douglaswhitehead.model.digitaldata.common.Attributes;
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
 import com.douglaswhitehead.model.digitaldata.common.Item;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * 6.5 Cart Object
+ * Implementation of the Cart interface.
  * 
- * The Cart object carries details about a shopping cart or basket and the products that have been
- * added to it. The Cart object is intended for a purchase that has not yet been completed. See the
- * Transaction object below for completed orders.
+ * @author douglas whitehead
+ *
  */
-public class CartImpl implements Cart {
+public class CartImpl extends BaseImpl implements Cart {
 
-	private final String cartID;
-	private final Price price;
-	private final Attributes attributes;
-	private final Item[] item;
+	private final static String CART_ID = "cartID";
+	private final static String PRICE = "price";
+	private final static String ATTRIBUTES = "attributes";
+	private final static String ITEM = "item";
 	
 	private CartImpl(
-		final String newCartID,
-		final Price newPrice,
-		final Attributes newAttributes,
-		final Item[] newItem
+		final Security security,
+		final String cartID,
+		final Price price,
+		final Attributes attributes,
+		final Item[] item
 	) {
-		this.cartID = newCartID;
-		this.price = newPrice;
-		this.attributes = newAttributes;
-		this.item = newItem;
+		this.security = security;
+		this.map.put(CART_ID, cartID);
+		this.map.put(PRICE, price);
+		this.map.put(ATTRIBUTES, attributes);
+		this.map.put(ITEM, item);
 	}
 	
 	public String getCartID() {
-		return cartID;
+		return (String)map.get(CART_ID);
 	}
 	
 	public Price getPrice() {
-		return price;
+		return (Price)map.get(PRICE);
 	}
 	
 	public Attributes getAttributes() {
-		return attributes;
+		return (Attributes)map.get(ATTRIBUTES);
 	}
 	
 	public Item[] getItem() {
-		return item;
+		return (Item[])map.get(ITEM);
 	}
 	
-	public static class Builder {
-		private String nestedCartID;
-		private Price nestedPrice;
-		private Attributes nestedAttributes;
-		private Item[] nestedItem;
-		
-		public Builder cartID(final String newCartID) {
-			this.nestedCartID = newCartID;
-			return this;
+	public static class Builder extends BaseImpl.Builder<Builder> implements Cart.Builder {
+
+		public Builder cartID(final String cartID) {
+			this.map.put(CART_ID, cartID);
+			this.previous = CART_ID;
+			return builder();
 		}
 		
-		public Builder price(final Price newPrice) {
-			this.nestedPrice = newPrice;
-			return this;
+		public Builder price(final Price price) {
+			this.map.put(PRICE, price);
+			this.previous = PRICE;
+			return builder();
 		}
 
-		public Builder attributes(final Attributes newAttributes) {
-			this.nestedAttributes = newAttributes;
-			return this;
+		public Builder attributes(final Attributes attributes) {
+			this.map.put(ATTRIBUTES, attributes);
+			this.previous = ATTRIBUTES;
+			return builder();
 		}
 		
-		public Builder item(final Item[] newItem) {
-			this.nestedItem = newItem;
-			return this;
+		public Builder item(final Item[] item) {
+			this.map.put(ITEM, item);
+			this.previous = ITEM;
+			return builder();
 		}
 		
 		public CartImpl build() {
 			return new CartImpl(
-				nestedCartID,
-				nestedPrice,
-				nestedAttributes,
-				nestedItem
+				security,
+				(String)map.get(CART_ID),
+				(Price)map.get(PRICE),
+				(Attributes)map.get(ATTRIBUTES),
+				(Item[])map.get(ITEM)
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		protected Builder builder() {
+			return this;
 		}
 	}
 }

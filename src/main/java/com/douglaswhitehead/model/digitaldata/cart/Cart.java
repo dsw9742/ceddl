@@ -67,28 +67,28 @@ public interface Cart {
 		 * 
 		 * @return Builder
 		 */
-		public Builder cartID();
+		public Builder cartID(String cartID);
 		
 		/**
 		 * Builds the Price object.
 		 * 
 		 * @return Builder
 		 */
-		public Builder price();
+		public Builder price(Price price);
 		
 		/**
 		 * Builds the Attributes object.
 		 * 
 		 * @return Builder
 		 */
-		public Builder attributes();
+		public Builder attributes(Attributes attributes);
 		
 		/**
 		 * Builds the Item array.
 		 * 
 		 * @return Builder
 		 */
-		public Builder item();
+		public Builder item(Item[] item);
 		
 		/**
 		 * Builds and returns the Cart object.
