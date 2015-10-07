@@ -35,6 +35,7 @@ public class SocialImpl extends BaseImpl implements Social {
 		 * 
 		 * @return SocialImpl
 		 */
+		@Override
 		public SocialImpl build() {
 			return new SocialImpl(
 				security

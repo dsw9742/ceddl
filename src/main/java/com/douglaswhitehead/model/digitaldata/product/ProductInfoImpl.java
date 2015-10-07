@@ -107,6 +107,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getProductID() {
 		return (String)map.get(PRODUCT_ID);
 	}
@@ -116,6 +117,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getProductName() {
 		return (String)map.get(PRODUCT_NAME);
 	}
@@ -125,6 +127,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getDescription() {
 		return (String)map.get(DESCRIPTION);
 	}
@@ -134,6 +137,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getProductURL() {
 		return (String)map.get(PRODUCT_URL);
 	}
@@ -143,6 +147,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getProductImage() {
 		return (String)map.get(PRODUCT_IMAGE);
 	}
@@ -152,6 +157,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getProductThumbnail() {
 		return (String)map.get(PRODUCT_THUMBNAIL);
 	}
@@ -161,6 +167,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getManufacturer() {
 		return (String)map.get(MANUFACTURER);
 	}
@@ -170,6 +177,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getSku() {
 		return (String)map.get(SKU);
 	}
@@ -179,6 +187,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getColor() {
 		return (String)map.get(COLOR);
 	}
@@ -188,6 +197,7 @@ public class ProductInfoImpl extends BaseImpl implements ProductInfo {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getSize() {
 		return (String)map.get(SIZE);
 	}

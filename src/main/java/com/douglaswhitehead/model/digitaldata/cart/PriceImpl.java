@@ -101,6 +101,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getBasePrice() {
 		return (BigDecimal)map.get(BASE_PRICE);
 	}
@@ -110,6 +111,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getVoucherCode() {
 		return (String)map.get(VOUCHER_CODE);
 	}
@@ -119,6 +121,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getVoucherDiscount() {
 		return (BigDecimal)map.get(VOUCHER_DISCOUNT);
 	}
@@ -128,6 +131,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getCurrency() {
 		return (String)map.get(CURRENCY);
 	}
@@ -137,6 +141,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getTaxRate() {
 		return (BigDecimal)map.get(TAX_RATE);
 	}
@@ -146,6 +151,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getShipping() {
 		return (BigDecimal)map.get(SHIPPING);
 	}
@@ -155,6 +161,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getShippingMethod() {
 		return (String)map.get(SHIPPING_METHOD);
 	}
@@ -164,6 +171,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getPriceWithTax() {
 		return (BigDecimal)map.get(PRICE_WITH_TAX);
 	}
@@ -173,6 +181,7 @@ public class PriceImpl extends BaseImpl implements Price {
 	 * 
 	 * @return BigDecimal
 	 */
+	@Override
 	public BigDecimal getCartTotal() {
 		return (BigDecimal)map.get(CART_TOTAL);
 	}
@@ -191,6 +200,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal BasePrice
 		 * @return Builder
 		 */
+		@Override
 		public Builder basePrice(final BigDecimal basePrice) {
 			this.map.put(BASE_PRICE, basePrice);
 			this.previous = BASE_PRICE;
@@ -203,6 +213,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param String VoucherCode
 		 * @return Builder
 		 */
+		@Override
 		public Builder voucherCode(final String voucherCode) {
 			this.map.put(VOUCHER_CODE, voucherCode);
 			this.previous = VOUCHER_CODE;
@@ -215,6 +226,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal VoucherDiscount
 		 * @return Builder
 		 */
+		@Override
 		public Builder voucherDiscount(final BigDecimal voucherDiscount) {
 			this.map.put(VOUCHER_DISCOUNT, voucherDiscount);
 			this.previous = VOUCHER_DISCOUNT;
@@ -227,6 +239,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param String currency
 		 * @return Builder
 		 */
+		@Override
 		public Builder currency(final String currency) {
 			this.map.put(CURRENCY, currency);
 			this.previous = CURRENCY;
@@ -239,6 +252,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal taxRate
 		 * @return Builder
 		 */
+		@Override
 		public Builder taxRate(final BigDecimal taxRate) {
 			this.map.put(TAX_RATE, taxRate);
 			this.previous = TAX_RATE;
@@ -251,6 +265,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal shipping
 		 * @return Builder
 		 */
+		@Override
 		public Builder shipping(final BigDecimal shipping) {
 			this.map.put(SHIPPING, shipping);
 			this.previous = SHIPPING;
@@ -263,6 +278,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param String shippingMethod
 		 * @return Builder
 		 */
+		@Override
 		public Builder shippingMethod(final String shippingMethod) {
 			this.map.put(SHIPPING_METHOD, shippingMethod);
 			this.previous = SHIPPING_METHOD;
@@ -275,6 +291,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal priceWithTax
 		 * @return Builder
 		 */
+		@Override
 		public Builder priceWithTax(final BigDecimal priceWithTax) {
 			this.map.put(PRICE_WITH_TAX, priceWithTax);
 			this.previous = PRICE_WITH_TAX;
@@ -287,6 +304,7 @@ public class PriceImpl extends BaseImpl implements Price {
 		 * @param BigDecimal cartTotal
 		 * @return Builder
 		 */
+		@Override
 		public Builder cartTotal(final BigDecimal cartTotal) {
 			this.map.put(CART_TOTAL, cartTotal);
 			this.previous = CART_TOTAL;

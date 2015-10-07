@@ -138,6 +138,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String profileID
 		 * @return Builder
 		 */
+		@Override
 		public Builder profileID(final String profileID) {
 			this.map.put(PROFILE_ID, profileID);
 			this.previous = PROFILE_ID;
@@ -150,6 +151,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String userName
 		 * @return Builder
 		 */
+		@Override
 		public Builder userName(final String userName) {
 			this.map.put(USER_NAME, userName);
 			this.previous = USER_NAME;
@@ -162,6 +164,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String email
 		 * @return Builder
 		 */
+		@Override
 		public Builder email(final String email) {
 			this.map.put(EMAIL, email);
 			this.previous = EMAIL;
@@ -174,6 +177,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String language
 		 * @return Builder
 		 */
+		@Override
 		public Builder language(final String language) {
 			this.map.put(LANGUAGE, language);
 			this.previous = LANGUAGE;
@@ -186,6 +190,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String returningStatus
 		 * @return Builder
 		 */
+		@Override
 		public Builder returningStatus(final String returningStatus) {
 			this.map.put(RETURNING_STATUS, returningStatus);
 			this.previous = RETURNING_STATUS;
@@ -198,6 +203,7 @@ public class ProfileInfoImpl extends BaseImpl implements ProfileInfo {
 		 * @param String type
 		 * @return Builder
 		 */
+		@Override
 		public Builder type(final String type) {
 			this.map.put(TYPE, type);
 			this.previous = TYPE;

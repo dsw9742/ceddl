@@ -77,6 +77,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return ProductInfo
 	 */
+	@Override
 	public ProductInfo getProductInfo() {
 		return (ProductInfo)map.get(PRODUCT_INFO);
 	}
@@ -86,6 +87,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return Category
 	 */
+	@Override
 	public Category getCategory() {
 		return (Category)map.get(CATEGORY);
 	}
@@ -95,6 +97,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return Integer
 	 */
+	@Override
 	public Integer getQuantity() {
 		return (Integer)map.get(QUANTITY);
 	}
@@ -104,6 +107,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return Price
 	 */
+	@Override
 	public Price getPrice() {
 		return (Price)map.get(PRICE);
 	}
@@ -113,6 +117,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return Product[]
 	 */
+	@Override
 	public Product[] getLinkedProduct() {
 		return (Product[])map.get(LINKED_PRODUCT);
 	}
@@ -122,6 +127,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * 
 	 * @return Attributes
 	 */
+	@Override
 	public Attributes getAttributes() {
 		return (Attributes)map.get(ATTRIBUTES);
 	}
@@ -140,6 +146,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param ProductInfo productInfo
 		 * @return Builder
 		 */
+		@Override
 		public Builder productInfo(final ProductInfo productInfo) {
 			this.map.put(PRODUCT_INFO, productInfo);
 			this.previous = PRODUCT_INFO;
@@ -152,6 +159,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param Category category
 		 * @return Builder
 		 */
+		@Override
 		public Builder category(final Category category) {
 			this.map.put(CATEGORY, category);
 			this.previous = CATEGORY;
@@ -164,6 +172,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param Integer quantity
 		 * @return Builder
 		 */
+		@Override
 		public Builder quantity(final Integer quantity) {
 			this.map.put(QUANTITY, quantity);
 			this.previous = QUANTITY;
@@ -176,6 +185,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param Product[] linkedProduct
 		 * @return Builder
 		 */
+		@Override
 		public Builder linkedProduct(final Product[] linkedProduct) {
 			this.map.put(LINKED_PRODUCT, linkedProduct);
 			this.previous = LINKED_PRODUCT;
@@ -188,6 +198,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param Price price
 		 * @return Builder
 		 */
+		@Override
 		public Builder price(final Price price) {
 			this.map.put(PRICE, price);
 			this.previous = PRICE;
@@ -200,6 +211,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * @param Attributes attributes
 		 * @return Builder
 		 */
+		@Override
 		public Builder attributes(final Attributes attributes) {
 			this.map.put(ATTRIBUTES, attributes);
 			this.previous = ATTRIBUTES;
@@ -211,6 +223,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		 * 
 		 * @return ItemImpl
 		 */
+		@Override
 		public ItemImpl build() {
 			return new ItemImpl(
 				security,

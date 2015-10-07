@@ -61,6 +61,7 @@ public class CartImpl extends BaseImpl implements Cart {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getCartID() {
 		return (String)map.get(CART_ID);
 	}
@@ -70,6 +71,7 @@ public class CartImpl extends BaseImpl implements Cart {
 	 * 
 	 * @return Price
 	 */
+	@Override
 	public Price getPrice() {
 		return (Price)map.get(PRICE);
 	}
@@ -79,6 +81,7 @@ public class CartImpl extends BaseImpl implements Cart {
 	 * 
 	 * @return Attributes
 	 */
+	@Override
 	public Attributes getAttributes() {
 		return (Attributes)map.get(ATTRIBUTES);
 	}
@@ -88,6 +91,7 @@ public class CartImpl extends BaseImpl implements Cart {
 	 * 
 	 * @return Item[]
 	 */
+	@Override
 	public Item[] getItem() {
 		return (Item[])map.get(ITEM);
 	}
@@ -105,6 +109,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return Builder
 		 */
+		@Override
 		public Builder cartID(final String cartID) {
 			this.map.put(CART_ID, cartID);
 			this.previous = CART_ID;
@@ -116,6 +121,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return Builder
 		 */
+		@Override
 		public Builder price(final Price price) {
 			this.map.put(PRICE, price);
 			this.previous = PRICE;
@@ -127,6 +133,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return Builder
 		 */
+		@Override
 		public Builder attributes(final Attributes attributes) {
 			this.map.put(ATTRIBUTES, attributes);
 			this.previous = ATTRIBUTES;
@@ -138,6 +145,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return Builder
 		 */
+		@Override
 		public Builder item(final Item[] item) {
 			this.map.put(ITEM, item);
 			this.previous = ITEM;
@@ -149,6 +157,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return CartImpl
 		 */
+		@Override
 		public CartImpl build() {
 			return new CartImpl(
 				security,
@@ -164,6 +173,7 @@ public class CartImpl extends BaseImpl implements Cart {
 		 * 
 		 * @return Builder
 		 */
+		@Override
 		protected Builder builder() {
 			return this;
 		}

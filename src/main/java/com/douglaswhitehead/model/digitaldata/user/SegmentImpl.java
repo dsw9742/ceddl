@@ -35,6 +35,7 @@ public class SegmentImpl extends BaseImpl implements Segment {
 		 * 
 		 * @return SegmentImpl
 		 */
+		@Override
 		public SegmentImpl build() {
 			return new SegmentImpl(
 				security

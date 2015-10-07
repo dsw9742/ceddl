@@ -21,28 +21,34 @@ public class UserImpl implements User {
 		this.profile = newProfile;
 	}
 	
+	//@Override
 	public Segment getSegment() {
 		return this.segment;
 	}
 	
+	//@Override
 	public Profile[] getProfile() {
 		return this.profile;
 	}
 	
+	//@Override
 	public static class Builder {
 		private Segment nestedSegment;
 		private Profile[] nestedProfile;
 		
+		//@Override
 		public Builder segment(final Segment newSegment) {
 			this.nestedSegment = newSegment;
 			return this;
 		}
 		
+		//@Override
 		public Builder profile(final Profile[] newProfile) {
 			this.nestedProfile = newProfile;
 			return this;
 		}
 		
+		//@Override
 		public UserImpl build() {
 			return new UserImpl(
 				nestedSegment,
