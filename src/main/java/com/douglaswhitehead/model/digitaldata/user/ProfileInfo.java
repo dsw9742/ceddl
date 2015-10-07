@@ -31,20 +31,102 @@ package com.douglaswhitehead.model.digitaldata.user;
  */
 public interface ProfileInfo {
 
+	/**
+	 * Returns the ProfileID object.
+	 * 
+	 * @return String
+	 */
 	public String getProfileID();
+	
+	/**
+	 * Returns the UserName object.
+	 * 
+	 * @return String
+	 */
 	public String getUserName();
+	
+	/**
+	 * Returns the Email object.
+	 * 
+	 * @return String
+	 */
 	public String getEmail();
+	
+	/**
+	 * Returns the Language object.
+	 * 
+	 * @return String
+	 */
 	public String getLanguage();
+	
+	/**
+	 * Returns the ReturningStatus object.
+	 * 
+	 * @return String
+	 */
 	public String getReturningStatus();
+	
+	/**
+	 * Returns the Type object.
+	 * 
+	 * @return String
+	 */
 	public String getType();
 	
+	/**
+	 * ProfileInfo.Builder inner interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
 	public static interface Builder {
 		
+		/**
+		 * Builds the ProfileID object.
+		 * 
+		 * @param String profileID
+		 * @return Builder
+		 */
 		public Builder profileID(String profileID);
+		
+		/**
+		 * Builds the UserName object.
+		 * 
+		 * @param String userName
+		 * @return Builder
+		 */
 		public Builder userName(String userName);
+		
+		/**
+		 * Builds the Email object.
+		 * 
+		 * @param String email
+		 * @return Builder
+		 */
 		public Builder email(String email);
+		
+		/**
+		 * Builds the Language object.
+		 * 
+		 * @param String language
+		 * @return Builder
+		 */
 		public Builder language(String language);
+		
+		/**
+		 * Builds the ReturningStatus object.
+		 * 
+		 * @param String returningStatus
+		 * @return Builder
+		 */
 		public Builder returningStatus(String returningStatus);
+		
+		/**
+		 * Builds the Type object.
+		 * 
+		 * @param String type
+		 * @return Builder
+		 */
 		public Builder type(String type);
 		
 		/**
