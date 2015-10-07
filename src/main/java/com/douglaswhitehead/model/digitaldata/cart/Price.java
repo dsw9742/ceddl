@@ -47,28 +47,145 @@ import java.math.BigDecimal;
  */
 public interface Price {
 	
+	/**
+	 * Returns the BasePrice object.
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getBasePrice();
+	
+	/**
+	 * Returns the VoucherCode object.
+	 * 
+	 * @return String
+	 */
 	public String getVoucherCode();
+	
+	/**
+	 * Returns the VoucherDiscount
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getVoucherDiscount();
+	
+	/**
+	 * Returns the Currency object.
+	 * 
+	 * @return String
+	 */
 	public String getCurrency();
+	
+	/**
+	 * Returns the TaxRate object.
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getTaxRate();
+	
+	/**
+	 * Returns the Shipping object.
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getShipping();
+	
+	/**
+	 * Returns the ShippingMethod object.
+	 * 
+	 * @return String
+	 */
 	public String getShippingMethod();
+	
+	/**
+	 * Returns the PriceWithTax object.
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getPriceWithTax();
+	
+	/**
+	 * Returns the CartTotal object.
+	 * 
+	 * @return BigDecimal
+	 */
 	public BigDecimal getCartTotal();
 	
+	/**
+	 * Price.Builder inner interface.
+	 * 
+	 * @author Douglas.Whitehead
+	 *
+	 */
 	public static interface Builder {
 		
-		public Builder basePrice();
-		public Builder voucherCode();
-		public Builder voucherDiscount();
-		public Builder currency();
-		public Builder taxRate();
-		public Builder shipping();
-		public Builder shippingMethod();
-		public Builder priceWithTax();
-		public Builder cartTotal();
+		/**
+		 * Builds the BasePrice object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder basePrice(BigDecimal basePrice);
 		
+		/**
+		 * Builds the VoucherCode object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder voucherCode(String voucherCode);
+		
+		/**
+		 * Builds the VoucherDiscount object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder voucherDiscount(BigDecimal voucherDiscount);
+		
+		/**
+		 * Builds the Currency object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder currency(String currency);
+		
+		/**
+		 * Builds the TaxRate object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder taxRate(BigDecimal taxRate);
+		
+		/**
+		 * Builds the Shipping object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder shipping(BigDecimal shipping);
+		
+		/**
+		 * Builds the ShippingMethod object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder shippingMethod(String shippingMethod);
+		
+		/**
+		 * Builds the PriceWithTax object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder priceWithTax(BigDecimal priceWithTax);
+		
+		/**
+		 * Builds the CartTotal object.
+		 * 
+		 * @return Builder
+		 */
+		public Builder cartTotal(BigDecimal cartTotal);
+		
+		/**
+		 * Builds and returns the Price object.
+		 * 
+		 * @return Price
+		 */
 		public Price build();
 		
 	}

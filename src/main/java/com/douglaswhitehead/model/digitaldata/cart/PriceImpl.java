@@ -2,149 +2,202 @@ package com.douglaswhitehead.model.digitaldata.cart;
 
 import java.math.BigDecimal;
 
-/**
- * This object provides details of the cart price. The basePrice SHOULD be the price of the
- * items before applicable discounts, shipping charges, and tax. The cartTotal SHOULD be
- * the total price inclusive of all discounts, charges, and tax.
- */
-public class PriceImpl implements Price {
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
-	private final BigDecimal basePrice;
-	private final String voucherCode;
-	private final BigDecimal voucherDiscount;
-	private final String currency;
-	private final BigDecimal taxRate;
-	private final BigDecimal shipping;
-	private final String shippingMethod;
-	private final BigDecimal priceWithTax;
-	private final BigDecimal cartTotal;
+/**
+ * Implementation of the Price interface.
+ * 
+ * @author Douglas.Whitehead
+ *
+ */
+public class PriceImpl extends BaseImpl implements Price {
+
+	private final static String BASE_PRICE = "basePrice";
+	private final static String VOUCHER_CODE = "voucherCode";
+	private final static String VOUCHER_DISCOUNT = "voucherDiscount";
+	private final static String CURRENCY = "currency";
+	private final static String TAX_RATE = "taxRate";
+	private final static String SHIPPING = "shipping";
+	private final static String SHIPPING_METHOD = "shippingMethod";
+	private final static String PRICE_WITH_TAX = "priceWithTax";
+	private final static String CART_TOTAL = "cartTotal";
 	
 	private PriceImpl(
-		final BigDecimal newBasePrice,
-		final String newVoucherCode,
-		final BigDecimal newVoucherDiscount,
-		final String newCurrency,
-		final BigDecimal newTaxRate,
-		final BigDecimal newShipping,
-		final String newShippingMethod,
-		final BigDecimal newPriceWithTax,
-		final BigDecimal newCartTotal
+		final Security security,
+		final BigDecimal basePrice,
+		final String voucherCode,
+		final BigDecimal voucherDiscount,
+		final String currency,
+		final BigDecimal taxRate,
+		final BigDecimal shipping,
+		final String shippingMethod,
+		final BigDecimal priceWithTax,
+		final BigDecimal cartTotal
 	) {
-		this.basePrice = newBasePrice;
-		this.voucherCode = newVoucherCode;
-		this.voucherDiscount = newVoucherDiscount;
-		this.currency = newCurrency;
-		this.taxRate = newTaxRate;
-		this.shipping = newShipping;
-		this.shippingMethod = newShippingMethod;
-		this.priceWithTax = newPriceWithTax;
-		this.cartTotal = newCartTotal;
+		this.security = security;
+		this.map.put(BASE_PRICE, basePrice);
+		this.map.put(VOUCHER_CODE, voucherCode);
+		this.map.put(VOUCHER_DISCOUNT, voucherDiscount);
+		this.map.put(CURRENCY, currency);
+		this.map.put(TAX_RATE, taxRate);
+		this.map.put(SHIPPING, shipping);
+		this.map.put(SHIPPING_METHOD, shippingMethod);
+		this.map.put(PRICE_WITH_TAX, priceWithTax);
+		this.map.put(CART_TOTAL, cartTotal);
 	}
 	
 	public BigDecimal getBasePrice() {
-		return basePrice;
+		return (BigDecimal)map.get(BASE_PRICE);
 	}
 	
 	public String getVoucherCode() {
-		return voucherCode;
+		return (String)map.get(VOUCHER_CODE);
 	}
 	
 	public BigDecimal getVoucherDiscount() {
-		return voucherDiscount;
+		return (BigDecimal)map.get(VOUCHER_DISCOUNT);
 	}
 	
 	public String getCurrency() {
-		return currency;
+		return (String)map.get(CURRENCY);
 	}
 
 	public BigDecimal getTaxRate() {
-		return taxRate;
+		return (BigDecimal)map.get(TAX_RATE);
 	}
 
 	public BigDecimal getShipping() {
-		return shipping;
+		return (BigDecimal)map.get(SHIPPING);
 	}
 
 	public String getShippingMethod() {
-		return shippingMethod;
+		return (String)map.get(SHIPPING_METHOD);
 	}
 
 	public BigDecimal getPriceWithTax() {
-		return priceWithTax;
+		return (BigDecimal)map.get(PRICE_WITH_TAX);
 	}
 
 	public BigDecimal getCartTotal() {
-		return cartTotal;
+		return (BigDecimal)map.get(CART_TOTAL);
 	}
 
-	public static class Builder {
-		private BigDecimal nestedBasePrice;
-		private String nestedVoucherCode;
-		private BigDecimal nestedVoucherDiscount;
-		private String nestedCurrency;
-		private BigDecimal nestedTaxRate;
-		private BigDecimal nestedShipping;
-		private String nestedShippingMethod;
-		private BigDecimal nestedPriceWithTax;
-		private BigDecimal nestedCartTotal;
+	public static class Builder extends BaseImpl.Builder<Builder> implements Price.Builder {
 		
-		public Builder basePrice(final BigDecimal newBasePrice) {
-			this.nestedBasePrice = newBasePrice;
-			return this;
+		public Builder basePrice(final BigDecimal basePrice) {
+			this.map.put(BASE_PRICE, basePrice);
+			this.previous = BASE_PRICE;
+			return builder();
 		}
 		
-		public Builder voucherCode(final String newVoucherCode) {
-			this.nestedVoucherCode = newVoucherCode;
-			return this;
+		public Builder voucherCode(final String voucherCode) {
+			this.map.put(VOUCHER_CODE, voucherCode);
+			this.previous = VOUCHER_CODE;
+			return builder();
 		}
 		
-		public Builder voucherDiscount(final BigDecimal newVoucherDiscount) {
-			this.nestedVoucherDiscount = newVoucherDiscount;
-			return this;
+		public Builder voucherDiscount(final BigDecimal voucherDiscount) {
+			this.map.put(VOUCHER_DISCOUNT, voucherDiscount);
+			this.previous = VOUCHER_DISCOUNT;
+			return builder();
 		}
 		
-		public Builder currency(final String newCurrency) {
-			this.nestedCurrency = newCurrency;
-			return this;
+		public Builder currency(final String currency) {
+			this.map.put(CURRENCY, currency);
+			this.previous = CURRENCY;
+			return builder();
 		}
 		
-		public Builder taxRate(final BigDecimal newTaxRate) {
-			this.nestedTaxRate = newTaxRate;
-			return this;
+		/**
+		 * Builds the TaxRate object.
+		 * 
+		 * @param BigDecimal taxRate
+		 * @return Builder
+		 */
+		public Builder taxRate(final BigDecimal taxRate) {
+			this.map.put(TAX_RATE, taxRate);
+			this.previous = TAX_RATE;
+			return builder();
 		}
 		
-		public Builder shipping(final BigDecimal newShipping) {
-			this.nestedShipping = newShipping;
-			return this;
+		/**
+		 * Builds the Shipping object.
+		 * 
+		 * @param BigDecimal shipping
+		 * @return Builder
+		 */
+		public Builder shipping(final BigDecimal shipping) {
+			this.map.put(SHIPPING, shipping);
+			this.previous = SHIPPING;
+			return builder();
 		}
 		
-		public Builder shippingMethod(final String newShippingMethod) {
-			this.nestedShippingMethod = newShippingMethod;
-			return this;
+		/**
+		 * Builds the ShippingMethod object.
+		 * 
+		 * @param String shippingMethod
+		 * @return Builder
+		 */
+		public Builder shippingMethod(final String shippingMethod) {
+			this.map.put(SHIPPING_METHOD, shippingMethod);
+			this.previous = SHIPPING_METHOD;
+			return builder();
 		}
 		
-		public Builder priceWithTax(final BigDecimal newPriceWithTax) {
-			this.nestedPriceWithTax = newPriceWithTax;
-			return this;
+		/**
+		 * Builds the PriceWithTax object.
+		 * 
+		 * @param BigDecimal priceWithTax
+		 * @return Builder
+		 */
+		public Builder priceWithTax(final BigDecimal priceWithTax) {
+			this.map.put(PRICE_WITH_TAX, priceWithTax);
+			this.previous = PRICE_WITH_TAX;
+			return builder();
 		}
 		
-		public Builder cartTotal(final BigDecimal newCartTotal) {
-			this.nestedCartTotal = newCartTotal;
-			return this;
+		/**
+		 * Builds the CartTotal object.
+		 * 
+		 * @param BigDecimal cartTotal
+		 * @return Builder
+		 */
+		public Builder cartTotal(final BigDecimal cartTotal) {
+			this.map.put(CART_TOTAL, cartTotal);
+			this.previous = CART_TOTAL;
+			return builder();
 		}
 		
+		/**
+		 * Builds and returns the PriceImpl object.
+		 * 
+		 * @return PriceImpl
+		 */
+		@Override
 		public PriceImpl build() {
 			return new PriceImpl(
-				nestedBasePrice,
-				nestedVoucherCode,
-				nestedVoucherDiscount,
-				nestedCurrency,
-				nestedTaxRate,
-				nestedShipping,
-				nestedShippingMethod,
-				nestedPriceWithTax,
-				nestedCartTotal
+				security,
+				(BigDecimal)map.get(BASE_PRICE),
+				(String)map.get(VOUCHER_CODE),
+				(BigDecimal)map.get(VOUCHER_DISCOUNT),
+				(String)map.get(CURRENCY),
+				(BigDecimal)map.get(TAX_RATE),
+				(BigDecimal)map.get(SHIPPING),
+				(String)map.get(SHIPPING_METHOD),
+				(BigDecimal)map.get(PRICE_WITH_TAX),
+				(BigDecimal)map.get(CART_TOTAL)
 			);
+		}
+		
+		/**
+		 * Returns the builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 	}
 }
