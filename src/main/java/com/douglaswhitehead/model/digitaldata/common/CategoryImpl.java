@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * Basic implementation of the Category interface.
+ * Minimal implementation of the Category interface.
  * 
  * @author douglas whitehead
  *

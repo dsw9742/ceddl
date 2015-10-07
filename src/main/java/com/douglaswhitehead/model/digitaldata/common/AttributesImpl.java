@@ -3,7 +3,7 @@ package com.douglaswhitehead.model.digitaldata.common;
 import com.douglaswhitehead.model.digitaldata.security.Security;
 
 /**
- * Basic implementation of the Attributes interface. 
+ * Minimal implementation of the Attributes interface. 
  * 
  * @author douglas.whitehead
  *
