@@ -1,19 +1,30 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
+/**
+ * <p>Social interface.</p>
+ * 
+ * <p>From the W3C CEDDL specification:</p>
+ * 
+ * <p>An extensible object for providing social information for the user profile.</p>
+ * 
+ * @author douglas whitehead
+ *
+ */
 public interface Social {
-
-	public String getTwitter();
-	public Object getTwitterInfo();
-	public String getFacebook();
-	public Object getFacebookInfo();
 	
+	/**
+	 * Social.Builder inner interface.
+	 * 
+	 * @author douglas whitehead
+	 *
+	 */
 	public static interface Builder {
 		
-		public Builder twitter();
-		public Builder twitterInfo();
-		public Builder facebook();
-		public Builder facebookInfo();
-		
+		/**
+		 * Builds and returns the Social object.
+		 * 
+		 * @return Social
+		 */
 		public Social build();
 		
 	}
