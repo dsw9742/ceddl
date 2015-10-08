@@ -1,59 +1,119 @@
 package com.douglaswhitehead.model.digitaldata.user;
 
-/**
- * 6.9 User Object
- * 
- * The User object captures the profile of a user who is interacting with the website.
- * 
- * The User object and its children, where included, MUST have the following Object Names & 
- * Types.
- */
-public class UserImpl implements User {
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 
-	private final Segment segment;
-	private final Profile[] profile;
+/**
+ * Implementation of the User interface.
+ * 
+ * @author Douglas.Whitehead
+ *
+ */
+public class UserImpl extends BaseImpl implements User {
+
+	/**
+	 * String constant for <tt>segment</tt>.
+	 */
+	private final static String SEGMENT = "segment";
 	
+	/**
+	 * String constant for <tt>profile</tt>.
+	 */
+	private final static String PROFILE = "profile";
+	
+	/**
+	 * UserImpl constructor.
+	 * 
+	 * @param Security security
+	 * @param Segment segment
+	 * @param Profile profile
+	 */
 	private UserImpl(
-		final Segment newSegment,
-		final Profile[] newProfile
+		final Security security,
+		final Segment segment,
+		final Profile[] profile
 	) {
-		this.segment = newSegment;
-		this.profile = newProfile;
+		this.security = security;
+		this.map.put(SEGMENT, segment);
+		this.map.put(PROFILE, profile);
 	}
 	
-	//@Override
+	/**
+	 * Returns the Segment object.
+	 * 
+	 * @return Segment
+	 */
+	@Override
 	public Segment getSegment() {
-		return this.segment;
+		return (Segment)map.get(SEGMENT);
 	}
 	
-	//@Override
+	/**
+	 * Returns the Profile array.
+	 * 
+	 * @return Profile[]
+	 */
+	@Override
 	public Profile[] getProfile() {
-		return this.profile;
+		return (Profile[])map.get(PROFILE);
 	}
 	
-	//@Override
-	public static class Builder {
-		private Segment nestedSegment;
-		private Profile[] nestedProfile;
+	/**
+	 * Implementation of the User.Builder interface.
+	 * 
+	 * @author Douglas.Whitehead
+	 *
+	 */
+	public static class Builder extends BaseImpl.Builder<Builder> implements User.Builder {
 		
-		//@Override
-		public Builder segment(final Segment newSegment) {
-			this.nestedSegment = newSegment;
-			return this;
+		/**
+		 * Builds the Segment object.
+		 * 
+		 * @param Segment segment
+		 * @return Builder
+		 */
+		@Override
+		public Builder segment(final Segment segment) {
+			this.map.put(SEGMENT, segment);
+			this.previous = SEGMENT;
+			return builder();
 		}
 		
-		//@Override
-		public Builder profile(final Profile[] newProfile) {
-			this.nestedProfile = newProfile;
-			return this;
+		/**
+		 * Builds the Profile[] array.
+		 * 
+		 * @param Profile[] profile
+		 * @return Builder
+		 */
+		@Override
+		public Builder profile(final Profile[] profile) {
+			this.map.put(PROFILE, profile);
+			this.previous = PROFILE;
+			return builder();
 		}
 		
-		//@Override
+		/**
+		 * Builds and returns the UserImpl object.
+		 * 
+		 * @return UserImpl
+		 */
+		@Override
 		public UserImpl build() {
 			return new UserImpl(
-				nestedSegment,
-				nestedProfile
+				security,
+				(Segment)map.get(SEGMENT),
+				(Profile[])map.get(PROFILE)
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 	}
 }
