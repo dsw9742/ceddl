@@ -38,7 +38,7 @@ public class CartImpl extends BaseImpl implements Cart {
 	 * 
 	 * @param Security security
 	 * @param String cartID
-	 * @param Price price
+	 * @param Total price
 	 * @param Attributes attributes
 	 * @param Item[] item
 	 */

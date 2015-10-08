@@ -89,7 +89,7 @@ public interface Item {
 		/**
 		 * Builds the Price object.
 		 * 
-		 * @param Price price
+		 * @param Total price
 		 * @return Builder
 		 */
 		public Builder price(Price price);

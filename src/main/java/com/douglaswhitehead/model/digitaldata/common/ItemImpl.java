@@ -50,7 +50,7 @@ public class ItemImpl extends BaseImpl implements Item {
 	 * @param ProductInfo productInfo
 	 * @param Category category
 	 * @param Integer quantity
-	 * @param Price price
+	 * @param Total price
 	 * @param Product[] linkedProduct
 	 * @param Attributes attributes
 	 */
@@ -195,7 +195,7 @@ public class ItemImpl extends BaseImpl implements Item {
 		/**
 		 * Builds the Price object.
 		 * 
-		 * @param Price price
+		 * @param Total price
 		 * @return Builder
 		 */
 		@Override
