@@ -26,15 +26,64 @@ import com.douglaswhitehead.model.digitaldata.common.Category;
  */
 public interface Event {
 
+	/**
+	 * Returns the EventInfo object.
+	 * 
+	 * @return EventInfo
+	 */
 	public EventInfo getEventInfo();
+	
+	/**
+	 * Returns the Category object.
+	 * 
+	 * @return Category
+	 */
 	public Category getCategory();
+	
+	/**
+	 * Returns the Attributes object.
+	 * 
+	 * @return Attributes
+	 */
 	public Attributes getAttributes();
 	
+	/**
+	 * Event.Builder inner interface.
+	 * 
+	 * @author Douglas.Whitehead
+	 *
+	 */
 	public static interface Builder {
-		public Builder eventInfo();
-		public Builder category();
-		public Builder attributes();
 		
+		/**
+		 * Builds the EventInfo object.
+		 * 
+		 * @param EventInfo eventInfo
+		 * @return Builder
+		 */
+		public Builder eventInfo(EventInfo eventInfo);
+		
+		/**
+		 * Builds the Category object.
+		 * 
+		 * @param Category category
+		 * @return Builder
+		 */
+		public Builder category(Category category);
+		
+		/**
+		 * Builds the Attributes object.
+		 * 
+		 * @param Attributes attributes
+		 * @return Builder
+		 */
+		public Builder attributes(Attributes attributes);
+		
+		/**
+		 * Builds and returns the Event object.
+		 * 
+		 * @return Event
+		 */
 		public Event build();
 	}
 }
