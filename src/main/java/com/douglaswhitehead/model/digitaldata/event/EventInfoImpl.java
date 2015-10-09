@@ -2,119 +2,280 @@ package com.douglaswhitehead.model.digitaldata.event;
 
 import java.util.Date;
 
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
+import com.douglaswhitehead.model.digitaldata.security.Security;
+
 /**
- * This object describes the event.
+ * Implementation of the EventInfo interface.
+ * 
+ * @author Douglas.Whitehead
+ *
  */
-public class EventInfoImpl implements EventInfo {
+public class EventInfoImpl extends BaseImpl implements EventInfo {
 	
-	private final String eventName;
-	private final String eventAction;
-	private final int eventPoints;
-	private final String type;
-	private final Date timestamp;
-	private final String cause;
-	private final String effect;
+	/**
+	 * String constant for <tt>eventName</tt>.
+	 */
+	private final static String EVENT_NAME = "eventName";
 	
+	/**
+	 * String constant for <tt>eventAction</tt>.
+	 */
+	private final static String EVENT_ACTION = "eventAction";
+	
+	/**
+	 * String constant for <tt>eventPoints</tt>.
+	 */
+	private final static String EVENT_POINTS = "eventPoints";
+	
+	/**
+	 * String constant for <tt>type</tt>.
+	 */
+	private final static String TYPE = "type";
+	
+	/**
+	 * String constant for <tt>timestamp</tt>.
+	 */
+	private final static String TIMESTAMP = "timestamp";
+	
+	/**
+	 * String constant for <tt>cause</tt>.
+	 */
+	private final static String CAUSE = "cause";
+	
+	/**
+	 * String constant for <tt>effect</tt>.
+	 */
+	private final static String EFFECT = "effect";
+	
+	/**
+	 * EventInfoImpl constructor.
+	 * 
+	 * @param Security security
+	 * @param String eventName
+	 * @param String eventAction
+	 * @param Integer eventPoints
+	 * @param String type
+	 * @param Date timestamp
+	 * @param String cause
+	 * @param String effect
+	 */
 	private EventInfoImpl(
-		final String newEventName,
-		final String newEventAction,
-		final int newEventPoints,
-		final String newType,
-		final Date newTimestamp,
-		final String newCause,
-		final String newEffect
+		final Security security,
+		final String eventName,
+		final String eventAction,
+		final Integer eventPoints,
+		final String type,
+		final Date timestamp,
+		final String cause,
+		final String effect
 	) {
-		this.eventName = newEventName;
-		this.eventAction = newEventAction;
-		this.eventPoints = newEventPoints;
-		this.type = newType;
-		this.timestamp = newTimestamp;
-		this.cause = newCause;
-		this.effect = newEffect;
+		this.security = security;
+		this.map.put(EVENT_NAME, eventName);
+		this.map.put(EVENT_ACTION, eventAction);
+		this.map.put(EVENT_POINTS, eventPoints);
+		this.map.put(TYPE, type);
+		this.map.put(TIMESTAMP, timestamp);
+		this.map.put(CAUSE, cause);
+		this.map.put(EFFECT, effect);
 	}
 
+	/**
+	 * Returns the EventName object.
+	 * 
+	 * @return String
+	 */
+	@Override
 	public String getEventName() {
-		return eventName;
+		return (String)map.get(EVENT_NAME);
 	}
 
+	/**
+	 * Returns the EventAction object.
+	 * 
+	 * @return String
+	 */
+	@Override
 	public String getEventAction() {
-		return eventAction;
+		return (String)map.get(EVENT_ACTION);
 	}
 
-	public int getEventPoints() {
-		return eventPoints;
+	/**
+	 * Returns the EventPoints object.
+	 * 
+	 * @return Integer
+	 */
+	@Override
+	public Integer getEventPoints() {
+		return (Integer)map.get(EVENT_POINTS);
 	}
 
+	/**
+	 * Returns the Type object.
+	 * 
+	 * @return String
+	 */
+	@Override
 	public String getType() {
-		return type;
+		return (String)map.get(TYPE);
 	}
 
+	/**
+	 * Returns the Timestamp object.
+	 * 
+	 * @return Date
+	 */
+	@Override
 	public Date getTimestamp() {
-		return timestamp;
+		return (Date)map.get(TIMESTAMP);
 	}
 
+	/**
+	 * Returns the Cause object.
+	 * 
+	 * @return String
+	 */
+	@Override
 	public String getCause() {
-		return cause;
+		return (String)map.get(CAUSE);
 	}
 
+	/**
+	 * Returns the Effect object.
+	 * 
+	 * @return String
+	 */
+	@Override
 	public String getEffect() {
-		return effect;
+		return (String)map.get(EFFECT);
 	}
 	
-	public static class Builder {
-		private String nestedEventName;
-		private String nestedEventAction;
-		private int nestedEventPoints;
-		private String nestedType;
-		private Date nestedTimestamp;
-		private String nestedCause;
-		private String nestedEffect;
+	/**
+	 * Implementation of the EventInfo.Builder interface.
+	 * 
+	 * @author Douglas.Whitehead
+	 *
+	 */
+	public static class Builder extends BaseImpl.Builder<Builder> implements EventInfo.Builder {
 		
-		public Builder eventName(final String newEventName) {
-			this.nestedEventName = newEventName;
-			return this;
+		/**
+		 * Builds the EventName object.
+		 * 
+		 * @param String eventName
+		 * @return Builder
+		 */
+		@Override
+		public Builder eventName(final String eventName) {
+			this.map.put(EVENT_NAME, eventName);
+			this.previous = EVENT_NAME;
+			return builder();
 		}
 		
-		public Builder eventAction(final String newEventAction) {
-			this.nestedEventAction = newEventAction;
-			return this;
+		/**
+		 * Builds the EventAction object.
+		 * 
+		 * @param String eventAction
+		 * @return Builder
+		 */
+		@Override
+		public Builder eventAction(final String eventAction) {
+			this.map.put(EVENT_ACTION, eventAction);
+			this.previous = EVENT_ACTION;
+			return builder();
 		}
 		
-		public Builder eventPoints(final int newEventPoints) {
-			this.nestedEventPoints = newEventPoints;
-			return this;
+		/**
+		 * Builds the EventPoints object.
+		 * 
+		 * @param Integer eventPoints
+		 * @return Builder
+		 */
+		@Override
+		public Builder eventPoints(final Integer eventPoints) {
+			this.map.put(EVENT_POINTS, eventPoints);
+			this.previous = EVENT_POINTS;
+			return builder();
 		}
 		
-		public Builder type(final String newType) {
-			this.nestedType = newType;
-			return this;
+		/**
+		 * Builds the Type object.
+		 * 
+		 * @param String type
+		 * @return Builder
+		 */
+		@Override
+		public Builder type(final String type) {
+			this.map.put(TYPE, type);
+			this.previous = TYPE;
+			return builder();
 		}
 		
-		public Builder timestamp(final Date newTimestamp) {
-			this.nestedTimestamp = newTimestamp;
-			return this;
+		/**
+		 * Builds the Timestamp object.
+		 * 
+		 * @param Date timestamp
+		 * @return Builder
+		 */
+		@Override
+		public Builder timestamp(final Date timestamp) {
+			this.map.put(TIMESTAMP, timestamp);
+			this.previous = TIMESTAMP;
+			return builder();
 		}
 		
-		public Builder cause(final String newCause) {
-			this.nestedCause = newCause;
-			return this;
+		/**
+		 * Builds the Cause object.
+		 * 
+		 * @param String cause
+		 * @return Builder
+		 */
+		@Override
+		public Builder cause(final String cause) {
+			this.map.put(CAUSE, cause);
+			this.previous = CAUSE;
+			return builder();
 		}
 		
-		public Builder effect(final String newEffect) {
-			this.nestedEffect = newEffect;
-			return this;
+		/**
+		 * Builds the Effect object.
+		 * 
+		 * @param String effect
+		 * @return Builder
+		 */
+		@Override
+		public Builder effect(final String effect) {
+			this.map.put(EFFECT, effect);
+			this.previous = EFFECT;
+			return builder();
 		}
 		
+		/**
+		 * Builds and returns the EventInfoImpl object.
+		 * 
+		 * @return EventInfoImpl
+		 */
+		@Override
 		public EventInfoImpl build() {
 			return new EventInfoImpl(
-				nestedEventName,
-				nestedEventAction,
-				nestedEventPoints,
-				nestedType,
-				nestedTimestamp,
-				nestedCause,
-				nestedEffect
+				security,
+				(String)map.get(EVENT_NAME),
+				(String)map.get(EVENT_ACTION),
+				(Integer)map.get(EVENT_POINTS),
+				(String)map.get(TYPE),
+				(Date)map.get(TIMESTAMP),
+				(String)map.get(CAUSE),
+				(String)map.get(EFFECT)
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		@Override
+		protected Builder builder() {
+			return this;
 		}
 	}
 
