@@ -4,10 +4,12 @@ import com.douglaswhitehead.model.digitaldata.cart.Cart;
 import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
+import com.douglaswhitehead.model.digitaldata.pageinstanceid.PageInstanceID;
 import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
 import com.douglaswhitehead.model.digitaldata.product.Product;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
+import com.douglaswhitehead.model.digitaldata.version.Version;
 
 /**
  * <p>DigitalData interface.</p>
@@ -56,9 +58,9 @@ public interface DigitalData {
 	/**
 	 * Returns the PageInstanceID object.
 	 * 
-	 * @return String
+	 * @return PageInstanceID
 	 */
-	public String getPageInstanceID();
+	public PageInstanceID getPageInstanceID();
 	
 	/**
 	 * Returns the Page object.
@@ -119,9 +121,9 @@ public interface DigitalData {
 	/**
 	 * Returns the Version object.
 	 * 
-	 * @return String
+	 * @return Version
 	 */
-	public String getVersion();
+	public Version getVersion();
 	
 	/**
 	 * DigitalData.Builder inner interface.
@@ -137,7 +139,7 @@ public interface DigitalData {
 		 * @param String pageInstanceID
 		 * @return Builder
 		 */
-		public Builder pageInstanceID(String pageInstanceID);
+		public Builder pageInstanceID(PageInstanceID pageInstanceID);
 		
 		/**
 		 * Builds the Page object.
@@ -209,7 +211,7 @@ public interface DigitalData {
 		 * @param String version
 		 * @return Builder
 		 */
-		public Builder version(String version);
+		public Builder version(Version version);
 		
 		/**
 		 * Builds and returns the DigitalData object.
