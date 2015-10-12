@@ -1,53 +1,119 @@
 package com.douglaswhitehead.model.digitaldata.privacy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * 6.10 Privacy Object
+ * Implementation of the Privacy interface.
  * 
- * The Privacy object holds the privacy policy settings that could be used to:
- *   1. Capture and enforce site visitor consent to use tracking technologies on the site.
- *   2. Together with Security objects described below, secure access to individual objects
- *      within the JSO by categories of tracking technologies.
+ * @author douglas.whitehead
+ *
  */
 public class PrivacyImpl implements Privacy {
+	
+	/**
+	 * Variable for DEFAULT_ACCESS_CATEGORY object.
+	 */
 	private final static AccessCategory DEFAULT_ACCESS_CATEGORY = new AccessCategoryImpl.Builder()
 																		.categoryName("Default")
 																		.domains(new String[]{"*"})
 																	.build();
 	
-	private final AccessCategory[] accessCategories;
+	/**
+	 * Variable for <tt>accessCategories</tt> object.
+	 */
+	//private List<AccessCategory> accessCategories = new ArrayList<AccessCategory>();
+	private AccessCategory accessCategories[];
 	
+	/**
+	 * PrivacyImpl constructor.
+	 * 
+	 * @param accessCategories
+	 */
 	private PrivacyImpl(
-		final AccessCategory[] newAccessCategories
+		final AccessCategory[] accessCategories
 	) {
-		this.accessCategories = newAccessCategories;
+		/*this.accessCategories.clear();
+		for (AccessCategory accessCategory: accessCategories) {
+			this.accessCategories.add(accessCategory);
+		}*/
+		this.accessCategories = accessCategories;
 	}
 	
+	/**
+	 * Returns the AccessCategory[] array.
+	 * 
+	 * @return AccessCategory[]
+	 */
+	@Override
 	public AccessCategory[] getAccessCategories() {
+		//return accessCategories.toArray(new AccessCategory[accessCategories.size()]);
 		return accessCategories;
 	}
 	
-	public static class Builder {
-		private AccessCategory[] nestedAccessCategories = new AccessCategory[]{DEFAULT_ACCESS_CATEGORY};
+	/**
+	 * Implementation of the Privacy.Builder interface.
+	 * 
+	 * @author douglas.whitehead
+	 *
+	 */
+	public static class Builder implements Privacy.Builder {
 		
+		/**
+		 * Variable for <tt>accessCategories</tt> array.
+		 */
+		private AccessCategory[] accessCategories;
+		
+		/**
+		 * Builds the AccessCategory[] array.
+		 * 
+		 * @param AccessCategory[] accessCategories
+		 * @return Builder
+		 */
+		@Override
 		public Builder accessCategories(
-			final AccessCategory[] newAccessCategories
+			final AccessCategory[] accessCategories
 		) {
-			this.nestedAccessCategories = safeguardDefaultAccessCategory(newAccessCategories);
-			return this;
+			this.accessCategories = safeguardDefaultAccessCategory(accessCategories);
+			return builder();
 		}
 		
+		/**
+		 * Builds and returns the PrivacyImpl object.
+		 * 
+		 * @return PrivacyImpl
+		 */
+		@Override
 		public PrivacyImpl build() {
 			return new PrivacyImpl(
-				nestedAccessCategories
+				accessCategories
 			);
 		}
 		
-		private AccessCategory[] safeguardDefaultAccessCategory(final AccessCategory[] newAccessCategories) {
-			newAccessCategories[newAccessCategories.length+1] = DEFAULT_ACCESS_CATEGORY;
-			return newAccessCategories;
+		/**
+		 * Ensures the DEFAULT_ACCESS_CATEGORY object is added to the AccessCategory[] array.
+		 * 
+		 * @param AccessCategory[] accessCategories
+		 * @return AccessCategory[]
+		 */
+		private AccessCategory[] safeguardDefaultAccessCategory(final AccessCategory[] accessCategories) {
+			List<AccessCategory> _accessCategories = new ArrayList<AccessCategory>();
+			for (AccessCategory accessCategory: accessCategories) {
+				_accessCategories.add(accessCategory);
+			}
+			_accessCategories.add(DEFAULT_ACCESS_CATEGORY);
+			return _accessCategories.toArray(new AccessCategory[_accessCategories.size()]);
 		}
 		
-	}
-	
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		private Builder builder() {
+			return this;
+		}
+		
+	}	
 
 }

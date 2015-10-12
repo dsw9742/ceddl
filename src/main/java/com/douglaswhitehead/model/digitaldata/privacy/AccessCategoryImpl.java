@@ -37,6 +37,7 @@ public class AccessCategoryImpl implements AccessCategory {
 	 * 
 	 * @return String
 	 */
+	@Override
 	public String getCategoryName() {
 		return categoryName;
 	}
@@ -46,6 +47,7 @@ public class AccessCategoryImpl implements AccessCategory {
 	 * 
 	 * @return String[]
 	 */
+	@Override
 	public String[] getDomains() {
 		return domains;
 	}
@@ -74,6 +76,7 @@ public class AccessCategoryImpl implements AccessCategory {
 		 * @param String categoryName
 		 * @return Builder
 		 */
+		@Override
 		public Builder categoryName(final String categoryName) {
 			this.categoryName = categoryName;
 			return builder();
@@ -85,6 +88,7 @@ public class AccessCategoryImpl implements AccessCategory {
 		 * @param String[] domains
 		 * @return Builder
 		 */
+		@Override
 		public Builder domains(final String[] domains) {
 			this.domains = domains;
 			return builder();
@@ -95,6 +99,7 @@ public class AccessCategoryImpl implements AccessCategory {
 		 * 
 		 * @return AccessCategoryImpl
 		 */
+		@Override
 		public AccessCategoryImpl build() {
 			return new AccessCategoryImpl(
 				categoryName,
