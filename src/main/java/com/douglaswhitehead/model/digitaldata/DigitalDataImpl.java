@@ -10,8 +10,10 @@ import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
 
 /**
- * The root JavaScript Object (JSO) MUST be digitalData, and all data properties within this
- * specification MUST fall within the hierarchy of the digitalData object.
+ * Implementation of the DigitalData interface.
+ * 
+ * @author douglas.whitehead
+ *
  */
 public class DigitalDataImpl implements DigitalData {
 

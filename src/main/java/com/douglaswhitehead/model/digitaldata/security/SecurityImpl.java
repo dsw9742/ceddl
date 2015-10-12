@@ -31,6 +31,7 @@ public class SecurityImpl implements Security {
 	 * @return Map<String, Object> the Map of security-related information
 	 */
 	@JsonAnyGetter
+	@Override
 	public Map<String, Object> getMap() {
 		return map;
 	}
