@@ -1,48 +1,114 @@
 package com.douglaswhitehead.model.digitaldata.privacy;
 
 /**
- * A list of privacy categories.
+ * Implementation of the AccessCategory interface.
+ * 
+ * @author douglas.whitehead
+ *
  */
 public class AccessCategoryImpl implements AccessCategory {
-
+	
+	/**
+	 * Variable for <tt>categoryName</tt> object.
+	 */
 	private final String categoryName;
+	
+	/**
+	 * Variable for <tt>domains</tt> array.
+	 */
 	private final String[] domains;
 	
+	/**
+	 * AccessCategoryImpl constructor.
+	 * 
+	 * @param String categoryName
+	 * @param String[] domains
+	 */
 	private AccessCategoryImpl(
-		final String newCategoryName,
-		final String[] newDomains
+		final String categoryName,
+		final String[] domains
 	) {
-		this.categoryName = newCategoryName;
-		this.domains = newDomains;
+		this.categoryName = categoryName;
+		this.domains = domains;
 	}
 	
+	/**
+	 * Returns the CategoryName object.
+	 * 
+	 * @return String
+	 */
 	public String getCategoryName() {
 		return categoryName;
 	}
 
+	/**
+	 * Returns the Domains array.
+	 * 
+	 * @return String[]
+	 */
 	public String[] getDomains() {
 		return domains;
 	}
 	
-	public static class Builder {
-		private String nestedCategoryName;
-		private String[] nestedDomains;
+	/**
+	 * Implementation of the AccessCategory.Builder interface.
+	 * 
+	 * @author douglas.whitehead
+	 *
+	 */
+	public static class Builder implements AccessCategory.Builder {
 		
-		public Builder categoryName(final String newCategoryName) {
-			this.nestedCategoryName = newCategoryName;
-			return this;
+		/**
+		 * Variable for <tt>categoryName</tt> object.
+		 */
+		private String categoryName;
+		
+		/**
+		 * Variable for <tt>domains</tt> array.
+		 */
+		private String[] domains;
+		
+		/**
+		 * Builds the CategoryName object.
+		 * 
+		 * @param String categoryName
+		 * @return Builder
+		 */
+		public Builder categoryName(final String categoryName) {
+			this.categoryName = categoryName;
+			return builder();
 		}
 		
-		public Builder domains(final String[] newDomains) {
-			this.nestedDomains = newDomains;
-			return this;
+		/**
+		 * Builds the Domains array.
+		 * 
+		 * @param String[] domains
+		 * @return Builder
+		 */
+		public Builder domains(final String[] domains) {
+			this.domains = domains;
+			return builder();
 		}
 		
+		/**
+		 * Builds and returns the AccessCategoryImpl object.
+		 * 
+		 * @return AccessCategoryImpl
+		 */
 		public AccessCategoryImpl build() {
 			return new AccessCategoryImpl(
-				nestedCategoryName,
-				nestedDomains
+				categoryName,
+				domains
 			);
+		}
+		
+		/**
+		 * Returns the Builder.
+		 * 
+		 * @return Builder
+		 */
+		private Builder builder() {
+			return this;
 		}
 	}
 
