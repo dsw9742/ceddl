@@ -62,7 +62,7 @@ public class ItemImplTest {
 													.build())
 											.build()
 										})
-								.attributes(null)
+								.attributes(new AttributesImpl.Builder().build())
 							.build();
 		
 		ObjectMapper mapper = new ObjectMapper();

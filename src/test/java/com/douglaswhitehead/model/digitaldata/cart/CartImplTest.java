@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import com.douglaswhitehead.model.digitaldata.common.AttributesImpl;
 import com.douglaswhitehead.model.digitaldata.common.CategoryImpl;
 import com.douglaswhitehead.model.digitaldata.common.ItemImpl;
 import com.douglaswhitehead.model.digitaldata.product.ProductImpl;
@@ -32,7 +33,7 @@ public class CartImplTest {
 									.priceWithTax(new BigDecimal("205"))
 									.cartTotal(new BigDecimal("215"))
 								.build())
-							.attributes(null)
+							.attributes(new AttributesImpl.Builder().build())
 							.item(new ItemImpl[]{
 									new ItemImpl.Builder()
 										.productInfo(new ProductInfoImpl.Builder()
@@ -78,7 +79,7 @@ public class CartImplTest {
 														.build())
 													.build()
 												})
-										.attributes(null)
+										.attributes(new AttributesImpl.Builder().build())
 									.build(),
 								new ItemImpl.Builder()
 									.productInfo(new ProductInfoImpl.Builder()
@@ -124,7 +125,7 @@ public class CartImplTest {
 														.build())
 												.build()
 											})
-									.attributes(null)
+									.attributes(new AttributesImpl.Builder().build())
 								.build()
 							})
 						.build();

@@ -22,7 +22,7 @@ public class UserImplTest {
 										.profileInfo(new ProfileInfoImpl.Builder()
 														.profileID("humanbing12345")
 														.userName("me")
-														.email(null).security(new String[]{"Analytics"})
+														.email("me@test.com").security(new String[]{"Analytics"})
 														.language("en-US")
 														.returningStatus("new")
 														.type("customer")

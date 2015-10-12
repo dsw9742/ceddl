@@ -3,6 +3,7 @@ package com.douglaswhitehead.model.digitaldata.product;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import com.douglaswhitehead.model.digitaldata.common.AttributesImpl;
 import com.douglaswhitehead.model.digitaldata.common.CategoryImpl;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,7 +32,7 @@ public class ProductImplTest {
 									.primaryCategory("Haircare").security(new String[]{"Analytics"})
 								.build())
 							.linkedProduct(new ProductImpl[]{new ProductImpl.Builder().build(), new ProductImpl.Builder().build()})
-							.attributes(null)
+							.attributes(new AttributesImpl.Builder().build())
 						.build();
 		
 		ObjectMapper mapper = new ObjectMapper();

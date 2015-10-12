@@ -104,7 +104,7 @@ public class TransactionImplTest {
 																	.build())
 																.build()
 															})
-													.attributes(null)
+													.attributes(new AttributesImpl.Builder().build())
 												.build(),
 											new ItemImpl.Builder()
 												.productInfo(new ProductInfoImpl.Builder()
@@ -150,7 +150,7 @@ public class TransactionImplTest {
 																	.build())
 															.build()
 														})
-												.attributes(null)
+												.attributes(new AttributesImpl.Builder().build())
 											.build()
 										})
 								.build();
