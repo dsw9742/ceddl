@@ -9,8 +9,6 @@ import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.event.EventImpl;
 import com.douglaswhitehead.model.digitaldata.page.Page;
 import com.douglaswhitehead.model.digitaldata.page.PageImpl;
-import com.douglaswhitehead.model.digitaldata.pageinstanceid.PageInstanceID;
-import com.douglaswhitehead.model.digitaldata.pageinstanceid.PageInstanceIDImpl;
 import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
 import com.douglaswhitehead.model.digitaldata.privacy.PrivacyImpl;
 import com.douglaswhitehead.model.digitaldata.product.Product;
@@ -19,8 +17,6 @@ import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.transaction.TransactionImpl;
 import com.douglaswhitehead.model.digitaldata.user.User;
 import com.douglaswhitehead.model.digitaldata.user.UserImpl;
-import com.douglaswhitehead.model.digitaldata.version.Version;
-import com.douglaswhitehead.model.digitaldata.version.VersionImpl;
 
 /**
  * Mock implementation of DigitalData interface for testing purposes.
@@ -29,8 +25,8 @@ public class MockDigitalDataImpl implements DigitalData {
 	
 	public MockDigitalDataImpl() {}
 
-	public PageInstanceID getPageInstanceID() {
-		return new PageInstanceIDImpl.Builder().pageInstanceID("mock-ceddl").build();
+	public String getPageInstanceID() {
+		return new String("mock-ceddl-dev");
 	}
 
 	public Page getPage() {
@@ -73,8 +69,8 @@ public class MockDigitalDataImpl implements DigitalData {
 		return new PrivacyImpl.Builder().build();
 	}
 
-	public Version getVersion() {
-		return new VersionImpl.Builder().version("1.0").build();
+	public String getVersion() {
+		return new String("1.0");
 	}
 
 }

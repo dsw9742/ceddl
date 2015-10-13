@@ -1,7 +1,5 @@
 package com.douglaswhitehead.model.digitaldata.security;
 
-import java.util.Map;
-
 /**
  * <p>Security interface.</p>
  * 
@@ -102,13 +100,6 @@ import java.util.Map;
  * 
  */
 public interface Security {
-	
-	/**
-	 * Returns Map holding Security-related information. 
-	 * 
-	 * @return Map<String, Object> object
-	 */
-	public Map<String, Object> getMap();
 	
 	/**
 	 * Creates Security object for key.

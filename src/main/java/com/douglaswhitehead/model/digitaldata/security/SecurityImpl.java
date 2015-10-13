@@ -1,9 +1,6 @@
 package com.douglaswhitehead.model.digitaldata.security;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
-
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 
 /**
  * Implementation of Security interface.
@@ -11,29 +8,18 @@ import com.fasterxml.jackson.annotation.JsonAnyGetter;
  * @author douglas whitehead
  *
  */
-public class SecurityImpl implements Security {
+public class SecurityImpl extends LinkedHashMap<String, Object> implements Security {
 
 	/**
-	 * Internal LinkedHashMap to hold data layer security-related information.
+	 * long constant for <tt>serialVersionUID</tt>.
 	 */
-	protected Map<String, Object> map = new LinkedHashMap<String, Object>();
+	private static final long serialVersionUID = 8342306488575406731L;
 	
 	/**
 	 * SecurityImpl constructor. This method is only intended to be called by the BaseImpl.Builder class.
 	 */
 	public SecurityImpl() {
 		
-	}
-	
-	/**
-	 * Returns SecurityImpl as contents of map.
-	 * 
-	 * @return Map<String, Object> the Map of security-related information
-	 */
-	@JsonAnyGetter
-	@Override
-	public Map<String, Object> getMap() {
-		return map;
 	}
 
 	/**
@@ -44,7 +30,7 @@ public class SecurityImpl implements Security {
 	 */
 	@Override
 	public void secure(final String key, final String[] value) {
-		this.map.put(key, value);
+		this.put(key, value);
 	}
 
 }

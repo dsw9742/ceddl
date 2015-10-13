@@ -4,15 +4,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.douglaswhitehead.model.digitaldata.cart.Cart;
+import com.douglaswhitehead.model.digitaldata.common.BaseImpl;
 import com.douglaswhitehead.model.digitaldata.component.Component;
 import com.douglaswhitehead.model.digitaldata.event.Event;
 import com.douglaswhitehead.model.digitaldata.page.Page;
-import com.douglaswhitehead.model.digitaldata.pageinstanceid.PageInstanceID;
 import com.douglaswhitehead.model.digitaldata.privacy.Privacy;
 import com.douglaswhitehead.model.digitaldata.product.Product;
+import com.douglaswhitehead.model.digitaldata.security.Security;
 import com.douglaswhitehead.model.digitaldata.transaction.Transaction;
 import com.douglaswhitehead.model.digitaldata.user.User;
-import com.douglaswhitehead.model.digitaldata.version.Version;
 
 /**
  * Implementation of the DigitalData interface.
@@ -20,7 +20,7 @@ import com.douglaswhitehead.model.digitaldata.version.Version;
  * @author douglas.whitehead
  *
  */
-public class DigitalDataImpl implements DigitalData {
+public class DigitalDataImpl extends BaseImpl implements DigitalData {
 
 	/**
 	 * String constant for <tt>pageInstanceID</tt>.
@@ -80,7 +80,8 @@ public class DigitalDataImpl implements DigitalData {
 	/**
 	 * DigitalDataImpl constructor.
 	 * 
-	 * @param PageInstanceID pageInstanceID
+	 * @param Security security
+	 * @param String pageInstanceID
 	 * @param Page page
 	 * @param Product[] product
 	 * @param Cart cart
@@ -89,10 +90,11 @@ public class DigitalDataImpl implements DigitalData {
 	 * @param Component[] component
 	 * @param User[] user
 	 * @param Privacy privacy
-	 * @param Version version
+	 * @param String version
 	 */
 	private DigitalDataImpl(
-		final PageInstanceID pageInstanceID,
+		final Security security,
+		final String pageInstanceID,
 		final Page page,
 		final Product[] product,
 		final Cart cart,
@@ -101,8 +103,9 @@ public class DigitalDataImpl implements DigitalData {
 		final Component[] component,
 		final User[] user,
 		final Privacy privacy,
-		final Version version
+		final String version
 	) {
+		this.security = security;
 		this.map.put(PAGE_INSTANCE_ID, pageInstanceID);
 		this.map.put(PAGE, page);
 		this.map.put(PRODUCT, product);
@@ -118,11 +121,11 @@ public class DigitalDataImpl implements DigitalData {
 	/**
 	 * Returns the PageInstanceID object.
 	 * 
-	 * @return PageInstanceID
+	 * @return String
 	 */
 	@Override
-	public PageInstanceID getPageInstanceID() {
-		return (PageInstanceID)map.get(PAGE_INSTANCE_ID);
+	public String getPageInstanceID() {
+		return (String)map.get(PAGE_INSTANCE_ID);
 	}
 
 	/**
@@ -208,11 +211,11 @@ public class DigitalDataImpl implements DigitalData {
 	/**
 	 * Returns the Version object.
 	 * 
-	 * @return Version
+	 * @return String
 	 */
 	@Override
-	public Version getVersion() {
-		return (Version)map.get(VERSION);
+	public String getVersion() {
+		return (String)map.get(VERSION);
 	}
 
 	/**
@@ -221,7 +224,7 @@ public class DigitalDataImpl implements DigitalData {
 	 * @author douglas.whitehead
 	 *
 	 */
-	public static class Builder implements DigitalData.Builder {
+	public static class Builder extends BaseImpl.Builder<Builder> implements DigitalData.Builder {
 		
 		/**
 		 * Internal LinkedHashMap to hold DigitalData.Builder properties.
@@ -231,12 +234,13 @@ public class DigitalDataImpl implements DigitalData {
 		/**
 		 * Builds the PageInstanceID object.
 		 * 
-		 * @param PageInstanceID pageInstanceID
+		 * @param String pageInstanceID
 		 * @return Builder
 		 */
 		@Override
-		public Builder pageInstanceID(final PageInstanceID pageInstanceID) {
+		public Builder pageInstanceID(final String pageInstanceID) {
 			this.map.put(PAGE_INSTANCE_ID, pageInstanceID);
+			this.previous = PAGE_INSTANCE_ID;
 			return builder();
 		}
 		
@@ -249,6 +253,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder page(final Page page) {
 			this.map.put(PAGE, page);
+			this.previous = PAGE;
 			return builder();
 		}
 		
@@ -261,6 +266,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder product(final Product[] product) {
 			this.map.put(PRODUCT, product);
+			this.previous = PRODUCT;
 			return builder();
 		}
 		
@@ -273,6 +279,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder cart(final Cart cart) {
 			this.map.put(CART, cart);
+			this.previous = CART;
 			return builder();
 		}
 		
@@ -285,6 +292,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder transaction(final Transaction transaction) {
 			this.map.put(TRANSACTION, transaction);
+			this.previous = TRANSACTION;
 			return builder();
 		}
 		
@@ -297,6 +305,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder event(final Event[] event) {
 			this.map.put(EVENT, event);
+			this.previous = EVENT;
 			return builder();
 		}
 		
@@ -309,6 +318,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder component(final Component[] component) {
 			this.map.put(COMPONENT, component);
+			this.previous = COMPONENT;
 			return builder();
 		}
 		
@@ -321,6 +331,7 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder user(final User[] user) {
 			this.map.put(USER, user);
+			this.previous = USER;
 			return builder();
 		}
 		
@@ -333,18 +344,20 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public Builder privacy(final Privacy privacy) {
 			this.map.put(PRIVACY, privacy);
+			this.previous = PRIVACY;
 			return builder();
 		}
 		
 		/**
 		 * Builds the Version object.
 		 * 
-		 * @param Version version
+		 * @param String version
 		 * @return Builder
 		 */
 		@Override
-		public Builder version(final Version version) {
+		public Builder version(final String version) {
 			this.map.put(VERSION, version);
+			this.previous = VERSION;
 			return builder();
 		}
 		
@@ -356,7 +369,8 @@ public class DigitalDataImpl implements DigitalData {
 		@Override
 		public DigitalDataImpl build() {
 			return new DigitalDataImpl(
-				(PageInstanceID)map.get(PAGE_INSTANCE_ID),
+				security,
+				(String)map.get(PAGE_INSTANCE_ID),
 				(Page)map.get(PAGE),
 				(Product[])map.get(PRODUCT),
 				(Cart)map.get(CART),
@@ -365,7 +379,7 @@ public class DigitalDataImpl implements DigitalData {
 				(Component[])map.get(COMPONENT),
 				(User[])map.get(USER),
 				(Privacy)map.get(PRIVACY),
-				(Version)map.get(VERSION)
+				(String)map.get(VERSION)
 			);
 		}
 		
