@@ -24,6 +24,11 @@ public class ProfileImpl extends BaseImpl implements Profile {
 	private final static String ADDRESS = "address";
 	
 	/**
+	 * String constant for <tt>shippingAddress</tt>.
+	 */
+	private final static String SHIPPING_ADDRESS = "shippingAddress";
+	
+	/**
 	 * String constant for <tt>social</tt>.
 	 */
 	private final static String SOCIAL = "social";
@@ -37,12 +42,14 @@ public class ProfileImpl extends BaseImpl implements Profile {
 		final Security security,
 		final ProfileInfo profileInfo,
 		final Address address,
+		final Address shippingAddress,
 		final Social social,
 		final Attributes attributes
 	) {
 		this.security = security;
 		this.map.put(PROFILE_INFO, profileInfo);
 		this.map.put(ADDRESS, address);
+		this.map.put(SHIPPING_ADDRESS, shippingAddress);
 		this.map.put(SOCIAL, social);
 		this.map.put(ATTRIBUTES, attributes);
 	}
@@ -65,6 +72,16 @@ public class ProfileImpl extends BaseImpl implements Profile {
 	@Override
 	public Address getAddress() {
 		return (Address)map.get(ADDRESS);
+	}
+	
+	/**
+	 * Returns the ShippingAddress object.
+	 * 
+	 * @return Address
+	 */
+	@Override
+	public Address getShippingAddress() {
+		return (Address)map.get(SHIPPING_ADDRESS);
 	}
 	
 	/**
@@ -122,6 +139,19 @@ public class ProfileImpl extends BaseImpl implements Profile {
 		}
 		
 		/**
+		 * Builds the ShippingAddress object.
+		 * 
+		 * @param Address address
+		 * @return Builder
+		 */
+		@Override
+		public Builder shippingAddress(final Address address) {
+			this.map.put(SHIPPING_ADDRESS, address);
+			this.previous = SHIPPING_ADDRESS;
+			return builder();
+		}
+		
+		/**
 		 * Builds the Social object.
 		 * 
 		 * @param Social social
@@ -158,6 +188,7 @@ public class ProfileImpl extends BaseImpl implements Profile {
 				security,
 				(ProfileInfo)map.get(PROFILE_INFO),
 				(Address)map.get(ADDRESS),
+				(Address)map.get(SHIPPING_ADDRESS),
 				(Social)map.get(SOCIAL),
 				(Attributes)map.get(ATTRIBUTES)
 			);

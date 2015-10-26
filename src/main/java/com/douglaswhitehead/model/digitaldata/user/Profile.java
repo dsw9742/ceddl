@@ -34,6 +34,13 @@ public interface Profile {
 	public Address getAddress();
 	
 	/**
+	 * Returns the ShippingAddress object.
+	 * 
+	 * @return Address
+	 */
+	public Address getShippingAddress();
+	
+	/**
 	 * Returns the Social object.
 	 * 
 	 * @return Social
@@ -70,6 +77,14 @@ public interface Profile {
 		 * @return Builder
 		 */
 		public Builder address(Address address);
+		
+		/**
+		 * Builds the ShippingAddress object.
+		 * 
+		 * @param Address address
+		 * @return Builder
+		 */
+		public Builder shippingAddress(Address address);
 		
 		/**
 		 * Builds the Social object.
