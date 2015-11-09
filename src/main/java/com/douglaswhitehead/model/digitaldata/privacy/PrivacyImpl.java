@@ -74,7 +74,7 @@ public class PrivacyImpl implements Privacy {
 		public Builder accessCategories(
 			final AccessCategory[] accessCategories
 		) {
-			this.accessCategories = safeguardDefaultAccessCategory(accessCategories);
+			this.accessCategories = accessCategories;
 			return builder();
 		}
 		
@@ -86,7 +86,7 @@ public class PrivacyImpl implements Privacy {
 		@Override
 		public PrivacyImpl build() {
 			return new PrivacyImpl(
-				accessCategories
+				safeguardDefaultAccessCategory(accessCategories)
 			);
 		}
 		
@@ -98,8 +98,10 @@ public class PrivacyImpl implements Privacy {
 		 */
 		private AccessCategory[] safeguardDefaultAccessCategory(final AccessCategory[] accessCategories) {
 			List<AccessCategory> _accessCategories = new ArrayList<AccessCategory>();
-			for (AccessCategory accessCategory: accessCategories) {
-				_accessCategories.add(accessCategory);
+			if (accessCategories != null) {
+				for (AccessCategory accessCategory: accessCategories) {
+					_accessCategories.add(accessCategory);
+				}
 			}
 			_accessCategories.add(DEFAULT_ACCESS_CATEGORY);
 			return _accessCategories.toArray(new AccessCategory[_accessCategories.size()]);

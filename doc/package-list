@@ -1,0 +1,12 @@
+com.douglaswhitehead.model.digitaldata
+com.douglaswhitehead.model.digitaldata.cart
+com.douglaswhitehead.model.digitaldata.common
+com.douglaswhitehead.model.digitaldata.component
+com.douglaswhitehead.model.digitaldata.event
+com.douglaswhitehead.model.digitaldata.page
+com.douglaswhitehead.model.digitaldata.privacy
+com.douglaswhitehead.model.digitaldata.product
+com.douglaswhitehead.model.digitaldata.security
+com.douglaswhitehead.model.digitaldata.transaction
+com.douglaswhitehead.model.digitaldata.user
+com.douglaswhitehead.model.digitaldata.utility
