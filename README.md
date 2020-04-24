@@ -1,6 +1,6 @@
 # What is this?
 
-This is a server-side implementation of the CEDDL, written in Java.
+A collection of Java POJOs that implement the [CEDDL specification](http://www.w3.org/2013/12/ceddl-201312.pdf).
 
 # What is the CEDDL?
 
